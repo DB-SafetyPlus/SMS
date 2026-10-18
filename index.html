@@ -794,6 +794,123 @@ body{font-family:var(--sans);font-size:13.5px;letter-spacing:.05px}
 .cc-top{height:44px;flex:none;text-decoration:none}
 @media (max-width:760px){ .cc-top{padding:0 12px} .pill-alert{min-width:44px} }
 
+/* =================== v5: change requests & diff =================== */
+del.dx{background:#FDE2E2;color:#B42318;text-decoration:line-through;text-decoration-thickness:1.5px;border-radius:3px;padding:0 2px}
+ins.ix{background:#DCF5E5;color:#11733C;text-decoration:none;border-bottom:2px solid #34C26F;border-radius:3px;padding:0 2px}
+:root[data-theme="dark"] del.dx{background:#4A1D20;color:#FF9A9A} :root[data-theme="dark"] ins.ix{background:#123D26;color:#7BE3A3}
+.sheet del.dx{background:#FDE2E2;color:#B42318} .sheet ins.ix{background:#DCF5E5;color:#11733C}
+.p-red{background:#FFE9E9;color:#C62828} .p-gry{background:var(--bg2);color:var(--muted)}
+.dsec{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px;background:var(--surface)}
+.dsh{display:flex;align-items:center;gap:8px;font:600 11px var(--sans);letter-spacing:1.1px;text-transform:uppercase;color:var(--ink2);margin:16px 0 8px}
+.dsec > .dsh:first-child{margin-top:0}
+.dtext{font:400 14.5px/1.85 var(--sans);white-space:pre-wrap;color:var(--ink)}
+.dtext.mini{font-size:13px;line-height:1.7;max-height:110px;overflow:hidden;position:relative;padding:10px 12px;background:var(--surface2);border-radius:10px;-webkit-mask-image:linear-gradient(#000 70%,transparent)}
+.sbs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sbs > div{background:var(--surface2);border-radius:10px;padding:10px 12px}
+.sbh{font:600 10.5px var(--sans);letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+table.dtab{width:100%;border-collapse:collapse;font-size:13px} .dtab th{text-align:left;font:600 11.5px var(--sans);color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)} .dtab td{padding:8px;border-bottom:1px solid var(--line2)}
+ol.dlist{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px;font-size:13.5px}
+ol.dlist li{padding:4px 6px;border-radius:6px} ol.dlist li.leq{color:var(--muted)} ol.dlist li.lins{background:color-mix(in srgb,#DCF5E5 55%,transparent)} ol.dlist li.ldel{background:color-mix(in srgb,#FDE2E2 55%,transparent)}
+.ltag{font:600 10px var(--sans);text-transform:uppercase;letter-spacing:.6px;margin-left:8px;padding:1px 6px;border-radius:5px}
+.ltag.red{background:#FFE9E9;color:#C62828} .ltag.grn{background:#DCF5E5;color:#11733C} .ltag.lav{background:#ECEBFF;color:#4F46E5}
+.sgwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+.sged .dsh .right{margin-left:auto}
+.sgpv{position:sticky;top:0;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:14px;max-height:62vh;overflow:auto}
+.sgpv .dsec{background:var(--surface)}
+.sgt{min-height:120px;font-size:14.5px;line-height:1.8;overflow:hidden;resize:none}
+.sgl{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line2)}
+.sgp{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.sgp .input{padding:7px 9px}
+.nabox{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1.5px dashed var(--line);border-radius:12px;cursor:pointer;margin-bottom:4px}
+.nabox.on{border-color:var(--amber);background:var(--amber-soft)} .nabox input{margin-top:3px}
+.dimmed{opacity:.35;pointer-events:none}
+.mb12{margin-bottom:12px} .gap8{gap:8px}
+.rvhead{padding:4px 0 14px;border-bottom:1px solid var(--line2);margin-bottom:14px}
+.sgbanner{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);margin-bottom:14px;font-size:13px;flex-wrap:wrap}
+.sgbanner > svg{color:var(--accent)}
+.sg-btn,.sg-pend{display:inline-flex;align-items:center;gap:5px;margin-left:10px;padding:3px 10px;border-radius:20px;font:600 11px Poppins,sans-serif;cursor:pointer;vertical-align:3px;border:1px solid #D8C3A0;background:#FBF5EC;color:#8C6A38;letter-spacing:0;font-style:normal}
+.sg-btn:hover{background:#F3E6D2}
+.sg-pend{background:#FEF4E2;border-color:#F1D39A;color:#A36A0B} .sg-pend.returned{background:#FFE9E9;border-color:#F3B3B3;color:#C62828}
+.cl-t .dmark{margin-left:8px}
+.op-ctl{margin-top:8px} .op-ctl .sg-btn,.op-ctl .sg-pend{margin-left:0;margin-right:6px}
+.cl.sgable > .cl-h{border-radius:6px;transition:background .15s} .cl.sgable > .cl-h:hover{background:#FBF5EC}
+p.dfp{white-space:pre-wrap;margin:0 0 10px}
+@media (max-width:900px){ .sgwrap,.sbs{grid-template-columns:1fr} .sgpv{position:static;max-height:none} }
+@media print{ .sg-btn,.sg-pend{display:none!important} }
+.vcard{border:1px solid var(--line);border-left:3px solid #6366F1;border-radius:12px;padding:12px 14px}
+
+/* =================== v6: process screens =================== */
+.mhead{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap}
+.mhead .h1{font-size:26px}
+.pbar{display:flex;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px;margin-bottom:18px;overflow-x:auto;scrollbar-width:none;box-shadow:var(--shadow)}
+.pbar::-webkit-scrollbar{display:none}
+.ps{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:500;font-size:12.5px;white-space:nowrap;flex:none;position:relative}
+.ps .n{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font:600 11px var(--sans);border:1.5px solid var(--line);background:var(--surface)}
+.ps.done{color:var(--ink)} .ps.done .n{background:var(--navy);border-color:var(--navy);color:#fff}
+.ps.cur{color:#8C6A38;font-weight:600} .ps.cur .n{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 0 0 4px var(--accent-soft)}
+.ps.todo{opacity:.55;cursor:default}
+.ps.view{background:var(--bg)} .ps.view:after{content:"";position:absolute;left:12px;right:12px;bottom:2px;height:2px;border-radius:2px;background:var(--accent)}
+a.ps[href]:hover{background:var(--bg)}
+.pl{flex:1;min-width:14px;height:2px;background:var(--line);border-radius:2px}
+.subnav{display:flex;align-items:center;gap:4px;margin-bottom:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:0}
+.subnav a{padding:10px 14px;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;margin-bottom:-1px;display:flex;gap:6px;align-items:center}
+.subnav a:hover{color:var(--ink)} .subnav a.on{color:var(--ink);font-weight:600;border-color:var(--accent)}
+.subnav .sn{font:600 10.5px var(--sans);background:var(--accent);color:#fff;border-radius:10px;padding:0 7px}
+.subnav > .btn{margin-bottom:6px}
+.flowgrid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:16px;align-items:start}
+.suhead{display:flex;gap:8px;padding:8px 16px;font:600 11px var(--sans);color:var(--muted);border-bottom:1px solid var(--line2);text-transform:uppercase;letter-spacing:.6px}
+.suhead span:first-child{width:46px}
+.sulist{max-height:calc(100vh - 290px);overflow:auto}
+.surow{display:flex;align-items:center;gap:8px;padding:5px 12px 5px calc(16px + var(--d) * 22px);border-bottom:1px solid var(--line2)}
+.surow:hover{background:var(--surface2)}
+.surow .num{width:42px;flex:none;font-size:11.5px;color:var(--accent)}
+.sut{font-size:13.5px} .sut.b{font-weight:600}
+.susel{width:200px;padding:6px 8px;font-size:12.5px;flex:none}
+.sudate{width:140px;padding:6px 8px;font-size:12.5px;flex:none}
+.suact{display:flex;width:112px;flex:none;justify-content:flex-end;opacity:.35;transition:opacity .15s} .surow:hover .suact{opacity:1}
+.pcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.pcard{display:flex;gap:10px;align-items:center;text-align:left;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);cursor:pointer;font:inherit;color:inherit}
+.pcard:hover{border-color:var(--faint)} .pcard.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.chain{display:flex;align-items:center;gap:2px} .chain .arr{color:var(--faint);font-weight:700;margin:0 2px}
+td .b,.b{font-weight:600}
+.rqrow{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit}
+.rqrow:hover{border-color:var(--accent);background:var(--accent-soft)}
+.dtree{border:1px solid var(--line);border-radius:12px;padding:8px 12px;background:var(--surface2)}
+.dtroot{display:flex;align-items:center;gap:8px;padding:6px 0 8px;border-bottom:1px dashed var(--line);font-size:13px}
+.dtn{position:relative;padding-left:16px;margin-top:6px}
+.dtn:before{content:"";position:absolute;left:5px;top:0;bottom:12px;border-left:1.5px solid var(--line)}
+.dtd{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:13px;position:relative}
+.dtd:before{content:"";position:absolute;left:-11px;top:50%;width:10px;border-top:1.5px solid var(--line)}
+.dtc{padding-left:26px;position:relative}
+.dtc:before{content:"";position:absolute;left:14px;top:0;bottom:14px;border-left:1.5px dashed var(--line)}
+.dtl{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:8px;cursor:pointer;font-size:13px;position:relative}
+.dtl:before{content:"";position:absolute;left:-12px;top:50%;width:10px;border-top:1.5px dashed var(--line)}
+.dtd:hover,.dtl:hover{background:var(--surface)}
+.dtree input{accent-color:var(--accent);width:16px;height:16px}
+.stdiv{margin-bottom:10px} .stdh{font:600 11px var(--sans);text-transform:uppercase;letter-spacing:.8px;color:var(--muted);display:flex;gap:6px;align-items:center;padding:4px 0}
+.stdl{display:flex;align-items:center;gap:10px;padding:8px 10px 8px 14px;margin-left:6px;border-left:2px solid var(--line);flex-wrap:wrap}
+.stdl:hover{background:var(--surface2)}
+.taskcard{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:16px 18px;border-radius:14px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);margin-bottom:16px;box-shadow:var(--shadow)}
+.limwrap{border-bottom:1px solid var(--line2)} .limwrap:last-child{border-bottom:0} .limwrap .lrow{border-bottom:0}
+.brz{padding:0 12px 10px 12px}
+.brtog{display:inline-flex;align-items:center;gap:6px;border:0;background:var(--red-soft);color:var(--red);font:600 11.5px var(--sans);padding:4px 10px;border-radius:20px;cursor:pointer}
+.brseq{margin-top:8px;border-left:2px solid #F3B3B3;padding-left:12px;display:flex;flex-direction:column;gap:8px}
+.brstep{background:var(--surface2);border:1px solid var(--line2);border-radius:10px;padding:8px 10px}
+.brh{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.brn{width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font:700 10.5px var(--sans);flex:none}
+.bracts{display:flex;flex-direction:column;gap:4px;margin:6px 0 0 26px}
+.bract{display:flex;align-items:center;gap:6px} .bract.ro{font-size:13px} .bract.ro svg{color:var(--red)}
+.lim-br{display:flex;flex-direction:column;gap:3px;padding:4px 12px 8px 24px;font-size:11.5px;color:#5b5f67;border-top:1px dashed #EFEDE8;background:#FFFAFA}
+.lim-br .lbh{font:800 8.5px var(--sans);letter-spacing:1.2px;text-transform:uppercase;color:#B42318}
+.lim-br .lbs b{color:#B42318;margin-right:6px}
+.rplan{margin-top:10px;border:1px solid #F3C9C9;background:var(--red-soft);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:4px}
+.rps{display:flex;align-items:center;gap:8px;opacity:.75} .rps.due{opacity:1}
+.rpn{width:18px;height:18px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font:700 10px var(--sans);flex:none}
+@media (max-width:1100px){ .flowgrid{grid-template-columns:1fr} .susel{width:150px} .sudate{width:120px} }
+@media (max-width:760px){ .surow{flex-wrap:wrap;padding-left:12px} .sut{flex-basis:calc(100% - 50px)} .susel,.sudate{flex:1} .suhead{display:none} .suact{opacity:1} }
+.wrow{display:flex;gap:14px;align-items:center;padding:16px 18px;cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.wrow:hover{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+
 </style>
 </head>
 <body>
@@ -953,12 +1070,24 @@ const KB = (() => {
     ];
   }
 
+  function breachFor(label) {
+    const L = (label || '').toLowerCase(), St = (offset, unit, ...acts) => ({ offset, unit, actions:acts.map(([text, owner]) => ({ text, owner })) });
+    if (/fire watch|gas test|combustible|oxygen|fall|trigger|clearance|re-test/.test(L)) return [St(0, 'minutes', ['Stop the work immediately and make the area safe', 'Permit Issuer'], ['Report the breach as a near miss', 'Supervisor']), St(1, 'days', ['Investigate the permit breach and re-brief the crew', 'HSE Officer'])];
+    if (/investigation|report|notification|log|reporting/.test(L)) return [St(0, 'hours', ['Notify the HSE Manager and the area manager', 'System'], ['Record a non-conformance against the responsible department', 'HSE Officer']), St(24, 'hours', ['Escalate to the department head with a recovery date', 'HSE Manager']), St(3, 'days', ['Escalate to the CEO and include in the weekly HSE report', 'HSE Director'])];
+    if (/capa|closure/.test(L)) return [St(0, 'days', ['Notify the CAPA owner and their manager', 'System']), St(14, 'days', ['Escalate to the management review', 'HSE Director'])];
+    if (/inspection|walk|audit|review|maintenance|fit test|refresher|interval|revalidation|evaluation/.test(L)) return [St(0, 'days', ['Tag the item or area as overdue and notify its owner', 'System']), St(7, 'days', ['Escalate to the department head — item may not be used until inspected', 'HSE Manager'])];
+    if (/toolbox|training|induction|first aid|representation|committee|hours per worker|wardens/.test(L)) return [St(0, 'days', ['Notify the department head', 'System']), St(7, 'days', ['Add a corrective action to the department improvement plan', 'HSE Manager'])];
+    return [St(0, 'days', ['Notify the responsible manager', 'System']), St(7, 'days', ['Escalate to the department head', 'HSE Manager'])];
+  }
+  const withBreach = nodes => (nodes || []).forEach(n => { (n.r || []).forEach(q => { if (!q.breach) q.breach = breachFor(q.label); }); withBreach(n.c); });
+
   function generate({ type, company, refs, description, title }) {
     const co = (company || 'the Company').trim();
     const kw = (description || '') + ' ' + (title || '');
     const isSafety = type === 'safety' || refs.some(r => /45001|OSHA|ILO/.test(r)) && type !== 'environment' && type !== 'quality' && type !== 'risk' && type !== 'emergency';
     const tname = (TYPES.find(t => t.id === type) || {}).name || title || 'Standard';
-    return isSafety ? safety(co, refs.length ? refs : ['ISO 45001:2018'], kw) : hls(co, refs, tname.replace(/ (Manual|Standard)$/,''), type);
+    const t = isSafety ? safety(co, refs.length ? refs : ['ISO 45001:2018'], kw) : hls(co, refs, tname.replace(/ (Manual|Standard)$/,''), type);
+    withBreach(t); return t;
   }
 
   /* ---------- Offline drafting for a single clause ---------- */
@@ -1067,7 +1196,7 @@ const KB = (() => {
     return out;
   }
 
-  return { REFS, TYPES, generate, draftClause, check, toHours };
+  return { REFS, TYPES, generate, draftClause, check, toHours, breachFor };
 })();
 
 /* ============ Core: state, helpers, workflow engine, AI ============ */
@@ -1144,15 +1273,15 @@ const ST = {
   approved:{ l:'Approved', b:'b-green', p:100, c:'#0FA88A' },
 };
 const STAGES = [
-  { id:'drafting', l:'Drafting & Review' }, { id:'dept_review', l:'Department Review' },
-  { id:'approval', l:'Approval Chain' }, { id:'published', l:'Published' },
+  { id:'setup', l:'Structure & Assignment' }, { id:'drafting', l:'Writing & Review' }, { id:'compliance', l:'Compliance Check' },
+  { id:'dept_review', l:'Department Review' }, { id:'approval', l:'Approval' }, { id:'published', l:'Published' },
 ];
 const stageIdx = s => STAGES.findIndex(x => x.id === s);
-const STAGE_B = { drafting:'b-blue', dept_review:'b-violet', approval:'b-amber', published:'b-green' };
+const STAGE_B = { setup:'b-gray', drafting:'b-blue', compliance:'b-orange', dept_review:'b-violet', approval:'b-amber', published:'b-green' };
 const AV_COLORS = ['#FF5B1F','#0FA88A','#2F6BFF','#7B5CFF','#E79A00','#E5383B','#0E7490','#BE185D','#4D7C0F','#6D28D9'];
 
 /* ---------- State ---------- */
-const STORE = 'canon-manual-studio.v2';
+const STORE = 'canon-manual-studio.v5';
 let S = null;
 let _saveT = null;
 function save() { clearTimeout(_saveT); _saveT = setTimeout(() => { try { localStorage.setItem(STORE, JSON.stringify(S)); } catch (e) {} }, 120); }
@@ -1186,10 +1315,12 @@ function depthOf(m, c) { return ancestors(m, c).length; }
 function prog(m, c) { const ch = kids(m, c.id); const own = ST[c.status].p; if (!ch.length) return own; const avg = ch.reduce((s, k) => s + prog(m, k), 0) / ch.length; return Math.round(own * 0.35 + avg * 0.65); }
 function manualProg(m) {
   if (m.stage === 'published') return 100;
+  if (m.stage === 'setup') return 5;
+  if (m.stage === 'compliance') return 72;
   const top = kids(m, null); if (!top.length) return 0;
   const draft = top.reduce((s, c) => s + prog(m, c), 0) / top.length;
   if (m.stage === 'drafting') return Math.round(draft * 0.7);
-  if (m.stage === 'dept_review') { const it = m.deptReview?.items || []; return Math.round(70 + 15 * (it.filter(i => i.status === 'accepted').length / (it.length || 1))); }
+  if (m.stage === 'dept_review') { const it = m.deptReview?.items || []; return Math.round(75 + 10 * (it.filter(i => i.status !== 'pending').length / (it.length || 1))); }
   if (m.stage === 'approval') { const st = m.approval?.steps || []; return Math.round(85 + 15 * (st.filter(s => ['approved','skipped'].includes(s.status)).length / (st.length || 1))); }
   return 0;
 }
@@ -1199,13 +1330,15 @@ function responsibleFor(m, c) { if (c.assigneeId) return c.assigneeId; const a =
 const isOwner = (m, u = S.me) => m.ownerId === u;
 const controls = (m, c, u = S.me) => isOwner(m, u) || c.assigneeId === u || ancestors(m, c).some(a => a.assigneeId === u);
 function canEdit(m, c) {
+  if (m.stage === 'setup' || m.stage === 'compliance') return isOwner(m);
   if (!controls(m, c)) return false;
   if (m.stage === 'drafting') return !['submitted','approved'].includes(c.status) || (isOwner(m) && !c.assigneeId && c.status !== 'submitted');
   if (m.stage === 'dept_review') return isOwner(m);
   if (m.stage === 'approval') return isOwner(m) && m.approval?.status === 'returned';
   return false;
 }
-const isGov = (m, u = S.me) => (user(u) || {}).deptId === (m.governanceDeptId || S.settings.governanceDeptId) || (user(u) || {}).admin;
+const isGov = (m, u = S.me) => isOwner(m, u) || isGov0(m, u);
+const isGov0 = (m, u = S.me) => (user(u) || {}).deptId === (m.governanceDeptId || S.settings.governanceDeptId) || (user(u) || {}).admin;
 
 /* ---------- Notifications & log ---------- */
 function notify(uids, text, link, kind = 'info') {
@@ -1221,11 +1354,11 @@ const L = (m, c) => `#/m/${m.id}${c ? '/c/' + c.id : ''}`;
 
 /* ---------- Factories ---------- */
 function newClause(o = {}) { return { id:uid('c'), parentId:null, order:0, title:'Untitled clause', body:'', assigneeId:null, assignedById:null, deadline:null, status:'not_started', requirements:[], steps:[], actions:[], comments:[], history:[], ...o }; }
-function newManual(o = {}) { return { id:uid('m'), title:'Untitled Manual', type:'custom', code:'DOC-000', version:'0.1', company:S.settings.company, description:'', references:[], ownerId:S.me, stage:'drafting', createdAt:now(), clauses:[], deptReview:null, approval:null, publishedAt:null, variations:[], conflicts:[], conflictsAt:null, conflictsSource:null, log:[], revisions:[], governanceDeptId:null, ...o }; }
+function newManual(o = {}) { return { id:uid('m'), title:'Untitled Manual', type:'custom', code:'DOC-000', version:'0.1', company:S.settings.company, description:'', references:[], ownerId:S.me, stage:'setup', createdAt:now(), clauses:[], deptReview:null, approval:null, publishedAt:null, variations:[], conflicts:[], conflictsAt:null, conflictsSource:null, log:[], revisions:[], governanceDeptId:null, ...o }; }
 function treeToClauses(tree, parentId = null, out = []) {
   (tree || []).forEach((n, i) => {
     const c = newClause({ parentId, order:i, title:n.t || n.title || 'Clause', body:n.b || n.body || '',
-      requirements:(n.r || n.requirements || []).map(r => ({ id:uid('q'), label:r.label, type:r.type === 'min' ? 'min' : 'max', value:+r.value || 0, unit:r.unit || 'days' })),
+      requirements:(n.r || n.requirements || []).map(r => ({ id:uid('q'), label:r.label, type:r.type === 'min' ? 'min' : 'max', value:+r.value || 0, unit:r.unit || 'days', breach:(r.breach || KB.breachFor(r.label)).map(s => ({ id:uid('b'), offset:+s.offset || 0, unit:s.unit || 'hours', actions:(s.actions || []).map(a => ({ id:uid('x'), text:a.text || a.action || '', owner:a.owner || '' })) })) })),
       steps:(n.p || n.points || []).slice(),
       actions:(n.a || n.actions || []).map(a => ({ id:uid('a'), offset:+a.offset || 0, unit:a.unit || 'days', action:a.action || '', owner:a.owner || '' })) });
     out.push(c); treeToClauses(n.c || n.children, c.id, out);
@@ -1240,7 +1373,7 @@ function assignClause(m, c, userId, deadline) {
   if (c.status === 'approved' && userId && userId !== prev) c.status = 'in_progress';
   const n = nums(m)[c.id];
   c.history.push({ ts:now(), userId:S.me, text:userId ? `Assigned to ${uname(userId)}${deadline ? ' · due ' + fmtD(deadline) : ''}` : 'Unassigned' });
-  if (userId && userId !== S.me) notify(userId, `${uname(S.me)} assigned you clause ${n} “${c.title}” in ${m.title}${deadline ? ' — due ' + fmtD(deadline) : ''}`, L(m, c), 'assign');
+  if (userId && userId !== S.me && m.stage !== 'setup') notify(userId, `${uname(S.me)} assigned you clause ${n} “${c.title}” in ${m.title}${deadline ? ' — due ' + fmtD(deadline) : ''}`, '#/writing', 'assign');
   log(m, `assigned ${n} ${c.title} to ${uname(userId)}`, 'assign');
 }
 function ownedBundle(m, c) { // c + descendants that travel with it (unassigned or same assignee)
@@ -1386,12 +1519,17 @@ function decideVariation(m, vid, act, comment) {
 }
 const VK = { na:{ l:'Not applicable', b:'b-gray', i:'ban' }, tighten:{ l:'Stricter limit', b:'b-orange', i:'target' }, add:{ l:'Improvement', b:'b-violet', i:'plus' } };
 function effective(m, deptId) {
-  const r = { na:{}, tight:{}, adds:{} };
+  const r = { na:{}, tight:{}, adds:{}, edits:{} };
   if (!deptId) return r;
-  m.variations.filter(v => v.deptId === deptId && v.status === 'approved').forEach(v => {
+  m.variations.filter(v => v.deptId === deptId && v.status === 'approved').sort((a, b) => (a.decidedAt || 0) - (b.decidedAt || 0)).forEach(v => {
     if (v.kind === 'na') r.na[v.clauseId] = v;
     if (v.kind === 'tighten') r.tight[v.reqId] = v;
     if (v.kind === 'add') (r.adds[v.clauseId] = r.adds[v.clauseId] || []).push(v);
+    if (v.kind === 'edit') {
+      r.edits[v.clauseId] = v;
+      if (v.after.na) r.na[v.clauseId] = v; else delete r.na[v.clauseId];
+      (v.after.reqs || []).forEach(q => { const b = reqById(m, q.id); if (!b) return; if (+q.value !== +b.q.value) r.tight[q.id] = { ...v, reqId:q.id, proposed:+q.value }; else delete r.tight[q.id]; });
+    }
   });
   return r;
 }
@@ -1531,12 +1669,27 @@ function seedState() {
   ];
   const wi = find(A, 'Workplace Inspections');
   A.variations.push({ id:uid('v'), deptId:'PRJ', clauseId:wi.id, kind:'tighten', reqId:wi.requirements[0].id, proposed:3, text:'', justification:'Construction sites change daily; supervisors inspect every 3 days.', status:'approved', requestedBy:'u9', ts:ago(15), decidedBy:'u2', decidedAt:ago(14), comment:'Approved.', thread:[] });
+  const mkEdit = (title, deptId, by, fn, status, decidedBy, comment, d) => {
+    const c = find(A, title), before = snapshot(A, c, deptId), after = JSON.parse(JSON.stringify(before)); fn(after);
+    const cs = changeSet(A, c, before, after);
+    const v = { id:uid('v'), kind:'edit', deptId, clauseId:c.id, before, after, justification:'', flags:cs.flags, findings:cs.findings, status, requestedBy:by, ts:ago(d), rounds:[{ ts:ago(d), by, after }], thread:[] };
+    if (decidedBy) { v.decidedBy = decidedBy; v.decidedAt = ago(d - .5); v.comment = comment; v.thread.push({ ts:ago(d - .5), userId:decidedBy, text:(status === 'approved' ? 'Approved' : 'Returned') + (comment ? ': ' + comment : '') }); }
+    return v;
+  };
+  const e1 = mkEdit('Personal Protective Equipment (PPE)', 'OPS', 'u3', a => { a.body += ' In the warehouse and loading bays, high-visibility vests and safety shoes shall be worn at all times, including by visitors.'; a.steps.push('PPE compliance checked at every shift start by the shift supervisor'); }, 'approved', 'u2', 'Good addition.', 6);
+  e1.justification = 'Forklift traffic in the warehouse makes visibility critical.';
+  const e2 = mkEdit('Hot Work', 'MNT', 'u4', a => { a.body = a.body.replace('for at least 30 minutes after completion', 'for at least 60 minutes after completion, and the area shall be re-inspected before the permit is closed'); a.reqs.find(q => /Fire watch/.test(q.label)).value = 60; a.steps.push('Hot work inside workshops requires HSE countersignature on the permit'); }, 'pending', null, '', 1);
+  e2.justification = 'Our workshops store oily rags and hydraulic fluids; a longer fire watch and countersignature reduce smoulder risk.';
+  const e3 = mkEdit('Contractor Management', 'PRJ', 'u9', a => { a.body = a.body.replace('Contractors shall be pre-qualified on OH&S performance, inducted before work and monitored during work.', 'Contractors should be pre-qualified where possible and inducted before work.'); }, 'returned', 'u2', 'You removed the monitoring requirement and softened “shall” to “should”. Projects can be stricter, not weaker — please keep monitoring and the mandatory wording.', 3);
+  e3.justification = 'Short-term contractors make full pre-qualification difficult.';
+  A.variations.push(e1, e2, e3);
   A.log = [{ ts:ago(32), userId:'u1', manualId:A.id, text:'published version 1.0', kind:'publish' }];
 
   /* --- B. Site Safety Manual in drafting (assignments, reviews, conflicts) --- */
   const B = newManual({ title:'Projects Site Safety Manual', type:'safety', code:'HSE-MAN-002', company:co, ownerId:'u1', createdAt:ago(18), version:'0.3',
     description:'Construction and shutdown projects: scaffolding, excavation, welding & fabrication, heavy lifting, contractor workforce of 600.',
     references:['ISO 45001:2018','OSHA 29 CFR 1926','OSHA 29 CFR 1904'] });
+  B.stage = 'drafting'; B.assignSent = ago(17);
   B.clauses = treeToClauses(KB.generate({ type:'safety', company:co, refs:B.references, description:B.description }));
   const top = kids(B, null);
   asg(B, top[0], 'u8', 'u1', ago(4), 'approved'); descendants(B, top[0].id).forEach(c => c.status = 'approved');
@@ -1589,13 +1742,30 @@ function seedState() {
   D.stage = 'dept_review';
   D.deptReview = { round:1, startedAt:ago(4), items:[
     { deptId:'OPS', reviewerId:'u3', status:'accepted', deadline:ahead(3), actedAt:ago(1), note:'' },
-    { deptId:'MNT', reviewerId:'u4', status:'returned', deadline:ahead(3), actedAt:ago(0.4), note:'Hazardous waste storage limit is unrealistic for remote sites — see comment on Waste Management.' },
+    { deptId:'MNT', reviewerId:'u4', status:'submitted', deadline:ahead(3), actedAt:ago(0.4), note:'Hazardous waste storage limit is unrealistic for remote sites — see comment on Waste Management.' },
     { deptId:'ENG', reviewerId:'u5', status:'pending', deadline:ahead(3), note:'' },
     { deptId:'PRJ', reviewerId:'u9', status:'pending', deadline:ago(1), note:'' } ] };
   const waste = find(D, 'Waste Management');
   waste.comments.push({ id:uid('k'), quote:'disposed of only through licensed contractors', text:'Remote sites have one licensed collector visiting monthly. Can we add a provision for consolidated storage at the regional yard?', authorId:'u4', ts:ago(0.4), resolved:false, replies:[], source:'dept', deptId:'MNT' });
 
-  S.manuals = [B, C, D, A];
+  const mkProp = (title, deptId, by, fn, status, d, just, comment) => {
+    const c = find(D, title), before = snapshot(D, c, ''), after = JSON.parse(JSON.stringify(before)); fn(after);
+    const cs = changeSet(D, c, before, after, true);
+    const p = { id:uid('p'), kind:'edit', scope:'base', status, ts:ago(d), requestedBy:by, thread:[], deptId, clauseId:c.id, round:1, before, after, justification:just, flags:cs.flags, findings:cs.findings, rounds:[{ ts:ago(d), by, after }] };
+    if (comment) { p.decidedBy = 'u1'; p.decidedAt = ago(d - .2); p.comment = comment; p.thread.push({ ts:ago(d - .2), userId:'u1', text:'Returned: ' + comment }); }
+    return p;
+  };
+  D.proposals = [
+    mkProp('Spill Prevention & Response', 'ENG', 'u5', a => { a.body = a.body.replace('spills shall be contained, reported and cleaned up immediately.', 'spills shall be contained within 15 minutes, reported to HSE and cleaned up using the site spill kit; waste from clean-up shall be handled as hazardous waste.'); a.steps.push('Inspect spill kits monthly and record contents'); }, 'draft', .6, 'Clarifies response time and how clean-up waste is handled.'),
+    mkProp('Waste Management', 'MNT', 'u4', a => { a.body = a.body.replace('disposed of only through licensed contractors with documented chain of custody.', 'disposed of through licensed contractors with documented chain of custody; remote sites may consolidate waste at the regional yard for up to 30 days before collection.'); }, 'pending', .4, 'Remote sites only get one licensed collector visit per month.'),
+  ];
+  const E = newManual({ title:'Contractor Safety Standard', type:'safety', code:'HSE-STD-005', company:co, ownerId:'u1', createdAt:ago(0.3), version:'0.1',
+    description:'Pre-qualification, induction and supervision of contractors on all sites.', references:['ISO 45001:2018','OSHA 29 CFR 1926'] });
+  E.clauses = treeToClauses(KB.generate({ type:'safety', company:co, refs:E.references, description:'contractor construction' }));
+  const et = kids(E, null);
+  [[2, 'u2', 6], [5, 'u9', 10], [7, 'u8', 8], [8, 'u8', 8]].forEach(([i, u, d]) => { et[i].assigneeId = u; et[i].assignedById = 'u1'; et[i].deadline = ahead(d); });
+  E.log = [{ ts:ago(0.3), userId:'u1', manualId:E.id, text:'created the manual with AI (offline engine)', kind:'edit' }];
+  S.manuals = [E, B, C, D, A];
   S.activity = [...B.log, { ts:ago(3), userId:'u2', manualId:C.id, text:'approved as Technical Review', kind:'approval' }, { ts:ago(0.4), userId:'u4', manualId:D.id, text:'Maintenance returned the manual with comments', kind:'dept' }, ...A.log].sort((a, b) => b.ts - a.ts);
   const n = (u, text, link, kind, d) => S.notifications.push({ id:uid('n'), userId:u, text, link, kind, ts:ago(d), read:false });
   n('u1', `Faisal Al-Harbi submitted ${nums(B)[top[3].id]} “Planning” for your review`, L(B, top[3]), 'review', 0.3);
@@ -1614,7 +1784,7 @@ const UI = { sel:{}, mode:{}, lens:{}, bell:false, libFilter:'all', treeFilter:'
 
 function route() {
   const h = (location.hash || '#/').slice(2).split('/');
-  if (h[0] === 'm' && h[1]) return { page:'manual', id:h[1], cid:h[2] === 'c' ? h[3] : null, tab:h[2] === 't' ? h[3] : 'clauses' };
+  if (h[0] === 'm' && h[1]) return { page:'manual', id:h[1], cid:h[2] === 'c' ? h[3] : null, rid:h[2] === 'r' ? h[3] : null, stage:h[2] === 's' ? h[3] : null, sub:h[2] === 's' ? h[4] || null : null, tab:h[2] === 't' ? h[3] : null };
   if (h[0] === 'depts') return { page:'depts', id:h[1] || null };
   return { page:h[0] || 'dashboard', sub:h[1] || null };
 }
@@ -1627,18 +1797,22 @@ function myTasks(uid = S.me) {
     const n = nums(m);
     if (m.stage === 'drafting') m.clauses.forEach(c => {
       if (c.assigneeId === uid && ['not_started','in_progress','changes_requested'].includes(c.status))
-        t.push({ kind:c.status === 'changes_requested' ? 'Fix' : 'Write', icon:'edit', b:c.status === 'changes_requested' ? 'b-red' : 'b-blue', m, title:`${n[c.id]} ${c.title}`, sub:m.title, due:c.deadline, link:L(m, c) });
+        t.push({ kind:c.status === 'changes_requested' ? 'Fix' : 'Write', icon:'edit', b:c.status === 'changes_requested' ? 'b-red' : 'b-blue', m, title:`${n[c.id]} ${c.title}`, sub:m.title, due:c.deadline, link:'#/writing' });
       if (c.status === 'submitted' && c.reviewerId === uid && c.submittedAt && (!c.parentId || clause(m, c.parentId).status !== 'submitted' || clause(m, c.parentId).reviewerId !== uid))
-        t.push({ kind:'Review', icon:'eye', b:'b-amber', m, title:`${n[c.id]} ${c.title}`, sub:`${m.title} · from ${uname(c.assigneeId)}`, due:c.deadline, link:L(m, c) });
+        t.push({ kind:'Review', icon:'eye', b:'b-amber', m, title:`${n[c.id]} ${c.title}`, sub:`${m.title} · from ${uname(c.assigneeId)}`, due:c.deadline, link:`#/m/${m.id}/r/${c.id}` });
     });
+    if (m.stage === 'setup' && m.ownerId === uid) t.push({ kind:'Plan', icon:'list', b:'b-gray', m, title:'Finish the structure & send assignments', sub:m.title, link:L(m) });
+    if (m.stage === 'compliance' && m.ownerId === uid) t.push({ kind:'Check', icon:'shield', b:'b-amber', m, title:'Resolve compliance findings & send to departments', sub:m.title, link:L(m) });
     if (m.stage === 'drafting' && m.ownerId === uid && kids(m, null).length && kids(m, null).every(c => c.status === 'approved'))
-      t.push({ kind:'Advance', icon:'send', b:'b-green', m, title:'Send to departments for review', sub:m.title, link:L(m) + '/t/dept' });
+      t.push({ kind:'Advance', icon:'send', b:'b-green', m, title:'All clauses approved — run the compliance check', sub:m.title, link:L(m) });
+    (m.proposals || []).forEach(p => { if (p.status === 'pending' && m.ownerId === uid) t.push({ kind:'Decide', icon:'edit', b:'b-orange', m, title:`${dept(p.deptId)?.name}: revision on ${nums(m)[p.clauseId]}`, sub:m.title, link:L(m) }); if (p.status === 'returned' && p.requestedBy === uid) t.push({ kind:'Revise', icon:'undo', b:'b-red', m, title:`Returned revision on ${nums(m)[p.clauseId]}`, sub:m.title, link:L(m) }); });
     if (m.stage === 'dept_review') {
       m.deptReview.items.forEach(i => { if (i.reviewerId === uid && i.status === 'pending') t.push({ kind:'Dept review', icon:'building', b:'b-violet', m, title:`Review for ${dept(i.deptId).name}`, sub:m.title, due:i.deadline, link:L(m) + '/t/dept' }); });
-      if (m.ownerId === uid && m.deptReview.items.some(i => i.status === 'returned')) t.push({ kind:'Address', icon:'msg', b:'b-red', m, title:'Address returned department comments', sub:m.title, link:L(m) + '/t/dept' });
-      if (m.ownerId === uid && m.deptReview.items.every(i => i.status === 'accepted')) t.push({ kind:'Advance', icon:'send', b:'b-green', m, title:'Build the approval chain', sub:m.title, link:L(m) + '/t/approval' });
+      if (false) t.push({ kind:'Address', icon:'msg', b:'b-red', m, title:'Address returned department comments', sub:m.title, link:L(m) + '/t/dept' });
+      if (m.ownerId === uid && m.deptReview.items.every(i => i.status !== 'pending') && !(m.proposals || []).some(p => p.status === 'pending')) t.push({ kind:'Advance', icon:'send', b:'b-green', m, title:'Department review complete — choose the next step', sub:m.title, link:L(m) });
     }
-    if (m.stage === 'approval') {
+    if (m.stage === 'approval' && !m.approval && m.ownerId === uid) t.push({ kind:'Advance', icon:'shieldck', b:'b-green', m, title:'Build the approval chain', sub:m.title, link:L(m) });
+    if (m.stage === 'approval' && m.approval) {
       const s = m.approval.steps.find(x => x.status === 'pending');
       if (s && s.userId === uid && m.approval.status === 'in_progress') t.push({ kind:'Approve', icon:'shield', b:'b-amber', m, title:`Approve as ${s.role}`, sub:m.title, due:s.deadline, link:L(m) + '/t/approval' });
       if (m.ownerId === uid && m.approval.status === 'returned') t.push({ kind:'Address', icon:'undo', b:'b-red', m, title:'Approval returned — revise & resubmit', sub:m.title, link:L(m) + '/t/approval' });
@@ -1675,7 +1849,7 @@ function shell(r) {
   const SECS = [
     { id:'dash', short:'Overview', icon:'dashboard', title:'Overview', pages:['dashboard','inbox'], items:[['#/','dashboard','Dashboard','dashboard'], ['#/inbox','inbox','My Work','inbox', tasks]] },
     { id:'comp', short:'Compliance', icon:'shieldck', title:'Compliance Management', pages:['compliance'], badge:br, items:[['#/compliance','target','Command Center','compliance', br], ['#/compliance/integration','link','Connected System','compliance:integration']] },
-    { id:'man', short:'Manuals', icon:'book', title:'Manual Management System', pages:['manuals','manual','new','depts'], items:[['#/manuals','list','Manuals List','manuals'], ['#/new','plus','Add New Manual','new'], ['#/depts','building','Department Standards','depts']] },
+    { id:'man', short:'Manuals', icon:'book', title:'Manual Management System', pages:['manuals','manual','new','depts','writing'], items:[['#/writing','edit','My Writing','writing', myWritingCount()], ['#/manuals','list','Manuals List','manuals'], ['#/new','plus','Add New Manual','new'], ['#/depts','building','Department Standards','depts']] },
     { id:'set', short:'Settings', icon:'settings', title:'Administration', pages:['settings'], items:[['#/settings','settings','Settings','settings']] },
   ];
   const sec = SECS.find(s => s.pages.includes(r.page)) || SECS[0];
@@ -1688,7 +1862,7 @@ function shell(r) {
       <div class="panel">
         <div class="panel-title">${sec.title}</div>
         <nav>${sec.items.map(([h, i, l, k, c]) => `<a href="${h}" class="${key === k || (k === 'manuals' && r.page === 'manual') ? 'on' : ''}">${ic(i)}<span class="grow">${l}</span>${c ? `<span class="cnt">${c}</span>` : ''}</a>`).join('')}
-        ${sec.id === 'man' ? `<div class="plabel">Manuals</div>${S.manuals.map(x => `<a href="#/m/${x.id}" class="sub ${m && m.id === x.id ? 'on' : ''}"><span class="dot" style="background:${{ drafting:'#6366F1', dept_review:'#A855F7', approval:'#D9A400', published:'#16A34A' }[x.stage]}"></span><span class="grow" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(x.title)}</span></a>`).join('')}` : ''}</nav>
+        ${sec.id === 'man' ? `<div class="plabel">Manuals</div>${S.manuals.map(x => `<a href="#/m/${x.id}" class="sub ${m && m.id === x.id ? 'on' : ''}"><span class="dot" style="background:${{ setup:'#9CA3AF', drafting:'#6366F1', compliance:'#F97316', dept_review:'#A855F7', approval:'#D9A400', published:'#16A34A' }[x.stage]}"></span><span class="grow" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(x.title)}</span></a>`).join('')}` : ''}</nav>
         <div class="panel-foot"><label class="xs muted">Acting as (demo)</label><select onchange="A.actAs(this.value)" title="Switch user to simulate the workflow">${S.users.map(x => `<option value="${x.id}" ${x.id === S.me ? 'selected' : ''}>${esc(x.name)}</option>`).join('')}</select>
           <div class="pf-brand">${ic('shieldck')}<b>SAFETY</b><span class="right xs muted">v2</span></div></div>
       </div>
@@ -1727,6 +1901,7 @@ function render() {
     else if (r.page === 'manuals') v.innerHTML = viewLibrary();
     else if (r.page === 'new') { v.innerHTML = viewNew(); }
     else if (r.page === 'inbox') v.innerHTML = viewInbox();
+    else if (r.page === 'writing') v.innerHTML = viewWriting();
     else if (r.page === 'compliance') v.innerHTML = viewCompliance(r.sub);
     else if (r.page === 'depts') v.innerHTML = viewDepts(r.id);
     else if (r.page === 'settings') v.innerHTML = viewSettings();
@@ -1801,7 +1976,7 @@ function viewDashboard() {
   dc.forEach(({ m, c }) => { if (c.assigneeId && c.deadline && c.status !== 'approved') dl.push({ ts:c.deadline, t:`${nums(m)[c.id]} ${c.title}`, s:m.title, who:c.assigneeId, link:L(m, c), k:'Clause' }); });
   ms.forEach(m => {
     if (m.stage === 'dept_review') m.deptReview.items.filter(i => i.status === 'pending').forEach(i => dl.push({ ts:i.deadline, t:`${dept(i.deptId).name} review`, s:m.title, who:i.reviewerId, link:L(m) + '/t/dept', k:'Dept' }));
-    if (m.stage === 'approval') m.approval.steps.filter(s => s.status === 'pending').forEach(s => dl.push({ ts:s.deadline, t:`${s.role}`, s:m.title, who:s.userId, link:L(m) + '/t/approval', k:'Approval' }));
+    if (m.stage === 'approval') (m.approval?.steps || []).filter(s => s.status === 'pending').forEach(s => dl.push({ ts:s.deadline, t:`${s.role}`, s:m.title, who:s.userId, link:L(m) + '/t/approval', k:'Approval' }));
   });
   dl.sort((a, b) => a.ts - b.ts);
   const overdue = dl.filter(d => d.ts < now()).length;
@@ -1812,7 +1987,7 @@ function viewDashboard() {
   const people = S.users.map(p => { const mine = dc.filter(x => x.c.assigneeId === p.id); return { p, parts:Object.keys(ST).map(k => ({ l:ST[k].l, c:ST[k].c, v:mine.filter(x => x.c.status === k).length })), n:mine.length, od:mine.filter(x => x.c.deadline && x.c.deadline < now() && x.c.status !== 'approved').length }; }).filter(x => x.n).sort((a, b) => b.n - a.n);
   const maxN = Math.max(1, ...people.map(x => x.n));
   const kpi = (label, v, s, icon, col) => `<div class="card kpi"><div class="eyebrow">${label}</div><div class="v">${v}</div><div class="s">${s}</div><div class="ic" style="background:color-mix(in srgb,${col} 14%,transparent);color:${col}">${ic(icon)}</div></div>`;
-  const pipeCol = ['#2F6BFF','#7B5CFF','#E79A00','#0FA88A'];
+  const pipeCol = ['#9CA3AF','#6366F1','#F97316','#A855F7','#D9A400','#16A34A'];
   return `
   <div class="hero">
     <div><div class="eyebrow" style="color:var(--side-muted)">${new Date().toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' })}</div>
@@ -1861,7 +2036,7 @@ function viewDashboard() {
 function taskRow(t) { const di = t.due ? dueInfo(t.due) : null; return `<div class="row gap12" style="padding:10px 0;border-bottom:1px solid var(--line2);cursor:pointer" onclick="go('${t.link}')"><span class="badge ${t.b} plain" style="min-width:84px;justify-content:center">${ic(t.icon, 'sm')} ${t.kind}</span><div class="grow" style="min-width:0"><div class="small" style="font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(t.title)}</div><div class="xs muted">${esc(t.sub)}</div></div>${di ? `<span class="badge ${di.cls}">${di.t}</span>` : ''}</div>`; }
 
 /* ---------------- Library ---------------- */
-const STAGE_PILL = { drafting:['p-lav','Manual Initiation'], dept_review:['p-pur','Department Review'], approval:['p-amb','Approval Chain'], published:['p-grn','Published'] };
+const STAGE_PILL = { setup:['p-gry','Structure & Assignment'], drafting:['p-lav','Writing & Review'], compliance:['p-amb','Compliance Check'], dept_review:['p-pur','Department Review'], approval:['p-amb','Approval'], published:['p-grn','Published'] };
 const catName = t => ({ safety:'Safety', environment:'Environment', quality:'Quality', emergency:'Emergency', risk:'Risk', custom:'Custom' }[t] || 'Custom');
 function viewLibrary() {
   const f = UI.libFilter, q = (UI.libQ || '').toLowerCase();
@@ -1875,7 +2050,7 @@ function viewLibrary() {
     <tbody>${rows.map(({ m, id }) => { const last = (m.log || [])[0] || { ts:m.createdAt, userId:m.ownerId }; const [pc, pl] = STAGE_PILL[m.stage]; const p = manualProg(m);
       return `<tr class="click" onclick="go('${L(m)}')"><td>${id}</td><td style="min-width:140px"><b>${esc(m.title)}</b><div class="bar mt8" style="height:4px;max-width:160px" title="${p}% complete"><i style="width:${p}%;background:${p === 100 ? 'var(--teal)' : 'var(--accent)'}"></i></div></td><td class="nowrap small">${esc(m.code)}</td><td><span class="pill p-tan">${esc(m.version)}</span></td><td><span class="pill p-tan">${catName(m.type)}</span></td>
         <td class="small">${new Date(last.ts).toLocaleDateString('en-GB')} , ${new Date(last.ts).toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit' })}</td><td class="small">${esc(uname(last.userId))}</td><td><span class="pill ${pc}">${pl}</span></td>
-        <td class="acts nowrap" onclick="event.stopPropagation()">${m.stage !== 'published' ? `<a class="ab" title="Edit" href="${L(m)}">${ic('edit')}</a>` : `<a class="ab" title="View book" href="${L(m)}/t/book">${ic('eye')}</a>`}${isOwner(m) && m.stage !== 'published' ? `<button class="ab" title="Delete" onclick="A.delManual('${m.id}')">${ic('trash')}</button>` : ''}${m.stage !== 'published' ? `<a class="ab" title="Next step" href="${L(m)}/t/${{ drafting:'dept', dept_review:'dept', approval:'approval' }[m.stage]}">${ic('fwd')}</a>` : ''}<a class="ab" title="History" href="${L(m)}/t/activity">${ic('clock')}</a></td></tr>`; }).join('') || `<tr><td colspan="10" class="empty">No manuals found.</td></tr>`}</tbody></table></div></div>`;
+        <td class="acts nowrap" onclick="event.stopPropagation()">${m.stage !== 'published' ? `<a class="ab" title="Edit" href="${L(m)}">${ic('edit')}</a>` : `<a class="ab" title="View book" href="${L(m)}/t/book">${ic('eye')}</a>`}${isOwner(m) && m.stage !== 'published' ? `<button class="ab" title="Delete" onclick="A.delManual('${m.id}')">${ic('trash')}</button>` : ''}${m.stage !== 'published' ? `<a class="ab" title="Next step" href="${L(m)}/s/${m.stage}">${ic('fwd')}</a>` : ''}<a class="ab" title="History" href="${L(m)}/t/activity">${ic('clock')}</a></td></tr>`; }).join('') || `<tr><td colspan="10" class="empty">No manuals found.</td></tr>`}</tbody></table></div></div>`;
 }
 
 /* ---------------- New manual wizard ---------------- */
@@ -1947,7 +2122,7 @@ function viewDepts(id) {
         ${vs.length ? `<div class="col gap4">${vs.map(v => `<div class="row small" style="padding:6px 0;border-bottom:1px solid var(--line2)"><span class="badge ${VK[v.kind].b} plain">${ic(VK[v.kind].i, 'sm')} ${VK[v.kind].l}</span><span class="mono muted">${n[v.clauseId]}</span><span class="grow">${esc(clause(m, v.clauseId)?.title || '')}</span>${varStatus(v)}</div>`).join('')}</div>` : '<div class="muted small">Follows the corporate baseline with no variations.</div>'}
       </div></div>`; }).join('') : '<div class="card empty">No published manuals yet.</div>'}`;
 }
-const varStatus = v => `<span class="badge ${{ pending:'b-amber', approved:'b-green', returned:'b-red', withdrawn:'b-gray' }[v.status]}">${v.status[0].toUpperCase() + v.status.slice(1)}</span>`;
+const varStatus = v => `<span class="badge ${{ draft:'b-gray', pending:'b-amber', approved:'b-green', returned:'b-red', rejected:'b-red', withdrawn:'b-gray' }[v.status]}">${{ draft:'Draft — not sent', approved:v.scope === 'base' ? 'Accepted' : 'Approved' }[v.status] || v.status[0].toUpperCase() + v.status.slice(1)}</span>`;
 
 /* ---------------- Settings ---------------- */
 function viewSettings() {
@@ -2022,10 +2197,35 @@ Object.assign(A, {
   resetDemo() { ask({ title:'Reset to demo data?', label:'Type RESET to replace all data in this browser with the demo workspace', ok:'Reset', okCls:'danger fill' }, v => { if (v !== 'RESET') return toast('Not reset', 'bad'); const key = S.settings.apiKey; seedState(); S.settings.apiKey = key; commit('Demo data restored'); go('#/'); }); },
 });
 
+/* ---------------- My Writing: every manual where you have clauses to write or review ---------------- */
+function myWritingRows() {
+  return S.manuals.filter(m => m.stage === 'drafting').map(m => {
+    const ids = writeScope(m), cs = m.clauses.filter(c => ids.has(c.id)), q = reviewQueue(m);
+    const mine = cs.filter(c => c.assigneeId === S.me || (isOwner(m) && !c.assigneeId));
+    const todo = mine.filter(c => ['not_started','in_progress','changes_requested'].includes(c.status));
+    return { m, cs, mine, todo, q, ret:mine.filter(c => c.status === 'changes_requested').length, next:Math.min(...todo.map(c => c.deadline || 9e15)) };
+  }).filter(x => x.cs.length || x.q.length);
+}
+function myWritingCount() { try { return myWritingRows().reduce((s, x) => s + x.todo.length + x.q.length, 0); } catch (e) { return 0; } }
+function viewWriting() {
+  const rows = myWritingRows(), n = m => nums(m);
+  const open = (m, sub) => isOwner(m) ? `#/m/${m.id}/s/drafting/${sub}` : sub === 'reviews' ? `#/m/${m.id}/s/drafting/reviews` : `#/m/${m.id}`;
+  return `<div class="pagehead"><div class="grow"><h1 class="h1">My Writing</h1><p>Manuals where you have clauses to write or submissions to review.</p></div></div>
+  ${rows.length ? `<div class="col gap12">${rows.map(({ m, cs, mine, todo, q, ret, next }) => { const p = Math.round(cs.reduce((s, c) => s + ST[c.status].p, 0) / Math.max(1, cs.length)), di = next < 9e15 ? dueInfo(next) : null;
+    return `<div class="card wrow" onclick="go('${open(m, todo.length || !q.length ? 'write' : 'reviews')}')">
+      <span class="sdot" style="width:10px;height:10px;background:${TYPE_COLOR(m.type)}"></span>
+      <div class="grow" style="min-width:0"><div class="row wrap gap8"><b>${esc(m.title)}</b><span class="mono xs muted">${m.code}</span>${ret ? `<span class="pill p-red">${ret} returned with comments</span>` : ''}${q.length ? `<span class="pill p-amb">${q.length} to review</span>` : ''}</div>
+        <div class="xs muted mt8">${mine.length} clause${mine.length === 1 ? '' : 's'} assigned to you: ${mine.slice(0, 5).map(c => n(m)[c.id] + ' ' + esc(c.title)).join(' · ')}${mine.length > 5 ? ' …' : ''} · owner ${esc(uname(m.ownerId))}</div>
+        <div class="row mt8" style="max-width:420px"><div class="bar grow"><i style="width:${p}%;background:var(--accent)"></i></div><span class="xs mono">${p}%</span></div></div>
+      <div class="col" style="align-items:flex-end;gap:6px">${di ? `<span class="badge ${di.cls}">${di.t}</span>` : todo.length ? '' : '<span class="pill p-grn">All submitted</span>'}
+        <div class="row gap4">${q.length ? `<a class="btn sm" href="${open(m, 'reviews')}" onclick="event.stopPropagation()">${ic('eye', 'sm')} Review</a>` : ''}<a class="btn sm acc" href="${open(m, 'write')}" onclick="event.stopPropagation()">${ic('edit', 'sm')} ${todo.length ? 'Write' : 'Open'}</a></div></div></div>`; }).join('')}</div>`
+  : `<div class="card empty"><div class="h2">Nothing to write</div>When someone assigns you clauses, the manual appears here.</div>`}`;
+}
+
 /* ============ Manual workspace ============ */
-const canAssign = (m, c) => m.stage === 'drafting' && (isOwner(m) || (c.parentId && controls(m, clause(m, c.parentId))));
-const canStructure = (m, c) => (m.stage === 'drafting' && (c ? controls(m, c) : isOwner(m))) || (isOwner(m) && (m.stage === 'dept_review' || (m.stage === 'approval' && m.approval?.status === 'returned')));
-const canDelete = (m, c) => m.stage === 'drafting' && (isOwner(m) || (c.parentId && controls(m, clause(m, c.parentId))));
+const canAssign = (m, c) => (m.stage === 'setup' && isOwner(m)) || (m.stage === 'drafting' && (isOwner(m) || controls(m, c) || (c.parentId && controls(m, clause(m, c.parentId)))));
+const canStructure = (m, c) => (m.stage === 'setup' && isOwner(m)) || (m.stage === 'drafting' && (c ? controls(m, c) : isOwner(m))) || (isOwner(m) && (m.stage === 'dept_review' || (m.stage === 'approval' && m.approval?.status === 'returned')));
+const canDelete = (m, c) => (m.stage === 'setup' && isOwner(m)) || (m.stage === 'drafting' && (isOwner(m) || (c.parentId && controls(m, clause(m, c.parentId)))));
 const openConf = (m, cid) => (m.conflicts || []).filter(x => x.status === 'open' && (!cid || x.clauseId === cid));
 
 function highlight(text, marks) {
@@ -2039,42 +2239,6 @@ function highlight(text, marks) {
   return out + esc(text.slice(p));
 }
 
-function viewManual(m, r) {
-  const tab = r.tab || 'clauses', si = stageIdx(m.stage), oc = openConf(m).length;
-  const pendVar = m.variations.filter(v => v.status === 'pending').length;
-  const deptBadge = m.deptReview ? m.deptReview.items.filter(i => i.status !== 'accepted').length : 0;
-  const tabs = [['clauses','list','Clauses', m.clauses.length], ['conflicts','alert','Compliance', oc], ['dept','building','Department Review', m.stage === 'dept_review' ? deptBadge : 0], ['approval','shield','Approval Chain', 0], ['variations','flag','Dept Requests', pendVar], ['book','book','Book View', 0], ['activity','clock','Activity', 0]];
-  let body = '';
-  if (tab === 'clauses') body = tabClauses(m, r);
-  else if (tab === 'conflicts') body = tabConflicts(m);
-  else if (tab === 'dept') body = tabDept(m);
-  else if (tab === 'approval') body = tabApproval(m);
-  else if (tab === 'variations') body = tabVariations(m);
-  else if (tab === 'book') body = tabBook(m);
-  else body = tabActivity(m);
-  return `<div class="ws-head"><div class="grow">
-      <div class="row wrap"><span class="eyebrow mono">${m.code} · v${m.version}</span>${stageBadge(m.stage)}<span class="badge plain b-gray">${esc((KB.TYPES.find(t => t.id === m.type) || {}).name || 'Standard')}</span></div>
-      <h1 class="h1 mt8" ${isOwner(m) ? `style="cursor:text" title="Click to rename" onclick="A.renameManual('${m.id}')"` : ''}>${esc(m.title)}</h1>
-      <div class="row wrap mt12 gap4"><span class="small muted">Owner</span>${av(m.ownerId, 'sm')}<span class="small" style="margin-right:10px">${esc(uname(m.ownerId))}</span><span class="small muted">Based on</span>${m.references.map(x => `<span class="chip">${esc(x)}</span>`).join('')}${isOwner(m) ? `<button class="btn xs ghost" onclick="A.editRefs('${m.id}')">${ic('edit', 'sm')}</button>` : ''}</div></div>
-    <div class="row wrap"><button class="btn ai-btn" onclick="A.check('${m.id}',this)">${ic('sparkles')} AI compliance check</button><a class="btn" href="${L(m)}/t/book">${ic('book')} Book</a></div></div>
-  <div class="stepper">${STAGES.map((s, i) => `${i ? '<span class="step-sep"></span>' : ''}<div class="step ${i < si || m.stage === 'published' ? 'done' : i === si ? 'cur' : ''}"><span class="n">${i < si || m.stage === 'published' ? '✓' : i + 1}</span>${s.l}</div>`).join('')}<span class="right row small muted" style="padding:0 10px;gap:10px">${ring(manualProg(m), 'sm')}${manualProg(m)}% complete</span></div>
-  <div class="tabs">${tabs.map(([k, i, l, n]) => `<a class="${tab === k ? 'on' : ''}" href="${L(m)}/t/${k}">${ic(i)} ${l}${n ? ` <span class="n">${n}</span>` : ''}</a>`).join('')}</div>
-  ${body}`;
-}
-
-function conflictCard(m, x, compact) {
-  const c = clause(m, x.clauseId), n = nums(m)[x.clauseId]; if (!c) return '';
-  const stale = x.quote && !c.body.includes(x.quote) && x.rule !== 'req';
-  const canFix = c.body.includes(x.quote) && (canEdit(m, c) || isOwner(m)) && m.stage !== 'published';
-  return `<div class="cfc" id="cf-${x.id}" onclick="${compact ? `A.flashMark('${x.id}')` : `go('${L(m, c)}')`}">
-    <div class="row wrap"><span class="badge ${x.severity === 'high' ? 'b-red' : x.severity === 'medium' ? 'b-amber' : 'b-blue'}">${x.severity}</span><b class="small">${esc(x.reference)}</b>${!compact ? `<span class="mono small muted right">${n} ${esc(c.title)}</span>` : ''}</div>
-    <div class="q">“${esc(x.quote)}”</div>
-    <div class="small">${esc(x.explanation)}</div>
-    ${x.suggestion ? `<div class="note good small mt8"><b>Suggested:</b> ${esc(x.suggestion)}</div>` : ''}
-    ${stale ? `<div class="xs muted mt8">${ic('check', 'sm')} Text changed since the check — re-run to confirm.</div>` : ''}
-    <div class="row mt8 wrap" onclick="event.stopPropagation()">${canFix && x.suggestion ? `<button class="btn xs ok" onclick="A.applyFix('${m.id}','${x.id}')">${ic('check', 'sm')} Apply suggestion</button>` : ''}${!compact ? `<a class="btn xs" href="${L(m, c)}">Open clause</a>` : ''}${isOwner(m) || controls(m, c) ? `<button class="btn xs ghost" onclick="A.dismissConf('${m.id}','${x.id}')">Dismiss</button>` : ''}</div></div>`;
-}
-
 /* ---------------- Compliance tab ---------------- */
 function tabConflicts(m) {
   const all = m.conflicts || [], open = all.filter(x => x.status === 'open'), dis = all.filter(x => x.status === 'dismissed');
@@ -2086,32 +2250,11 @@ function tabConflicts(m) {
   ${dis.length ? `<div class="mt24"><div class="eyebrow mb8">Dismissed (${dis.length})</div>${dis.map(x => `<div class="note small mb8"><b>${esc(x.reference)}</b> — “${esc(x.quote)}” <span class="muted">· dismissed by ${esc(uname(x.dismissedBy))}: ${esc(x.reason || '')}</span></div>`).join('')}</div>` : ''}`;
 }
 
-/* ---------------- Department review tab ---------------- */
-function tabDept(m) {
-  const dr = m.deptReview, top = kids(m, null), ready = top.length && top.every(c => c.status === 'approved');
-  const dc = []; const n = nums(m); m.clauses.forEach(c => c.comments.filter(k => k.source === 'dept').forEach(k => dc.push({ c, k })));
-  if (!dr) return `<div class="card pad"><div class="row gap16 wrap"><div class="grow"><h3>Department review</h3><p class="small muted">Once every top-level clause is approved through the writing hierarchy, the owner sends the manual to departments. Each department head reviews, comments on highlighted text and either accepts or returns it. Returned comments are addressed and the manual is re-circulated until all departments accept.</p>
-    <div class="row mt12">${ring(Math.round(top.filter(c => c.status === 'approved').length / Math.max(1, top.length) * 100))}<span class="small">${top.filter(c => c.status === 'approved').length} of ${top.length} top-level clauses approved</span></div></div>
-    ${isOwner(m) ? `<button class="btn acc" ${ready ? '' : 'disabled'} onclick="A.sendDepts('${m.id}')">${ic('send')} Send to departments</button>` : ''}</div></div>`;
-  const it = dr.items, myItem = it.find(i => i.reviewerId === S.me && i.status === 'pending');
-  return `${myItem ? `<div class="note warn mb16 row wrap"><span class="grow">${ic('building', 'sm')} <b>${esc(dept(myItem.deptId).name)}</b> review is waiting on you. Read each clause, highlight text to comment, then accept or return the manual.</span><button class="btn ok sm" onclick="A.deptAct('${m.id}','${myItem.deptId}','accept')">${ic('check', 'sm')} Accept</button><button class="btn danger sm" onclick="A.deptAct('${m.id}','${myItem.deptId}','return')">${ic('undo', 'sm')} Return with comments</button></div>` : ''}
-  <div class="card mb16"><div class="hd"><h3>Department review</h3><span class="badge b-violet plain">Round ${dr.round}</span><span class="small muted">started ${fmtD(dr.startedAt)}</span>
-    <div class="right row">${isOwner(m) && m.stage === 'dept_review' && it.some(i => i.status === 'returned') ? `<button class="btn sm" onclick="A.recirc('${m.id}')">${ic('send', 'sm')} Re-circulate returned</button>` : ''}${isOwner(m) && m.stage === 'dept_review' && it.every(i => i.status === 'accepted') ? `<a class="btn sm acc" href="${L(m)}/t/approval">${ic('shield', 'sm')} Build approval chain</a>` : ''}</div></div>
-    <div class="bd" style="padding:0;overflow-x:auto"><table class="tbl"><thead><tr><th>Department</th><th>Reviewer</th><th>Status</th><th>Deadline</th><th>Feedback</th><th></th></tr></thead><tbody>
-    ${it.map(i => { const d = dueInfo(i.deadline, i.status !== 'pending'); return `<tr><td><b>${esc(dept(i.deptId).name)}</b></td><td><div class="row">${av(i.reviewerId, 'sm')}<span class="small">${esc(uname(i.reviewerId))}</span></div></td>
-      <td><span class="badge ${{ pending:'b-amber', accepted:'b-green', returned:'b-red' }[i.status]}">${{ pending:'Pending', accepted:'Accepted', returned:'Returned' }[i.status]}</span></td><td><span class="badge ${d.cls}">${d.t}</span></td>
-      <td class="small" style="max-width:320px">${esc(i.note) || '<span class="muted">—</span>'}</td>
-      <td style="white-space:nowrap">${i.reviewerId === S.me && i.status === 'pending' ? `<button class="btn xs ok" onclick="A.deptAct('${m.id}','${i.deptId}','accept')">Accept</button> <button class="btn xs danger" onclick="A.deptAct('${m.id}','${i.deptId}','return')">Return</button>` : isOwner(m) && i.status === 'pending' ? `<button class="btn xs" onclick="A.remind('${m.id}','${i.reviewerId}')">${ic('bell', 'sm')} Remind</button>` : ''}</td></tr>`; }).join('')}</tbody></table></div></div>
-  <div class="card"><div class="hd"><h3>Department comments</h3><span class="badge plain b-gray">${dc.filter(x => !x.k.resolved).length} open</span></div><div class="bd col gap12">
-    ${dc.length ? dc.map(({ c, k }) => `<div class="cmt dept ${k.resolved ? 'resolved' : ''}" onclick="go('${L(m, c)}')"><div class="row">${av(k.authorId, 'sm')}<b class="small">${esc(uname(k.authorId))}</b><span class="badge b-violet plain">${esc(dept(k.deptId)?.name || '')}</span>${k.resolved ? '<span class="badge b-green">Resolved</span>' : ''}<span class="mono xs muted right">${n[c.id]} ${esc(c.title)}</span></div>${k.quote ? `<div class="q">“${esc(k.quote)}”</div>` : ''}<div class="small">${esc(k.text)}</div></div>`).join('') : '<div class="small muted">No department comments yet. Reviewers open any clause, switch to “Read & comment” and highlight text.</div>'}
-  </div></div>`;
-}
-
 /* ---------------- Approval tab ---------------- */
 function tabApproval(m) {
   const ap = m.approval;
   if (!ap) {
-    const allOk = m.stage === 'dept_review' && m.deptReview.items.every(i => i.status === 'accepted');
+    const allOk = m.stage === 'approval';
     if (!allOk || !isOwner(m)) return `<div class="card pad"><h3>Approval chain</h3><p class="small muted">The approval chain starts after all departments accept the manual. Each approver signs in sequence with their own deadline; the owner can delegate, escalate or skip a step.</p></div>`;
     const ch = UI.chain || (UI.chain = [
       { userId:deptHead(m.governanceDeptId || S.settings.governanceDeptId) === m.ownerId ? 'u2' : deptHead(S.settings.governanceDeptId), role:'Technical Review', days:3 },
@@ -2123,8 +2266,8 @@ function tabApproval(m) {
       <div class="row"><button class="btn" onclick="UI.chain.push({userId:'${S.users[0].id}',role:'Approver',days:3});rerender()">${ic('plus')} Add approver</button><span class="grow"></span><button class="btn acc" onclick="A.startChain('${m.id}')">${ic('send')} Start approval chain</button></div></div></div>`;
   }
   const pend = ap.steps.find(s => s.status === 'pending');
-  const banner = ap.status === 'returned' ? `<div class="note bad mb16 row wrap"><span class="grow">${ic('undo', 'sm')} Returned by <b>${esc(uname(ap.steps.find(s => s.status === 'returned')?.signedBy || ap.steps.find(s => s.status === 'returned')?.userId))}</b>: “${esc(ap.steps.find(s => s.status === 'returned')?.comment)}”. The owner can now edit clauses and resubmit.</span>${isOwner(m) ? `<button class="btn sm acc" onclick="A.resubmit('${m.id}')">${ic('send', 'sm')} Resubmit for approval</button>` : ''}</div>`
-    : ap.status === 'complete' && m.stage === 'approval' ? `<div class="note good mb16 row wrap"><span class="grow">${ic('check', 'sm')} All approvers signed. ${isOwner(m) ? 'Publish to issue the manual to every department.' : 'Waiting for the owner to publish.'}</span>${isOwner(m) ? `<button class="btn sm ok" onclick="A.publish('${m.id}')">${ic('book', 'sm')} Publish v${parseFloat(m.version) < 1 ? '1.0' : Math.floor(parseFloat(m.version)) + 1 + '.0'}</button>` : ''}</div>`
+  const banner = ap.status === 'returned' ? `<div class="note bad mb16 row wrap"><span class="grow">${ic('undo', 'sm')} Returned by <b>${esc(uname(ap.steps.find(s => s.status === 'returned')?.signedBy || ap.steps.find(s => s.status === 'returned')?.userId))}</b>: “${esc(ap.steps.find(s => s.status === 'returned')?.comment)}”. The owner can now edit clauses and resubmit.</span>${isOwner(m) && !(m.proposals || []).some(p => p.status === 'pending') ? `<button class="btn sm acc" onclick="A.resubmit('${m.id}')">${ic('send', 'sm')} Resubmit for approval</button>` : ''}</div>`
+    : ap.status === 'complete' && m.stage === 'approval' ? `<div class="note good mb16 row wrap"><span class="grow">${ic('check', 'sm')} All approvers signed. ${isOwner(m) ? 'Publish to issue the manual to every department.' : 'Waiting for the owner to publish.'}</span>${isOwner(m) && !(m.proposals || []).some(p => p.status === 'pending') ? `<button class="btn sm ok" onclick="A.publish('${m.id}')">${ic('book', 'sm')} Publish v${parseFloat(m.version) < 1 ? '1.0' : Math.floor(parseFloat(m.version)) + 1 + '.0'}</button>` : ''}</div>`
     : m.stage === 'published' ? `<div class="note good mb16 row wrap"><span class="grow">${ic('book', 'sm')} Published v${m.version} on ${fmtD(m.publishedAt)}.</span>${isOwner(m) ? `<button class="btn sm" onclick="A.revise('${m.id}')">${ic('git', 'sm')} Start new revision</button>` : ''}</div>` : '';
   return `${banner}<div class="grid3" style="grid-template-columns:2fr 1fr;align-items:start"><div class="card"><div class="hd"><h3>Approval chain</h3><span class="badge plain b-amber">Round ${ap.round}</span></div><div class="bd"><div class="chain">
     ${ap.steps.map((s, i) => { const d = dueInfo(s.deadline, s.status !== 'pending'); const isP = s.status === 'pending' && ap.status === 'in_progress';
@@ -2142,19 +2285,19 @@ function tabApproval(m) {
 /* ---------------- Department requests (variations) tab ---------------- */
 function tabVariations(m) {
   const gov = dept(m.governanceDeptId || S.settings.governanceDeptId), f = UI.varFilter, n = nums(m);
-  const list = m.variations.filter(v => f === 'all' || v.status === f);
+  const list = m.variations.filter(v => (f === 'all' || v.status === f) && (!UI.varDept || v.deptId === UI.varDept));
   if (m.stage !== 'published' && !m.variations.length) return `<div class="card pad"><h3>Department requests</h3><p class="small muted">After publication, departments can request that a clause is <b>not applicable</b> to them, set a <b>stricter limit</b> (lower than a MAX, higher than a MIN — never weaker than the standard), or add an <b>improvement</b>. Requests go to <b>${esc(gov.name)}</b> (configured in Settings).</p></div>`;
-  return `<div class="card pad mb16"><div class="row wrap gap16"><div class="grow"><h3>Department requests</h3><div class="small muted">Not applicable · Stricter limit · Improvement. Decisions by <b>${esc(gov.name)}</b> <a class="muted" href="#/settings">(Settings)</a>. Departments can be better than the standard, never worse.</div></div>
+  return `<div class="card pad mb16"><div class="row wrap gap16"><div class="grow"><h3>Department requests</h3><div class="small muted">Departments open their edition of the book and suggest changes — wording, mandatory points, timelines, stricter limits or not-applicable. Each request shows the exact before/after. Decisions by <b>${esc(gov.name)}</b> <a class="muted" href="#/settings">(Settings)</a>. Departments can be better than the standard, never worse.</div></div>
     <div class="seg">${['all','pending','approved','returned'].map(x => `<a class="${f === x ? 'on' : ''}" onclick="UI.varFilter='${x}';rerender()">${x[0].toUpperCase() + x.slice(1)} ${x === 'all' ? m.variations.length : m.variations.filter(v => v.status === x).length}</a>`).join('')}</div>
-    ${m.stage === 'published' ? `<button class="btn acc" onclick="A.raise('${m.id}')">${ic('flag')} Raise request</button>` : ''}</div></div>
+    ${m.stage === 'published' ? `<button class="btn acc" onclick="A.openSuggest('${m.id}')">${ic('book')} Open my edition & request variations</button>` : ''}</div></div>
   <div class="col gap12">${list.map(v => { const c = clause(m, v.clauseId), rq = v.reqId ? reqById(m, v.reqId) : null;
     return `<div class="card pad"><div class="row wrap"><span class="badge ${VK[v.kind].b} plain">${ic(VK[v.kind].i, 'sm')} ${VK[v.kind].l}</span><b>${esc(dept(v.deptId).name)}</b><span class="mono small muted">${n[v.clauseId]}</span><a href="${L(m, c)}" class="small">${esc(c?.title || '')}</a><span class="right">${varStatus(v)}</span></div>
       ${v.kind === 'tighten' && rq ? `<div class="row mt12 gap12"><span class="small muted">${esc(rq.q.label)}</span><span class="ty ${rq.q.type} badge plain">${rq.q.type.toUpperCase()}</span><span class="h2" style="font-size:18px;text-decoration:line-through;color:var(--muted)">${rq.q.value}</span>${ic('chev')}<span class="h2" style="font-size:22px;color:var(--accent)">${v.proposed}</span><span class="small">${esc(rq.q.unit)}</span></div>` : ''}
-      ${v.kind === 'add' ? `<div class="note mt12 small">${esc(v.text)}</div>` : ''}
+      ${v.kind === 'add' ? `<div class="note mt12 small">${esc(v.text)}</div>` : ''}${v.kind === 'edit' ? editSummary(m, v) : ''}
       <div class="small mt12"><span class="muted">Justification:</span> ${esc(v.justification)}</div>
       <div class="row mt12 wrap">${av(v.requestedBy, 'sm')}<span class="xs muted">${esc(uname(v.requestedBy))} · ${rel(v.ts)}</span>${v.decidedBy ? `<span class="xs muted">· ${v.status} by ${esc(uname(v.decidedBy))}${v.comment ? ': “' + esc(v.comment) + '”' : ''}</span>` : ''}
-        <span class="right row">${v.status === 'pending' && isGov(m) && v.requestedBy !== S.me ? `<button class="btn sm ok" onclick="A.decide('${m.id}','${v.id}','approve')">${ic('check', 'sm')} Approve</button><button class="btn sm danger" onclick="A.decide('${m.id}','${v.id}','return')">${ic('undo', 'sm')} Return</button>` : ''}
-        ${v.status === 'returned' && v.requestedBy === S.me ? `<button class="btn sm" onclick="A.raise('${m.id}','${v.id}')">${ic('edit', 'sm')} Revise & resubmit</button><button class="btn sm ghost" onclick="A.withdraw('${m.id}','${v.id}')">Withdraw</button>` : ''}</span></div></div>`; }).join('') || '<div class="card empty">No requests in this view.</div>'}</div>`;
+        <span class="right row">${v.kind === 'edit' ? `<button class="btn sm ${v.status === 'pending' && isGov(m) && v.requestedBy !== S.me ? 'acc' : ''}" onclick="A.reviewReq('${m.id}','${v.id}')">${ic('eye', 'sm')} ${v.status === 'pending' && isGov(m) && v.requestedBy !== S.me ? 'Review changes' : 'View changes'}</button>` : ''}${v.kind !== 'edit' && v.status === 'pending' && isGov(m) && v.requestedBy !== S.me ? `<button class="btn sm ok" onclick="A.decide('${m.id}','${v.id}','approve')">${ic('check', 'sm')} Approve</button><button class="btn sm danger" onclick="A.decide('${m.id}','${v.id}','return')">${ic('undo', 'sm')} Return</button>` : ''}
+        ${v.status === 'returned' && v.requestedBy === S.me && v.kind !== 'edit' ? `<button class="btn sm" onclick="A.raise('${m.id}','${v.id}')">${ic('edit', 'sm')} Revise & resubmit</button><button class="btn sm ghost" onclick="A.withdraw('${m.id}','${v.id}')">Withdraw</button>` : ''}</span></div></div>`; }).join('') || '<div class="card empty">No requests in this view.</div>'}</div>`;
 }
 
 function tabActivity(m) {
@@ -2210,14 +2353,14 @@ Object.assign(A, {
       if (u) assignClause(m, c, u, d); else if (d && p) c.deadline = d;
       log(m, `added clause ${nums(m)[c.id]} ${t}`); closeModal();
       if (useAi) { try { c.body = (await AI.draft(m, c)).text; } catch (e) { c.body = KB.draftClause(t, { company:m.company, refs:m.references }); } }
-      save(); go(L(m, c));
+      save(); if (m.stage === 'setup') rerender(); else go(L(m, c));
     };
   },
   delClause(mid, cid) {
     const [m, c] = MC(mid, cid); const d = descendants(m, cid);
     ask({ title:`Delete ${nums(m)[cid]} ${esc(c.title)}?`, label:`Reason (this also deletes ${d.length} sub-clause${d.length === 1 ? '' : 's'})`, ok:'Delete', okCls:'danger fill' }, v => {
       const ids = new Set([cid, ...d.map(x => x.id)]); m.clauses = m.clauses.filter(x => !ids.has(x.id)); m.conflicts = (m.conflicts || []).filter(x => !ids.has(x.clauseId));
-      kids(m, c.parentId).forEach((k, i) => k.order = i); log(m, `deleted clause ${c.title}: ${v}`); delete UI.sel[mid]; save(); go(c.parentId ? L(m, clause(m, c.parentId)) : L(m)); toast('Clause deleted');
+      kids(m, c.parentId).forEach((k, i) => k.order = i); log(m, `deleted clause ${c.title}: ${v}`); delete UI.sel[mid]; save(); if (m.stage === 'setup') rerender(); else go(c.parentId ? L(m, clause(m, c.parentId)) : L(m)); toast('Clause deleted');
     });
   },
   move(mid, cid, dir) { const [m, c] = MC(mid, cid); const sib = kids(m, c.parentId); const i = sib.indexOf(c), j = i + dir; if (j < 0 || j >= sib.length) return; [sib[i].order, sib[j].order] = [sib[j].order, sib[i].order]; commit(); },
@@ -2247,7 +2390,7 @@ Object.assign(A, {
       c.comments.push({ id:uid('k'), quote:q, text:t, authorId:S.me, ts:now(), resolved:false, replies:[], source:dr ? 'dept' : 'review', deptId:dr ? dr.deptId : null });
       const to = [responsibleFor(m, c), c.reviewerId, dr ? m.ownerId : null].filter(u => u && u !== S.me);
       notify(to, `${uname(S.me)} commented on ${nums(m)[c.id]} “${c.title}”: ${t.slice(0, 80)}`, L(m, c), 'comment');
-      UI.quote = ''; UI.railTab = 'comments'; UI.cmtFilter = 'open'; UI.view[m.id] = 'review'; UI.rTab = 'comments'; closeModal(); commit('Comment added');
+      UI.quote = ''; UI.railTab = 'comments'; UI.cmtFilter = 'open'; UI.rTab = 'comments'; closeModal(); commit('Comment added');
     };
   },
   reply(mid, cid, kid, inp) { const [m, c] = MC(mid, cid); const t = inp.value.trim(); if (!t) return; const k = c.comments.find(x => x.id === kid); k.replies.push({ authorId:S.me, text:t, ts:now() }); if (k.authorId !== S.me) notify(k.authorId, `${uname(S.me)} replied on ${nums(m)[c.id]}: ${t.slice(0, 80)}`, L(m, c), 'comment'); commit(); },
@@ -2293,6 +2436,7 @@ Object.assign(A, {
   publish(mid) { const m = manual(mid); ask({ title:'Publish manual', label:'Revision note', value:m.revisions.length ? 'Revision' : 'Initial issue', ok:'Publish', okCls:'ok' }, v => { publish(m, v); commit(`Published v${m.version}`); go(L(m) + '/t/book'); }); },
   revise(mid) { const m = manual(mid); ask({ title:'Start a new revision?', label:'Reason for revision', ok:'Start revision' }, v => { startRevision(m); log(m, 'revision reason: ' + v); commit('Revision ' + m.version + ' started'); go(L(m)); }); },
   raise(mid, vid) {
+    if (!vid) return A.openSuggest(mid);
     const m = manual(mid), n = nums(m), old = vid ? m.variations.find(v => v.id === vid) : null;
     const st = { deptId:old?.deptId || me().deptId, clauseId:old?.clauseId || flat(m)[0].c.id, kind:old?.kind || 'na', reqId:old?.reqId || '', proposed:old?.proposed ?? '', text:old?.text || '', justification:old?.justification || '' };
     const draw = () => {
@@ -2332,94 +2476,115 @@ Object.assign(A, {
   withdraw(mid, vid) { const m = manual(mid); const v = m.variations.find(x => x.id === vid); v.status = 'withdrawn'; log(m, `withdrew ${VK[v.kind].l.toLowerCase()} request`); commit('Withdrawn'); },
 });
 
-/* ============ Clause Studio: document-style writing + dedicated review ============ */
-const actLabel = a => a.offset === 0 ? 'Immediately' : `${a.unit === 'days' ? 'Day' : a.unit === 'hours' ? 'Hour' : 'Minute'} ${a.offset}`;
-const studioView = m => UI.view[m.id] || 'write';
-function autogrow(el) { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px'; }
-UI.view = UI.view || {}; UI.exp = UI.exp || {}; UI.activeCmt = null; UI.outlineOpen = false; UI.rTab = 'comments';
+function proposalsCard(m, origin) {
+  const ps = (m.proposals || []).filter(p => p.status !== 'withdrawn' && p.status !== 'draft' && (!origin || p.origin === origin)), n = nums(m);
+  const open = ps.filter(p => p.status === 'pending').length;
+  return `<div class="card mb16"><div class="hd"><h3>${ic('edit')} Proposed revisions to the corporate text</h3>${open ? `<span class="pill p-amb">${open} awaiting ${isOwner(m) ? 'your decision' : esc(uname(m.ownerId))}</span>` : ''}<a class="btn sm right" href="${L(m)}/t/book">${ic('book', 'sm')} Open book</a></div><div class="bd col gap12">
+    ${ps.length ? ps.map(p => { const c = clause(m, p.clauseId); return `<div class="vcard"><div class="row wrap"><span class="pill p-lav">${esc(dept(p.deptId).name)}</span><b class="mono small">${n[p.clauseId]}</b><span class="small" style="font-weight:600">${esc(c?.title || '')}</span><span class="xs muted">${esc(uname(p.requestedBy))} · ${rel(p.ts)}${(p.rounds || []).length > 1 ? ' · round ' + p.rounds.length : ''}</span><span class="right">${varStatus(p)}</span></div>
+      ${editSummary(m, p)}<div class="row mt8"><span class="small muted grow">${esc(p.justification)}</span><button class="btn sm ${p.status === 'pending' && isOwner(m) ? 'acc' : ''}" onclick="A.reviewReq('${m.id}','${p.id}')">${ic('eye', 'sm')} ${p.status === 'pending' && isOwner(m) ? 'Review revision' : 'View'}</button></div></div>`; }).join('') : '<div class="small muted">No revisions proposed yet. Department reviewers open the book in revision mode and click “Propose revision” on any clause.</div>'}
+  </div></div>`;
+}
 
-function tabClauses(m, r) {
-  if (!m.clauses.length) return `<div class="card empty"><div class="h2">No clauses yet</div><p>Start with 1.0 and build the hierarchy.</p>${canStructure(m) ? `<button class="btn acc" onclick="A.addSub('${m.id}','')">${ic('plus')} Add clause 1.0</button>` : ''}</div>`;
-  let cid = r.cid || UI.sel[m.id]; if (!clause(m, cid)) cid = flat(m)[0].c.id; UI.sel[m.id] = cid;
-  const c = clause(m, cid), v = studioView(m);
+/* ============ Clause Studio: writing (only your clauses) and review (only after submit) ============ */
+const actLabel = a => a.offset === 0 ? 'Immediately' : `${a.unit === 'days' ? 'Day' : a.unit === 'hours' ? 'Hour' : 'Minute'} ${a.offset}`;
+const stepLabel = s => +s.offset === 0 ? 'Immediately on breach' : `${s.offset} ${s.unit} after breach`;
+function autogrow(el) { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px'; }
+UI.exp = UI.exp || {}; UI.activeCmt = null; UI.outlineOpen = false; UI.rTab = 'comments'; UI.brOpen = UI.brOpen || {};
+
+/* Which clauses a person writes: the subtrees assigned to them (owner: everything nobody else was given) */
+function writeScope(m) {
+  const ids = new Set();
+  if (isOwner(m) && ['setup','compliance'].includes(m.stage)) return new Set(m.clauses.map(c => c.id));
+  const roots = isOwner(m) ? m.clauses.filter(c => !c.parentId && (!c.assigneeId || c.assigneeId === S.me))
+    : m.clauses.filter(c => c.assigneeId === S.me && !ancestors(m, c).some(a => a.assigneeId === S.me));
+  roots.forEach(r => { ids.add(r.id); descendants(m, r.id).forEach(d => ids.add(d.id)); });
+  return ids;
+}
+const reviewQueue = m => m.clauses.filter(c => c.status === 'submitted' && c.reviewerId === S.me && c.submittedAt);
+
+function studio(m, r, mode) {
+  const scope = mode === 'review' ? (() => { const c = clause(m, r.rid); return c ? new Set([c.id, ...descendants(m, c.id).map(d => d.id)]) : new Set(); })() : writeScope(m);
+  const inScope = flat(m).filter(x => scope.has(x.c.id));
+  if (!inScope.length) return `<div class="card empty"><div class="h2">${mode === 'review' ? 'Nothing to review' : 'No clauses to write'}</div><p class="muted">${mode === 'review' ? 'This clause is not waiting for your review.' : isOwner(m) ? 'Every clause is assigned to someone else. Follow progress in Assignments.' : 'Nothing is assigned to you in this manual.'}</p></div>`;
+  let cid = mode === 'review' ? r.rid : (r.cid || UI.sel[m.id]); if (!scope.has(cid)) cid = inScope[0].c.id; if (mode === 'write') UI.sel[m.id] = cid;
+  const c = clause(m, cid);
   const exp = UI.exp[m.id] || (UI.exp[m.id] = {}); ancestors(m, c).forEach(a => exp[a.id] = true); exp[c.id] = true;
-  const list = [c, ...descendants(m, c.id)];
-  return `<datalist id="units">${["minutes","hours","days","weeks","months","years","%","m","persons","per week"].map(u=>`<option value="${u}">`).join("")}</datalist><div class="studio ${UI.outlineOpen ? 'ol-open' : ''}">
+  const list = [c, ...descendants(m, c.id)].filter(k => scope.has(k.id));
+  const openC = list.reduce((s, k) => s + k.comments.filter(x => !x.resolved).length, 0);
+  const panel = mode === 'review' || openC;
+  return `<datalist id="units">${['minutes','hours','days','weeks','months','years','%','m','persons','per week'].map(u => `<option value="${u}">`).join('')}</datalist>
+  <div class="studio ${UI.outlineOpen ? 'ol-open' : ''}">
     <div class="ol-scrim" onclick="UI.outlineOpen=false;rerender()"></div>
-    ${outline(m, cid)}
+    ${outline(m, cid, scope, mode)}
     <div class="canvas">
-      ${studioBar(m, c, v, list)}
-      <div class="cgrid ${v}">
-        <div class="sheetcol">${v === 'write' ? writeBanner(m, c, list) : ''}<article class="wsheet ${v}">${list.map(k => block(m, k, v, k === c)).join('')}</article></div>
-        ${v === 'review' ? reviewPanel(m, c, list) : ''}
+      ${studioBar(m, c, mode, inScope)}
+      <div class="cgrid ${panel ? 'review' : 'write'}">
+        <div class="sheetcol">${mode === 'write' ? writeBanner(m, c, list) : ''}<article class="wsheet ${mode}">${list.map(k => block(m, k, mode, k === c)).join('')}</article></div>
+        ${panel ? reviewPanel(m, c, list, mode) : ''}
       </div>
     </div>
   </div>`;
 }
 
-/* ---------- Outline ---------- */
-function outline(m, sel) {
-  const n = nums(m), f = UI.treeFilter, exp = UI.exp[m.id];
+/* ---------- Outline (only the clauses in scope) ---------- */
+function outline(m, sel, scope, mode) {
+  const n = nums(m), exp = UI.exp[m.id], pre = mode === 'review' ? 'r' : 'c';
   const node = (c, d) => {
-    const ch = kids(m, c.id), mine = c.assigneeId === S.me || c.reviewerId === S.me || (controls(m, c) && !isOwner(m));
-    const cf = openConf(m, c.id).length, cm = c.comments.filter(k => !k.resolved).length;
-    const od = c.deadline && c.deadline < now() && c.status !== 'approved' && m.stage === 'drafting';
-    const self = (f !== 'mine' || mine) ? `<div class="on2 d${Math.min(d, 3)} ${c.id === sel ? 'sel' : ''}" style="padding-left:${6 + d * 16}px">
+    if (!scope.has(c.id)) return '';
+    const ch = kids(m, c.id).filter(k => scope.has(k.id)), cm = c.comments.filter(k => !k.resolved).length;
+    const od = c.deadline && c.deadline < now() && c.status !== 'approved';
+    const deleg = c.assigneeId && c.assigneeId !== S.me ? av(c.assigneeId, 'sm') : '';
+    return `<div class="on2 d${Math.min(d, 3)} ${c.id === sel ? 'sel' : ''}" style="padding-left:${6 + d * 16}px">
       ${ch.length ? `<button class="tw ${exp[c.id] ? 'open' : ''}" onclick="event.stopPropagation();A.tw('${m.id}','${c.id}')">${ic('chev', 'sm')}</button>` : '<span class="tw"></span>'}
-      <a class="ol-link" onclick="UI.outlineOpen=false;go('${L(m, c)}')"><span class="num">${n[c.id]}</span><span class="tt">${esc(c.title)}</span></a>
-      ${cf ? `<span class="flag red" title="${cf} compliance conflict(s)">${ic('alert', 'sm')}</span>` : ''}${cm ? `<span class="flag amber" title="${cm} open comment(s)">${cm}</span>` : ''}${od ? `<span class="flag red" title="Overdue">${ic('clock', 'sm')}</span>` : ''}
-      <span class="sdot" style="background:${ST[c.status].c}" title="${ST[c.status].l}"></span></div>` : '';
-    return self + (ch.length && (exp[c.id] || f === 'mine') ? ch.map(k => node(k, d + 1)).join('') : '');
+      <a class="ol-link" onclick="UI.outlineOpen=false;go('#/m/${m.id}/${pre}/${c.id}')"><span class="num">${n[c.id]}</span><span class="tt">${esc(c.title)}</span></a>
+      ${cm ? `<span class="flag amber" title="${cm} open comment(s)">${cm}</span>` : ''}${od ? `<span class="flag red" title="Overdue">${ic('clock', 'sm')}</span>` : ''}${deleg}
+      <span class="sdot" style="background:${ST[c.status].c}" title="${ST[c.status].l}"></span></div>` + (ch.length && exp[c.id] ? ch.map(k => node(k, d + 1)).join('') : '');
   };
-  const top = kids(m, null), p = Math.round(top.reduce((s, c) => s + prog(m, c), 0) / Math.max(1, top.length));
-  return `<aside class="outline"><div class="ol-head"><div class="row">${ring(p)}<div class="grow"><b>Outline</b><div class="xs muted">${m.clauses.length} clauses · ${p}% written</div></div>${canStructure(m) ? `<button class="btn xs" onclick="A.addSub('${m.id}','')" title="Add chapter">${ic('plus', 'sm')}</button>` : ''}<button class="btn xs ghost ol-close" onclick="UI.outlineOpen=false;rerender()">${ic('x', 'sm')}</button></div>
-    <div class="seg mt12" style="width:100%"><a class="${f === 'all' ? 'on' : ''}" style="flex:1;text-align:center" onclick="UI.treeFilter='all';rerender()">All</a><a class="${f === 'mine' ? 'on' : ''}" style="flex:1;text-align:center" onclick="UI.treeFilter='mine';rerender()">Mine</a><a style="flex:1;text-align:center" onclick="A.expandAll('${m.id}')">Expand</a></div></div>
-    <div class="ol-list">${top.map(c => node(c, 0)).join('')}</div></aside>`;
+  const roots = flat(m).filter(x => scope.has(x.c.id) && !scope.has(x.c.parentId)).map(x => x.c);
+  const p = Math.round(roots.reduce((s, c) => s + prog(m, c), 0) / Math.max(1, roots.length));
+  return `<aside class="outline"><div class="ol-head"><div class="row">${ring(p)}<div class="grow"><b>${mode === 'review' ? 'Under review' : 'Your clauses'}</b><div class="xs muted">${scope.size} clause${scope.size > 1 ? 's' : ''} · ${p}% done</div></div><button class="btn xs ghost ol-close" onclick="UI.outlineOpen=false;rerender()">${ic('x', 'sm')}</button></div></div>
+    <div class="ol-list">${roots.map(c => node(c, ancestors(m, c).length ? 0 : 0)).join('')}</div></aside>`;
 }
 
-/* ---------- Top bar of the canvas ---------- */
-function studioBar(m, c, v, list) {
-  const n = nums(m), fl = flat(m), i = fl.findIndex(x => x.c === c), prev = fl[i - 1]?.c, next = fl[i + 1]?.c;
-  const openC = list.reduce((s, k) => s + k.comments.filter(x => !x.resolved).length, 0), openF = list.reduce((s, k) => s + openConf(m, k.id).length, 0);
+/* ---------- Canvas bar ---------- */
+function studioBar(m, c, mode, inScope) {
+  const n = nums(m), i = inScope.findIndex(x => x.c === c), prev = inScope[i - 1]?.c, next = inScope[i + 1]?.c, pre = mode === 'review' ? 'r' : 'c';
   const menu = [];
-  if (canStructure(m, c)) menu.push(`<button onclick="A.addSub('${m.id}','${c.id}')">${ic('plus', 'sm')} Add sub-clause</button>`);
-  if (canAssign(m, c)) menu.push(`<button onclick="A.assign('${m.id}','${c.id}')">${ic('user', 'sm')} ${c.assigneeId ? 'Re-assign' : 'Assign'}</button>`);
-  if (canDelete(m, c)) menu.push(`<button onclick="A.move('${m.id}','${c.id}',-1)">${ic('arrowup', 'sm')} Move up</button><button onclick="A.move('${m.id}','${c.id}',1)">${ic('arrowdown', 'sm')} Move down</button><button class="danger" onclick="A.delClause('${m.id}','${c.id}')">${ic('trash', 'sm')} Delete</button>`);
+  if (mode === 'write') {
+    if (canStructure(m, c)) menu.push(`<button onclick="A.addSub('${m.id}','${c.id}')">${ic('plus', 'sm')} Add sub-clause</button>`);
+    if (c.parentId && canDelete(m, c)) menu.push(`<button onclick="A.move('${m.id}','${c.id}',-1)">${ic('arrowup', 'sm')} Move up</button><button onclick="A.move('${m.id}','${c.id}',1)">${ic('arrowdown', 'sm')} Move down</button><button class="danger" onclick="A.delClause('${m.id}','${c.id}')">${ic('trash', 'sm')} Delete</button>`);
+  }
   menu.push(`<button onclick="A.history('${m.id}','${c.id}')">${ic('clock', 'sm')} History</button>`);
   return `<div class="sbar">
     <button class="btn sm ol-btn" onclick="UI.outlineOpen=true;rerender()">${ic('list', 'sm')} Outline</button>
-    <div class="row gap4"><button class="btn sm ghost" ${prev ? `onclick="go('${L(m, prev)}')"` : 'disabled'} title="Previous clause">${ic('chev', 'sm flip')}</button><button class="btn sm ghost" ${next ? `onclick="go('${L(m, next)}')"` : 'disabled'} title="Next clause">${ic('chev', 'sm')}</button></div>
-    <div class="sb-crumb grow">${ancestors(m, c).map(a => `<a href="${L(m, a)}">${n[a.id]}</a>`).join('<span>›</span>')}${ancestors(m, c).length ? '<span>›</span>' : ''}<b>${n[c.id]} ${esc(c.title)}</b></div>
-    <div class="seg modeseg"><a class="${v === 'write' ? 'on' : ''}" onclick="A.view('${m.id}','write')">${ic('edit', 'sm')} Write</a><a class="${v === 'review' ? 'on' : ''}" onclick="A.view('${m.id}','review')">${ic('msg', 'sm')} Review${openC + openF ? ` <span class="cnt2">${openC + openF}</span>` : ''}</a></div>
-    ${workflowBtns(m, c)}
+    <div class="row gap4"><button class="btn sm ghost" ${prev ? `onclick="go('#/m/${m.id}/${pre}/${prev.id}')"` : 'disabled'}>${ic('chev', 'sm flip')}</button><button class="btn sm ghost" ${next ? `onclick="go('#/m/${m.id}/${pre}/${next.id}')"` : 'disabled'}>${ic('chev', 'sm')}</button></div>
+    <div class="sb-crumb grow"><b>${n[c.id]} ${esc(c.title)}</b></div>
+    ${mode === 'write' ? submitBtn(m, c) : reviewBtns(m, c)}
     <details class="menu"><summary class="btn sm ghost">${ic('menu', 'sm')}</summary><div class="menu-pop">${menu.join('')}</div></details>
   </div>`;
 }
-function workflowBtns(m, c) {
+function submitBtn(m, c) {
   if (m.stage !== 'drafting') return '';
-  const n = nums(m), anc = ancestors(m, c), out = [];
-  const selfOwner = !c.assigneeId && isOwner(m) && !anc.some(a => a.assigneeId);
-  if ((c.assigneeId === S.me || selfOwner) && ['not_started','in_progress','changes_requested'].includes(c.status)) {
-    const b = submitBlockers(m, c), target = selfOwner ? null : reviewerOf(m, c);
-    out.push(b.length ? `<button class="btn sm acc" disabled title="Waiting on ${b.map(x => n[x.id] + ' ' + uname(x.assigneeId)).join(', ')}">${ic('send', 'sm')} Submit · waiting on ${b.length}</button>`
-      : `<button class="btn sm acc" onclick="A.submit('${m.id}','${c.id}')">${ic('send', 'sm')} ${target && target !== S.me ? 'Submit to ' + esc(uname(target).split(' ')[0]) : 'Mark approved'}</button>`);
-  }
-  if (c.status === 'submitted' && c.reviewerId === S.me) out.push(`<button class="btn sm ok" onclick="A.approve('${m.id}','${c.id}')">${ic('check', 'sm')} Approve</button><button class="btn sm danger" onclick="A.reqChanges('${m.id}','${c.id}')">${ic('undo', 'sm')} Request changes</button>`);
-  if (c.status === 'approved' && (c.reviewerId === S.me || isOwner(m))) out.push(`<button class="btn sm" onclick="A.reopen('${m.id}','${c.id}')">${ic('undo', 'sm')} Re-open</button>`);
-  return out.join('');
+  const n = nums(m), anc = ancestors(m, c), mine = c.assigneeId === S.me || (!c.assigneeId && isOwner(m) && !anc.some(a => a.assigneeId));
+  if (!mine || !['not_started','in_progress','changes_requested'].includes(c.status)) return c.status === 'submitted' ? `<span class="pill p-amb">In review · ${esc(uname(c.reviewerId).split(' ')[0])}</span>` : c.status === 'approved' ? '<span class="pill p-grn">Approved</span>' : '';
+  const b = submitBlockers(m, c), target = c.assigneeId === S.me ? reviewerOf(m, c) : null;
+  return b.length ? `<button class="btn sm acc" disabled title="Waiting on ${b.map(x => n[x.id] + ' ' + uname(x.assigneeId)).join(', ')}">${ic('send', 'sm')} Submit · waiting on ${b.length} sub-clause${b.length > 1 ? 's' : ''}</button>`
+    : `<button class="btn sm acc" onclick="A.submit('${m.id}','${c.id}')">${ic('send', 'sm')} ${target && target !== S.me ? 'Submit to ' + esc(uname(target).split(' ')[0]) : 'Mark as final'}</button>`;
+}
+function reviewBtns(m, c) {
+  if (c.status === 'submitted' && c.reviewerId === S.me) return `<button class="btn sm ok" onclick="A.approve('${m.id}','${c.id}')">${ic('check', 'sm')} Approve</button><button class="btn sm danger" onclick="A.reqChanges('${m.id}','${c.id}')">${ic('undo', 'sm')} Return with comments</button>`;
+  return `<span class="pill ${c.status === 'approved' ? 'p-grn' : 'p-gry'}">${ST[c.status].l}</span>`;
 }
 function writeBanner(m, c, list) {
   const out = [];
-  if (c.status === 'changes_requested' && c.assigneeId === S.me) out.push(`<div class="banner bad">${ic('undo')}<span class="grow"><b>Changes requested.</b> Your reviewer left comments — open Review to see them highlighted in the text, then update and resubmit.</span><button class="btn sm" onclick="A.view('${m.id}','review')">Open review</button></div>`);
-  const oc = list.reduce((s, k) => s + k.comments.filter(x => !x.resolved).length, 0), of = list.reduce((s, k) => s + openConf(m, k.id).length, 0);
-  if (!out.length && (oc || of)) out.push(`<div class="banner">${ic('msg')}<span class="grow">${oc ? `<b>${oc}</b> open comment${oc > 1 ? 's' : ''}` : ''}${oc && of ? ' · ' : ''}${of ? `<b style="color:var(--red)">${of}</b> compliance finding${of > 1 ? 's' : ''}` : ''} in this section.</span><button class="btn sm ghost" onclick="A.view('${m.id}','review')">View in Review ${ic('chev', 'sm')}</button></div>`);
-  if (c.status === 'submitted') out.push(`<div class="banner warn">${ic('eye')}<span class="grow">This section is <b>in review</b> by ${esc(uname(c.reviewerId || reviewerOf(m, c)))} — editing is locked until it is approved or returned.</span></div>`);
+  if (c.status === 'changes_requested' && c.assigneeId === S.me) out.push(`<div class="banner bad">${ic('undo')}<span class="grow"><b>Returned with comments.</b> Your reviewer's comments are on the right. Update the text, resolve each comment, then submit again.</span></div>`);
+  if (c.status === 'submitted') out.push(`<div class="banner warn">${ic('eye')}<span class="grow">Submitted to <b>${esc(uname(c.reviewerId || reviewerOf(m, c)))}</b> — locked until it is approved or returned.</span></div>`);
   return out.join('');
 }
 
 /* ---------- One clause block on the sheet ---------- */
 function block(m, c, v, isRoot) {
-  const n = nums(m), d = depthOf(m, c), ed = v === 'write' && canEdit(m, c), di = dueInfo(c.deadline, c.status === 'approved');
+  const n = nums(m), d = depthOf(m, c), ed = v === 'write' && canEdit(m, c) && (!c.assigneeId || c.assigneeId === S.me || m.stage === 'setup'), di = dueInfo(c.deadline, c.status === 'approved');
   const marks = v === 'review' ? [
     ...c.comments.filter(k => !k.resolved && k.quote).map(k => ({ quote:k.quote, cls:'cm' + (k.source === 'dept' ? ' dept' : '') + (UI.activeCmt === k.id ? ' act' : ''), id:k.id, kind:'c' })),
     ...openConf(m, c.id).map(x => ({ quote:x.quote, cls:'cf', id:x.id, kind:'f', title:`${x.reference}: ${x.explanation}` }))] : [];
@@ -2445,13 +2610,33 @@ function block(m, c, v, isRoot) {
 }
 function xLimits(m, c, ed) {
   if (!c.requirements.length) return '';
-  return `<div class="xbox"><div class="xh">${ic('target', 'sm')} Limits departments must follow <span class="xs faint">MAX → may go lower · MIN → may go higher</span>${ed ? `<button class="tbtn right" onclick="A.reqAdd('${m.id}','${c.id}')">${ic('plus', 'sm')} Add</button>` : ''}</div>
-    ${c.requirements.map(q => ed ? `<div class="lrow ed"><input class="lin grow" value="${esc(q.label)}" placeholder="Limit, e.g. Preliminary investigation report" onchange="A.reqSet('${m.id}','${c.id}','${q.id}','label',this.value)">
-        <div class="lctl"><button class="tpill ${q.type}" onclick="A.reqSet('${m.id}','${c.id}','${q.id}','type','${q.type === 'max' ? 'min' : 'max'}');rerender()" title="Click to switch MAX/MIN">${q.type.toUpperCase()}</button>
-        <input class="lin num" type="number" step="any" value="${q.value}" onchange="A.reqSet('${m.id}','${c.id}','${q.id}','value',+this.value)"><input class="lin unit" value="${esc(q.unit)}" list="units" onchange="A.reqSet('${m.id}','${c.id}','${q.id}','unit',this.value)">
-        <button class="tbtn" onclick="A.reqDel('${m.id}','${c.id}','${q.id}')">${ic('x', 'sm')}</button></div></div>`
-      : `<div class="lrow"><span class="grow">${esc(q.label)}</span><span class="tpill ${q.type}">${q.type.toUpperCase()}</span><b class="lval">${q.value}</b><span class="lunit">${esc(q.unit)}</span></div>`).join('')}</div>`;
+  const M = m.id, C = c.id;
+  const plan = q => {
+    const steps = q.breach || [], open = ed ? UI.brOpen[q.id] !== false : UI.brOpen[q.id];
+    const nAct = steps.reduce((s, x) => s + x.actions.length, 0);
+    const head = `<button class="brtog" onclick="UI.brOpen['${q.id}']=${open ? 'false' : 'true'};rerender()">${ic(open ? 'chevd' : 'chev', 'sm')} If breached — ${steps.length ? `${steps.length} step${steps.length > 1 ? 's' : ''} · ${nAct} action${nAct === 1 ? '' : 's'}` : 'no response defined'}</button>`;
+    if (!open) return `<div class="brz">${head}</div>`;
+    return `<div class="brz">${head}<div class="brseq">${steps.map((s, i) => `<div class="brstep"><div class="brh"><span class="brn">${i + 1}</span>${ed ? `<input class="lin num" type="number" min="0" value="${s.offset}" onchange="A.brSet('${M}','${C}','${q.id}','${s.id}','offset',+this.value)"><select class="lin" onchange="A.brSet('${M}','${C}','${q.id}','${s.id}','unit',this.value)">${['minutes','hours','days'].map(u => `<option ${s.unit === u ? 'selected' : ''}>${u}</option>`).join('')}</select><span class="xs muted">after breach${+s.offset === 0 ? ' (immediately)' : ''}</span><button class="tbtn right" onclick="A.brDel('${M}','${C}','${q.id}','${s.id}')">${ic('trash', 'sm')}</button>` : `<b class="small">${stepLabel(s)}</b>`}</div>
+        <div class="bracts">${s.actions.map(a => ed ? `<div class="bract"><input class="lin grow" value="${esc(a.text)}" placeholder="Action to take" onchange="A.brActSet('${M}','${C}','${q.id}','${s.id}','${a.id}','text',this.value)"><input class="lin" style="width:150px" value="${esc(a.owner)}" placeholder="Owner role" onchange="A.brActSet('${M}','${C}','${q.id}','${s.id}','${a.id}','owner',this.value)"><button class="tbtn" onclick="A.brActDel('${M}','${C}','${q.id}','${s.id}','${a.id}')">${ic('x', 'sm')}</button></div>` : `<div class="bract ro">${ic('chev', 'sm')}<span class="grow">${esc(a.text)}</span>${a.owner ? `<span class="xs muted">${esc(a.owner)}</span>` : ''}</div>`).join('')}
+        ${ed ? `<button class="tbtn" onclick="A.brActAdd('${M}','${C}','${q.id}','${s.id}')">${ic('plus', 'sm')} Action</button>` : ''}</div></div>`).join('')}
+      ${ed ? `<button class="tbtn" onclick="A.brAdd('${M}','${C}','${q.id}')">${ic('plus', 'sm')} Add escalation step</button>` : ''}</div></div>`;
+  };
+  return `<div class="xbox"><div class="xh">${ic('target', 'sm')} Limits & breach response <span class="xs faint">MAX → departments may go lower · MIN → may go higher</span>${ed ? `<button class="tbtn right" onclick="A.reqAdd('${M}','${C}')">${ic('plus', 'sm')} Add limit</button>` : ''}</div>
+    ${c.requirements.map(q => `<div class="limwrap">${ed ? `<div class="lrow ed"><input class="lin grow" value="${esc(q.label)}" placeholder="Limit, e.g. Preliminary investigation report" onchange="A.reqSet('${M}','${C}','${q.id}','label',this.value)">
+        <div class="lctl"><button class="tpill ${q.type}" onclick="A.reqSet('${M}','${C}','${q.id}','type','${q.type === 'max' ? 'min' : 'max'}');rerender()" title="Click to switch MAX/MIN">${q.type.toUpperCase()}</button>
+        <input class="lin num" type="number" step="any" value="${q.value}" onchange="A.reqSet('${M}','${C}','${q.id}','value',+this.value)"><input class="lin unit" value="${esc(q.unit)}" list="units" onchange="A.reqSet('${M}','${C}','${q.id}','unit',this.value)">
+        <button class="tbtn" onclick="A.reqDel('${M}','${C}','${q.id}')">${ic('x', 'sm')}</button></div></div>`
+      : `<div class="lrow"><span class="grow">${esc(q.label)}</span><span class="tpill ${q.type}">${q.type.toUpperCase()}</span><b class="lval">${q.value}</b><span class="lunit">${esc(q.unit)}</span></div>`}${plan(q)}</div>`).join('')}</div>`;
 }
+const BR = (mid, cid, qid) => { const [m, c] = MC(mid, cid); const q = c.requirements.find(x => x.id === qid); q.breach = q.breach || []; return [m, c, q]; };
+Object.assign(A, {
+  brAdd(mid, cid, qid) { const [m, c, q] = BR(mid, cid, qid); const l = q.breach[q.breach.length - 1]; q.breach.push({ id:uid('b'), offset:l ? +l.offset + 1 : 0, unit:l ? l.unit : 'hours', actions:[{ id:uid('x'), text:'', owner:'' }] }); UI.brOpen[qid] = true; touchClause(c); commit(); },
+  brSet(mid, cid, qid, sid, k, v) { const [m, c, q] = BR(mid, cid, qid); q.breach.find(s => s.id === sid)[k] = v; q.breach.sort((a, b) => KB.toHours(a.offset, a.unit) - KB.toHours(b.offset, b.unit)); touchClause(c); save(); rerender(); },
+  brDel(mid, cid, qid, sid) { const [m, c, q] = BR(mid, cid, qid); q.breach = q.breach.filter(s => s.id !== sid); commit(); },
+  brActAdd(mid, cid, qid, sid) { const [m, c, q] = BR(mid, cid, qid); q.breach.find(s => s.id === sid).actions.push({ id:uid('x'), text:'', owner:'' }); commit(); setTimeout(() => { const l = $$(`.bract input.grow`); }, 20); },
+  brActSet(mid, cid, qid, sid, aid, k, v) { const [m, c, q] = BR(mid, cid, qid); q.breach.find(s => s.id === sid).actions.find(a => a.id === aid)[k] = v; touchClause(c); save(); },
+  brActDel(mid, cid, qid, sid, aid) { const [m, c, q] = BR(mid, cid, qid); const s = q.breach.find(x => x.id === sid); s.actions = s.actions.filter(a => a.id !== aid); commit(); },
+});
 function xPoints(m, c, ed) {
   if (!c.steps.length) return '';
   return `<div class="xbox"><div class="xh">${ic('list', 'sm')} Mandatory points${ed ? `<button class="tbtn right" onclick="A.ptAdd('${m.id}','${c.id}')">${ic('plus', 'sm')} Add</button>` : ''}</div>
@@ -2467,7 +2652,7 @@ function xActions(m, c, ed) {
 }
 
 /* ---------- Review panel ---------- */
-function reviewPanel(m, c, list) {
+function reviewPanel(m, c, list, mode) {
   const n = nums(m), t = UI.rTab, f = UI.cmtFilter;
   const all = list.flatMap(k => k.comments.map(x => ({ k, x })));
   const shown = all.filter(({ x }) => f === 'all' || (f === 'open' ? !x.resolved : x.resolved));
@@ -2487,7 +2672,7 @@ function reviewPanel(m, c, list) {
     </div>`;
   }).join('');
   return `<aside class="rpanel">
-    <div class="rp-head"><div class="row"><b>Review</b><span class="xs muted">${n[c.id]} ${esc(c.title)}</span></div>
+    <div class="rp-head"><div class="row"><b>${mode === 'write' ? 'Reviewer comments' : 'Review'}</b><span class="xs muted">${n[c.id]} ${esc(c.title)}</span></div>
       ${iAmReviewer ? `<div class="rp-decide"><div class="small">Submitted by <b>${esc(uname(c.assigneeId))}</b> ${c.submittedAt ? rel(c.submittedAt) : ''}. Highlight text to comment, then decide:</div><div class="row mt8"><button class="btn sm ok grow" onclick="A.approve('${m.id}','${c.id}')">${ic('check', 'sm')} Approve</button><button class="btn sm danger grow" onclick="A.reqChanges('${m.id}','${c.id}')">${ic('undo', 'sm')} Request changes</button></div></div>` : ''}
       <div class="seg mt12" style="width:100%"><a class="${t === 'comments' ? 'on' : ''}" style="flex:1;text-align:center" onclick="UI.rTab='comments';rerender()">Comments ${all.filter(x => !x.x.resolved).length || ''}</a><a class="${t === 'conf' ? 'on' : ''}" style="flex:1;text-align:center" onclick="UI.rTab='conf';rerender()">Compliance ${confs.length ? `<span class="cnt2 red">${confs.length}</span>` : ''}</a></div>
       ${t === 'comments' ? `<div class="row mt8"><div class="seg">${['open','resolved','all'].map(x => `<a class="${f === x ? 'on' : ''}" onclick="UI.cmtFilter='${x}';rerender()">${x[0].toUpperCase() + x.slice(1)}</a>`).join('')}</div><button class="btn xs right" onclick="A.newComment('${m.id}','${c.id}',true)">${ic('plus', 'sm')} Comment</button></div>` : ''}
@@ -2499,7 +2684,7 @@ function reviewPanel(m, c, list) {
 
 /* ---------- Mount ---------- */
 function mountManual(m, r) {
-  $$('[data-ag]').forEach(autogrow);
+  $$('[data-ag]').forEach(autogrow); $$('[data-ind]').forEach(e => e.indeterminate = true);
   const bodies = $$('.wsheet.review .docbody[data-c]');
   bodies.forEach(body => body.addEventListener('mouseup', () => setTimeout(() => {
     $('.fab-comment')?.remove();
@@ -2517,13 +2702,11 @@ function mountManual(m, r) {
 
 /* ---------- Studio actions ---------- */
 Object.assign(A, {
-  view(mid, v) { UI.view[mid] = v; UI.activeCmt = null; rerender(); },
-  mode(cid, md) { const r = route(); if (r.id) UI.view[r.id] = md === 'read' ? 'review' : 'write'; rerender(); },
   tw(mid, cid) { const e = UI.exp[mid]; e[cid] = !e[cid]; rerender(); },
   expandAll(mid) { const m = manual(mid), e = UI.exp[mid]; const any = m.clauses.some(c => kids(m, c.id).length && !e[c.id]); m.clauses.forEach(c => e[c.id] = any); rerender(); },
   bullet(btn) { const ta = btn.closest('.blk').querySelector('.b-text'); const s = ta.selectionStart, v = ta.value, ls = v.lastIndexOf('\n', s - 1) + 1; ta.value = v.slice(0, ls) + '• ' + v.slice(ls); ta.selectionStart = ta.selectionEnd = s + 2; ta.focus(); ta.dispatchEvent(new Event('input')); },
   pickCmt(id) { UI.activeCmt = UI.activeCmt === id ? null : id; rerender(); const mk = $(`mark[data-k="${id}"]`); if (mk && UI.activeCmt) mk.scrollIntoView({ behavior:'smooth', block:'center' }); setTimeout(() => $(`#rp-${id}`)?.focus({ preventScroll:true }), 30); },
-  flashMark(id) { const r = route(); if (r.id && studioView(manual(r.id)) !== 'review') { UI.view[r.id] = 'review'; rerender(); } const mk = $(`mark[data-k="${id}"]`); if (mk) { mk.scrollIntoView({ behavior:'smooth', block:'center' }); mk.classList.add('act'); setTimeout(() => mk.classList.remove('act'), 1600); } },
+  flashMark(id) { const mk = $(`mark[data-k="${id}"]`); if (mk) { mk.scrollIntoView({ behavior:'smooth', block:'center' }); mk.classList.add('act'); setTimeout(() => mk.classList.remove('act'), 1600); } },
   focusMark(id, kind) { if (kind === 'f') { UI.rTab = 'conf'; rerender(); const el = $(`#cf-${id}`); if (el) { el.scrollIntoView({ behavior:'smooth', block:'nearest' }); el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 1600); } } else { UI.rTab = 'comments'; UI.cmtFilter = 'all'; UI.activeCmt = id; rerender(); $(`#cmt-${id}`)?.scrollIntoView({ behavior:'smooth', block:'nearest' }); } },
   history(mid, cid) { const [m, c] = MC(mid, cid); modal({ title:`History — ${nums(m)[cid]} ${esc(c.title)}`, body:`<div class="col gap8">${c.history.slice().reverse().map(h => `<div class="row small">${h.userId ? av(h.userId, 'sm') : `<span class="av sm" style="background:var(--ink)">${ic('zap', 'sm')}</span>`}<span class="grow">${esc(h.text)}</span><span class="xs muted">${fmtDT(h.ts)}</span></div>`).join('') || '<div class="muted">No history yet.</div>'}</div>` }); },
 });
@@ -2545,14 +2728,20 @@ function bodyHTML(t) {
 }
 
 function tabBook(m) {
-  const lens = UI.lens[m.id] || '', B = brand();
+  if (UI.lens[m.id] === undefined && m.stage === 'published') UI.lens[m.id] = isGov(m) ? '' : me().deptId;
+  const lens = UI.lens[m.id] || '', B = brand(), e0 = effective(m, lens), sg = canSuggest(m, lens) && UI.suggest[m.id];
+  const RL = m.stage === 'published' ? m.variations.filter(v => v.deptId === lens) : (m.proposals || []).filter(v => isOwner(m) ? v.status !== 'draft' : v.requestedBy === S.me);
+  const pendN = RL.filter(v => v.status === 'pending').length, retN = RL.filter(v => v.status === 'returned').length;
   return `<div class="booktools noprint">
       <select class="select" style="width:auto" onchange="UI.lens['${m.id}']=this.value;rerender()"><option value="">Corporate baseline</option>${S.departments.map(d => `<option value="${d.id}" ${lens === d.id ? 'selected' : ''}>${esc(d.name)} edition</option>`).join('')}</select>
       <div class="seg"><a class="${UI.zoom === 'fit' ? 'on' : ''}" onclick="UI.zoom='fit';rerender()">Fit</a><a class="${UI.zoom === 'full' ? 'on' : ''}" onclick="UI.zoom='full';rerender()">100%</a></div>
+      ${canSuggest(m, lens) ? `<button class="btn ${sg ? 'acc' : ''}" onclick="UI.suggest['${m.id}']=!UI.suggest['${m.id}'];rerender()">${ic('edit')} ${sg ? ACT(m).mode + ' on' : ACT(m).tool}</button>` : ''}
+      ${lens && Object.keys(e0.edits).length ? `<button class="btn ${UI.showDiff[m.id] ? 'pri' : ''}" onclick="UI.showDiff['${m.id}']=!UI.showDiff['${m.id}'];rerender()">${ic('eye')} ${UI.showDiff[m.id] ? 'Hide' : 'Highlight'} ${esc(lens)} changes</button>` : ''}
       <span class="grow"></span>
       <button class="btn ${UI.brandPanel ? 'pri' : ''}" onclick="UI.brandPanel=!UI.brandPanel;rerender()">${ic('edit')} Design & logo</button>
       <button class="btn acc" onclick="window.print()">${ic('print')} Print / PDF</button>
     </div>
+    ${sg ? `<div class="sgbanner noprint">${ic('edit')}<div class="grow">${m.stage === 'published' ? `<b>Variation mode — ${esc(dept(lens).name)} edition.</b> Click <b>Request variation</b> next to any clause to adapt it for your department only: stricter limits, extra or reworded points, timeline changes, or not applicable. Requests go to ${esc(dept(m.governanceDeptId || S.settings.governanceDeptId).name)} for approval with an exact before/after.` : `<b>Revision mode — corporate baseline (${esc(dept(me().deptId).name)} review).</b> Click <b>Propose revision</b> next to any clause to change the base text for everyone. ${esc(uname(m.ownerId))} reviews each revision with an exact before/after and accepts or returns it.`}</div>${pendN ? `<span class="pill p-amb">${pendN} pending</span>` : ''}${retN ? `<span class="pill p-red">${retN} returned</span>` : ''}</div>` : (m.stage === 'published' && lens && !canSuggest(m, lens) ? '' : '')}
     <div class="bookdesk ${UI.brandPanel ? 'with-panel' : ''} z-${UI.zoom}">
       ${bookNav(m, lens)}
       <div class="pages" id="pages">${bookPages(m, lens, B)}</div>
@@ -2608,20 +2797,35 @@ function bookPages(m, lens, B) {
 
   /* chapters */
   const naBox = (c, v) => `<div class="na2"><b>Not applicable to ${esc(D.name)}</b><span>Approved by ${esc(uname(v.decidedBy))} on ${fmtD(v.decidedAt)}${kids(m, c.id).length ? " · includes all sub-clauses" : ""}</span><i>${esc(v.justification)}</i></div>`;
-  const extras = c => {
-    const lim = c.requirements.length ? `<div class="lim"><div class="lim-h">Limits${D ? ` <span>Corporate${Object.keys(e.tight).length ? ` · ${esc(D.name)}` : ''}</span>` : ''}</div>${c.requirements.map(q => { const t = e.tight[q.id]; return `<div class="lim-r"><span class="lim-l">${esc(q.label)}</span><span class="lim-ty ${q.type}">${q.type === 'max' ? 'Max' : 'Min'}</span><span class="lim-v ${t ? 'struck' : ''}">${q.value} ${esc(q.unit)}</span>${t ? `<span class="lim-d"><span class="dmark">${esc(D.id)}</span> ${t.proposed} ${esc(q.unit)}</span>` : ''}</div>`; }).join('')}</div>` : '';
-    const pts = c.steps.length ? `<div class="pts2"><div class="lim-h">Mandatory</div><ol>${c.steps.map(p => `<li>${esc(p)}</li>`).join('')}</ol></div>` : '';
+  const SG = canSuggest(m, lens) && UI.suggest[m.id], SD = !!(D && UI.showDiff[m.id]);
+  const ctl = c => {
+    if (m.stage !== 'published') {
+      if (!['dept_review','approval'].includes(m.stage)) return '';
+      const ps = (m.proposals || []).filter(v => v.clauseId === c.id && ['draft','pending','returned'].includes(v.status) && (v.status === 'draft' ? v.requestedBy === S.me : isOwner(m) || v.requestedBy === S.me));
+      return ps.map(p => `<button class="sg-pend ${p.status} noprint" onclick="A.reviewReq('${m.id}','${p.id}')">${p.status === 'draft' ? '✎ Your draft' : p.status === 'pending' ? '● ' + esc(p.deptId) + ' revision' : '↩ ' + esc(p.deptId) + ' returned'}</button>`).join('') + (SG ? `<button class="sg-btn noprint" onclick="A.suggest('${m.id}','${c.id}')">${ic('edit', 'sm')} ${ps.some(p => p.deptId === me().deptId) ? 'Edit revision' : 'Propose revision'}</button>` : '');
+    }
+    if (!D) return '';
+    const p = m.variations.find(v => v.deptId === D.id && v.clauseId === c.id && ['pending','returned'].includes(v.status));
+    const mark = e.edits[c.id] ? `<span class="dmark" title="Approved ${esc(D.name)} change">${esc(D.id)} revised</span>` : '';
+    return mark + (p ? `<button class="sg-pend ${p.status} noprint" onclick="A.reviewReq('${m.id}','${p.id}')">${p.status === 'pending' ? '● Pending review' : '↩ Returned — see comments'}</button>` : '') + (SG && !(p && p.status === 'pending' && p.kind !== 'edit') ? `<button class="sg-btn noprint" onclick="A.suggest('${m.id}','${c.id}')">${ic('edit', 'sm')} ${p ? 'Edit request' : 'Request variation'}</button>` : '');
+  };
+  const extras = (c, base) => {
+    const lim = c.requirements.length ? `<div class="lim"><div class="lim-h">Limits${D ? ` <span>Corporate${Object.keys(e.tight).length ? ` · ${esc(D.name)}` : ''}</span>` : ''}</div>${c.requirements.map(q => { const t = e.tight[q.id]; return `<div class="lim-r"><span class="lim-l">${esc(q.label)}</span><span class="lim-ty ${q.type}">${q.type === 'max' ? 'Max' : 'Min'}</span><span class="lim-v ${t ? 'struck' : ''}">${q.value} ${esc(q.unit)}</span>${t ? `<span class="lim-d"><span class="dmark">${esc(D.id)}</span> ${t.proposed} ${esc(q.unit)}</span>` : ''}</div>${(q.breach || []).length ? `<div class="lim-br"><span class="lbh">If breached</span>${q.breach.map((s, i) => `<span class="lbs"><b>${i + 1} · ${stepLabel(s)}</b>${s.actions.map(a => esc(a.text) + (a.owner ? ` <i>(${esc(a.owner)})</i>` : '')).join(' · ')}</span>`).join('')}</div>` : ''}`; }).join('')}</div>` : '';
+    const showD = SD && c._edit;
+    const pts = c.steps.length || (showD && base.steps.length) ? `<div class="pts2"><div class="lim-h">Mandatory</div><ol>${showD ? listDiff(base.steps, c.steps).map(o => o.t === 'eq' ? `<li>${esc(o.a)}</li>` : o.t === 'del' ? `<li><del class="dx">${esc(o.a)}</del></li>` : o.t === 'ins' ? `<li><ins class="ix">${esc(o.b)}</ins></li>` : `<li>${o.d.inline}</li>`).join('') : c.steps.map(p => `<li>${esc(p)}</li>`).join('')}</ol></div>` : '';
     const acts = c.actions.length ? `<div class="acts2"><div class="lim-h">Response timeline</div>${c.actions.slice().sort((a, b) => KB.toHours(a.offset, a.unit) - KB.toHours(b.offset, b.unit)).map(a => `<div class="ar"><span class="aw">${actLabel(a)}</span><span class="ad"></span><span class="aa">${esc(a.action)}${a.owner ? `<em>${esc(a.owner)}</em>` : ''}</span></div>`).join('')}</div>` : '';
     const adds = (e.adds[c.id] || []).map(v => `<div class="add2"><span class="dmark">${esc(D.id)}</span> ${esc(v.text)}</div>`).join('');
     return lim + pts + acts + adds;
   };
+  const bodyOf = (ec, c) => SD && ec._edit ? `<p class="dfp">${wordDiff(c.body, ec.body).inline}</p>` : bodyHTML(ec.body);
   const clauseHTML = (c, d) => {
-    const head = `<div class="cl-h d${Math.min(d, 3)}" id="bk-${c.id}"><span class="cl-n">${n[c.id]}</span><span class="cl-t">${esc(c.title)}</span></div>`;
+    const ec = eclause(c, e);
+    const head = `<div class="cl-h d${Math.min(d, 3)}" id="bk-${c.id}"><span class="cl-n">${n[c.id]}</span><span class="cl-t">${esc(c.title)}${ctl(c)}</span></div>`;
     if (e.na[c.id]) return `<div class="cl">${head}${naBox(c, e.na[c.id])}</div>`;
-    return `<div class="cl">${head}<div class="cl-b">${bodyHTML(c.body)}${extras(c)}</div>${kids(m, c.id).map(k => clauseHTML(k, d + 1)).join("")}</div>`;
+    return `<div class="cl ${SG ? 'sgable' : ''}">${head}<div class="cl-b">${bodyOf(ec, c)}${extras(ec, c)}</div>${kids(m, c.id).map(k => clauseHTML(k, d + 1)).join("")}</div>`;
   };
-  const chaps = chapters.map((c, i) => sheet("ch-" + c.id, 4 + i, `<div class="opener" id="bk-${c.id}"><div class="op-n">${String(i + 1).padStart(2, "0")}</div><div><div class="op-k">Section ${n[c.id]}</div><h2 class="op-t">${esc(c.title)}</h2></div></div>
-    ${e.na[c.id] ? naBox(c, e.na[c.id]) : `<div class="cl-b lead">${bodyHTML(c.body)}${extras(c)}</div>${kids(m, c.id).map(k => clauseHTML(k, 1)).join("")}`}`, "chap"));
+  const chaps = chapters.map((c, i) => { const ec = eclause(c, e); return sheet("ch-" + c.id, 4 + i, `<div class="opener" id="bk-${c.id}"><div class="op-n">${String(i + 1).padStart(2, "0")}</div><div class="grow"><div class="op-k">Section ${n[c.id]}</div><h2 class="op-t">${esc(c.title)}</h2><div class="op-ctl">${ctl(c)}</div></div></div>
+    ${e.na[c.id] ? naBox(c, e.na[c.id]) : `<div class="cl-b lead">${bodyOf(ec, c)}${extras(ec, c)}</div>${kids(m, c.id).map(k => clauseHTML(k, 1)).join("")}`}`, "chap"); });
   return cover + control + toc + chaps.join('');
 }
 
@@ -2941,10 +3145,16 @@ function breachCard(x) {
     <div class="row gap12">${modTile(mo)}<div class="grow" style="min-width:0"><div class="row wrap gap4"><b class="mono small">${esc(x.id)}</b><span class="small" style="font-weight:600">${esc(x.title)}</span></div>
       <div class="xs muted">${esc(mo.name)} · ${esc(dept(x.dept).name)}${x.area ? ' · ' + esc(x.area) : ''}</div></div><span class="badge ${STATE_B[x.state][0]}">${STATE_B[x.state][1]}</span></div>
     <div class="small mt8">${whereTxt(x)}</div>
-    ${whereBar(x)}
+    ${whereBar(x)}${respPlan(x)}
     <div class="row wrap mt8"><span class="xs muted">Standard: <a href="${L(x.lim.m, x.lim.c)}">${esc(x.lim.m.code)} §${n} ${esc(x.lim.c.title)}</a> — ${esc(x.lim.q.label)} ${limTxt(x.lim)}${x.lim.tightened ? ` <span class="badge b-orange plain">${esc(x.dept)} edition (corporate ${x.lim.base} ${esc(x.lim.unit)})</span>` : ''}</span>
       <span class="right row gap4">${I.notified[x.id] ? `<span class="xs faint">Notified ${rel(I.notified[x.id])}</span>` : `<button class="btn xs" onclick="A.ccNotify('${x.id}')">${ic('bell', 'sm')} Notify ${esc(uname(deptHead(x.dept)).split(' ')[0])}</button>`}</span></div>
   </div>`;
+}
+function respPlan(x) {
+  const st = x.lim.q.breach || []; if (!st.length || x.state !== 'overdue') return '';
+  const over = (x.el || 0) - (x.lim.hours || 0);
+  return `<div class="rplan"><div class="xs muted mb8" style="margin-bottom:4px">Required response per ${esc(x.lim.m.code)}</div>${st.map((s, i) => { const h = KB.toHours(+s.offset, s.unit), due = over >= h;
+    return `<div class="rps ${due ? 'due' : ''}"><span class="rpn">${i + 1}</span><span class="grow small"><b>${stepLabel(s)}</b> — ${s.actions.map(a => esc(a.text) + (a.owner ? ` <i class="muted">(${esc(a.owner)})</i>` : '')).join('; ')}</span>${due ? '<span class="pill p-red">due now</span>' : `<span class="xs muted">in ${fmtDur(h - over)}</span>`}</div>`; }).join('')}</div>`;
 }
 function heatmap(period) {
   const I = integ();
@@ -3029,6 +3239,470 @@ Object.assign(A, {
 
 const _render0 = render;
 render = function () { LIMC = {}; CUBE = null; _render0(); };
+
+/* ============ Department change requests from the book: suggest → diff review → approve / return ============ */
+VK.edit = { l:'Department variation', b:'b-blue', i:'edit' };
+UI.suggest = UI.suggest || {}; UI.showDiff = UI.showDiff || {}; UI.diffMode = UI.diffMode || 'inline';
+const clone = o => JSON.parse(JSON.stringify(o));
+
+/* ---------- Diff engine ---------- */
+function lcsOps(a, b, eq = (x, y) => x === y) {
+  const n = a.length, m = b.length, dp = Array.from({ length:n + 1 }, () => new Int32Array(m + 1));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) dp[i][j] = eq(a[i], b[j]) ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+  const ops = []; let i = 0, j = 0;
+  while (i < n && j < m) { if (eq(a[i], b[j])) { ops.push({ t:'eq', a:a[i], b:b[j] }); i++; j++; } else if (dp[i + 1][j] >= dp[i][j + 1]) ops.push({ t:'del', a:a[i++] }); else ops.push({ t:'ins', b:b[j++] }); }
+  while (i < n) ops.push({ t:'del', a:a[i++] }); while (j < m) ops.push({ t:'ins', b:b[j++] });
+  return ops;
+}
+function wordDiff(a, b) {
+  const tk = s => (s || '').split(/(\s+)/).filter(x => x !== '');
+  const ops = lcsOps(tk(a), tk(b)); let inline = '', left = '', right = '', ins = 0, del = 0;
+  const groups = []; ops.forEach(o => { const g = groups[groups.length - 1]; if (g && g.t === o.t) g.s += (o.t === 'ins' ? o.b : o.a); else groups.push({ t:o.t, s:o.t === 'ins' ? o.b : o.a }); });
+  groups.forEach(g => {
+    if (g.t === 'eq') { inline += esc(g.s); left += esc(g.s); right += esc(g.s); }
+    else if (g.t === 'del') { if (g.s.trim()) del += g.s.trim().split(/\s+/).length; inline += `<del class="dx">${esc(g.s)}</del>`; left += `<del class="dx">${esc(g.s)}</del>`; }
+    else { if (g.s.trim()) ins += g.s.trim().split(/\s+/).length; inline += `<ins class="ix">${esc(g.s)}</ins>`; right += `<ins class="ix">${esc(g.s)}</ins>`; }
+  });
+  return { inline, left, right, ins, del, changed:ins + del > 0 };
+}
+function listDiff(a, b) {
+  const ops = lcsOps(a, b), out = [];
+  for (let k = 0; k < ops.length; k++) {
+    const o = ops[k], nx = ops[k + 1];
+    if (o.t === 'del' && nx && nx.t === 'ins') { out.push({ t:'mod', a:o.a, b:nx.b, d:wordDiff(o.a, nx.b) }); k++; } else out.push(o);
+  }
+  return out;
+}
+const actStr = a => `${actLabel(a)} — ${a.action}${a.owner ? ' (' + a.owner + ')' : ''}`;
+
+/* ---------- Effective clause for a department (approved edits applied) ---------- */
+function eclause(c, e) { const v = e.edits && e.edits[c.id]; if (!v) return c; const a = v.after; return { ...c, body:a.body, steps:a.steps.slice(), actions:a.actions.map(x => ({ ...x })), _edit:v }; }
+function snapshot(m, c, D) {
+  const e = effective(m, D), cur = eclause(c, e);
+  return { na:!!e.na[c.id], body:cur.body, steps:cur.steps.slice(), actions:cur.actions.map(x => ({ ...x })),
+    reqs:c.requirements.map(q => ({ id:q.id, label:q.label, type:q.type, unit:q.unit, base:+q.value, value:e.tight[q.id] ? +e.tight[q.id].proposed : +q.value })) };
+}
+function changeSet(m, c, b, a, base) {
+  const wd = wordDiff(b.body, a.body), pts = listDiff(b.steps, a.steps), acts = listDiff(b.actions.map(actStr), a.actions.map(actStr));
+  const lims = a.reqs.map(q => ({ q, old:(b.reqs.find(x => x.id === q.id) || q).value })).filter(x => +x.old !== +x.q.value);
+  const cnt = k => pts.filter(x => x.t === k).length, ac = k => acts.filter(x => x.t === k).length;
+  const flags = [];
+  if (cnt('del')) flags.push(`Removes ${cnt('del')} mandatory point${cnt('del') > 1 ? 's' : ''} — this weakens the corporate requirement.`);
+  if (ac('del')) flags.push(`Removes ${ac('del')} timed response action${ac('del') > 1 ? 's' : ''}.`);
+  const sh = s => ((s || '').match(/\bshall\b/gi) || []).length;
+  if (sh(a.body) < sh(b.body)) flags.push(`Mandatory “shall” statements reduced from ${sh(b.body)} to ${sh(a.body)}.`);
+  const soft = s => ((s || '').match(/\b(should|may|where possible|if practicable|optional|recommended)\b/gi) || []).length;
+  if (soft(a.body) > soft(b.body)) flags.push('Introduces softer wording (should / may / where possible / optional).');
+  if (base) lims.forEach(({ q, old }) => { if (q.type === 'max' ? +q.value > +old : +q.value < +old) flags.push(`${q.label} relaxed from ${old} to ${q.value} ${q.unit}.`); });
+  const limErr = base ? a.reqs.filter(q => q.value === '' || isNaN(+q.value)).map(q => `${q.label}: enter a number`) : a.reqs.map(q => { const v = +q.value; if (isNaN(v)) return `${q.label}: enter a number`; if (q.type === 'max' && v > q.base) return `${q.label}: max ${q.base} ${q.unit} — cannot be higher`; if (q.type === 'min' && v < q.base) return `${q.label}: min ${q.base} ${q.unit} — cannot be lower`; return null; }).filter(Boolean);
+  const findings = a.na ? [] : KB.check(m, [{ ...c, body:a.body, requirements:a.reqs.map(q => ({ ...q })) }], nums(m));
+  const total = (a.na !== b.na ? 1 : 0) + (wd.changed ? 1 : 0) + lims.length + pts.filter(x => x.t !== 'eq').length + acts.filter(x => x.t !== 'eq').length;
+  return { wd, pts, acts, lims, flags, limErr, findings, total, na:a.na !== b.na };
+}
+function summaryChips(cs, a) {
+  const ch = [];
+  if (cs.na) ch.push(`<span class="pill p-amb">${a.na ? 'Mark not applicable' : 'Restore applicability'}</span>`);
+  if (cs.wd.changed) ch.push(`<span class="pill p-lav">Text: +${cs.wd.ins} / −${cs.wd.del} words</span>`);
+  if (cs.lims.length) ch.push(`<span class="pill p-tan">${cs.lims.length} limit${cs.lims.length > 1 ? 's' : ''} changed</span>`);
+  const p = t => cs.pts.filter(x => x.t === t).length;
+  if (p('ins')) ch.push(`<span class="pill p-grn">+${p('ins')} point${p('ins') > 1 ? 's' : ''}</span>`);
+  if (p('mod')) ch.push(`<span class="pill p-lav">${p('mod')} point${p('mod') > 1 ? 's' : ''} reworded</span>`);
+  if (p('del')) ch.push(`<span class="pill p-red">−${p('del')} point${p('del') > 1 ? 's' : ''}</span>`);
+  const q = cs.acts.filter(x => x.t !== 'eq').length; if (q) ch.push(`<span class="pill p-pur">${q} timeline change${q > 1 ? 's' : ''}</span>`);
+  return ch.join('') || '<span class="pill p-gry">No changes yet</span>';
+}
+function diffSections(cs, b, a, mode) {
+  const out = [];
+  if (cs.na) out.push(`<div class="dsec"><div class="dsh">Applicability</div><div class="row gap12"><span class="pill p-grn" style="${a.na ? 'text-decoration:line-through;opacity:.6' : ''}">Applies to department</span>${ic('chev')}<span class="pill ${a.na ? 'p-red' : 'p-grn'}">${a.na ? 'Not applicable' : 'Applies again'}</span></div></div>`);
+  if (cs.wd.changed) out.push(`<div class="dsec"><div class="dsh">Requirement text</div>${mode === 'side' ? `<div class="sbs"><div><div class="sbh">Current</div><div class="dtext">${cs.wd.left}</div></div><div><div class="sbh">Proposed</div><div class="dtext">${cs.wd.right}</div></div></div>` : `<div class="dtext">${cs.wd.inline}</div>`}</div>`);
+  if (cs.lims.length) out.push(`<div class="dsec"><div class="dsh">Limits</div><table class="dtab"><thead><tr><th>Limit</th><th>Corporate</th><th>Current</th><th>Proposed</th></tr></thead><tbody>${cs.lims.map(({ q, old }) => { const stricter = q.type === 'max' ? +q.value < +old : +q.value > +old; return `<tr><td>${esc(q.label)} <span class="tpill ${q.type}">${q.type.toUpperCase()}</span></td><td>${q.base} ${esc(q.unit)}</td><td><del class="dx">${old} ${esc(q.unit)}</del></td><td><ins class="ix">${q.value} ${esc(q.unit)}</ins> ${stricter ? '<span class="pill p-grn">stricter</span>' : '<span class="pill p-amb">less strict</span>'}</td></tr>`; }).join('')}</tbody></table></div>`);
+  const listHTML = (ops, title) => ops.some(x => x.t !== 'eq') ? `<div class="dsec"><div class="dsh">${title}</div><ol class="dlist">${ops.map(o => o.t === 'eq' ? `<li class="leq">${esc(o.a)}</li>` : o.t === 'del' ? `<li class="ldel"><del class="dx">${esc(o.a)}</del><span class="ltag red">removed</span></li>` : o.t === 'ins' ? `<li class="lins"><ins class="ix">${esc(o.b)}</ins><span class="ltag grn">added</span></li>` : `<li class="lmod">${o.d.inline}<span class="ltag lav">reworded</span></li>`).join('')}</ol></div>` : '';
+  out.push(listHTML(cs.pts, 'Mandatory points'), listHTML(cs.acts, 'Response timeline'));
+  return out.join('') || '<div class="rp-empty">No changes compared with the current edition.</div>';
+}
+function flagsHTML(cs) {
+  return `${cs.flags.map(f => `<div class="note bad small mb8">${ic('alert', 'sm')} <b>Weakens standard:</b> ${esc(f)}</div>`).join('')}
+    ${cs.findings.map(x => `<div class="note warn small mb8">${ic('shield', 'sm')} <b>${esc(x.reference)}</b> — ${esc(x.explanation)} <span class="muted">“${esc(x.quote)}”</span></div>`).join('')}`;
+}
+
+/* ---------- Suggest editor (opened from the book) ---------- */
+const reqScope = m => m.stage === 'published' ? 'var' : 'base';
+const reqList = (m, scope) => scope === 'base' ? (m.proposals || (m.proposals = [])) : m.variations;
+const findReq = (m, vid) => m.variations.find(v => v.id === vid) || (m.proposals || []).find(v => v.id === vid);
+const myReviewItem = m => m.stage === 'dept_review' && m.deptReview && m.deptReview.items.find(i => i.deptId === me().deptId && i.status === 'pending');
+const myApprovalStep = m => m.stage === 'approval' && m.approval && m.approval.status === 'in_progress' && m.approval.steps.find(s => s.userId === S.me && s.status === 'pending');
+const canSuggest = (m, D) => m.stage === 'published' ? !!(D && (me().deptId === D || me().admin)) : !!(myReviewItem(m) || myApprovalStep(m));
+const ACT = m => m.stage === 'published'
+  ? { btn:'Request variation', tool:'Request variations', mode:'Variation mode', title:'Department variation', submit:'Submit variation request', resub:'Resubmit variation', edit:'Edit request' }
+  : { btn:'Propose revision', tool:'Propose revisions', mode:'Revision mode', title:'Proposed revision', submit:'Send revision to owner', resub:'Resend revision', edit:'Edit revision' };
+function applyProposal(m, v, comment) {
+  const c = clause(m, v.clauseId), a = v.after, n = nums(m)[v.clauseId];
+  c.body = a.body; c.steps = a.steps.slice(); c.actions = a.actions.map(x => ({ ...x, id:x.id || uid('a') }));
+  a.reqs.forEach(q => { const r = c.requirements.find(x => x.id === q.id); if (r) r.value = +q.value; });
+  Object.assign(v, { status:'approved', decidedBy:S.me, decidedAt:now(), comment:comment || '' });
+  v.thread.push({ ts:now(), userId:S.me, text:'Accepted and applied to the corporate text' + (comment ? ': ' + comment : '') });
+  c.history.push({ ts:now(), userId:S.me, text:`Applied revision proposed by ${dept(v.deptId).name}` });
+  (m.proposals || []).filter(x => x !== v && x.clauseId === v.clauseId && x.status === 'pending').forEach(x => x.thread.push({ ts:now(), userId:m.ownerId, text:'Note: the corporate text of this clause was updated by another accepted revision — review against the latest text.' }));
+  notify(v.requestedBy, `${uname(S.me)} accepted your proposed revision on ${n} ${c.title} — it now applies to the corporate text`, L(m) + '/t/book', 'approved');
+  log(m, `accepted ${dept(v.deptId).name}'s revision on ${n} ${c.title}`, 'dept');
+}
+Object.assign(A, {
+  openSuggest(mid) { const m = manual(mid); const D = me().deptId; const base = reqScope(m) === 'base'; UI.lens[mid] = base ? '' : D; UI.suggest[mid] = true; go(L(m) + '/t/book'); toast(base ? 'Revision mode on — click “Propose revision” on any clause' : `Variation mode on — click “Request variation” on any clause in the ${dept(D).name} edition`); },
+  suggest(mid, cid, vid) {
+    const m = manual(mid), c = clause(m, cid), base = reqScope(m) === 'base', list = reqList(m, base ? 'base' : 'var'), T = ACT(m);
+    const D = vid ? findReq(m, vid).deptId : base ? me().deptId : (UI.lens[mid] || me().deptId), n = nums(m)[cid];
+    const pend = vid ? findReq(m, vid) : list.find(v => v.kind === 'edit' && v.deptId === D && v.clauseId === cid && ['pending','returned'].includes(v.status));
+    const before = pend ? clone(pend.before) : snapshot(m, c, base ? '' : D);
+    const st = pend ? clone(pend.after) : clone(before); let just = pend ? pend.justification : '';
+    const lastRet = pend && pend.status === 'returned' ? pend.thread.slice().reverse().find(t => /^Returned/.test(t.text)) : null;
+    modal({ wide:true, title:`${T.title} · ${n} ${esc(c.title)}`, icon:`<span class="mico" style="background:var(--accent)">${ic('edit')}</span>`,
+      body:`<div class="row wrap mb12 gap8">${base ? `<span class="pill p-lav">Corporate baseline · ${esc(dept(D).name)} review</span><span class="xs muted">Goes to the manual owner <b>${esc(uname(m.ownerId))}</b> · if accepted it changes the corporate text for every department</span>` : `<span class="pill p-tan">${esc(dept(D).name)} edition</span><span class="xs muted">Goes to <b>${esc(dept(m.governanceDeptId || S.settings.governanceDeptId).name)}</b> for approval · applies only to your department · stricter than the corporate standard, never weaker</span>`}</div>
+        ${lastRet ? `<div class="note bad small mb12">${ic('undo', 'sm')} <b>Returned by ${esc(uname(lastRet.userId))}:</b> ${esc(lastRet.text.replace(/^Returned:?\s*/, ''))}</div>` : ''}
+        <div class="sgwrap"><div class="sged" id="sg-ed"></div><div class="sgpv"><div class="dsh" style="margin-top:0">Live preview of your change</div><div id="sg-pv"></div></div></div>`,
+      foot:`<span class="grow xs muted" id="sg-sum"></span><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn acc" id="sg-ok">${ic('send')} ${pend ? (pend.status === 'draft' ? 'Update draft' : T.resub) : base ? 'Save revision' : T.submit}</button>` });
+    const pv = () => { const cs = changeSet(m, c, before, st, base); $('#sg-pv').innerHTML = `<div class="row wrap gap4 mb12">${summaryChips(cs, st)}</div>${flagsHTML(cs)}${cs.limErr.map(x => `<div class="note bad small mb8">${ic('ban', 'sm')} ${esc(x)}</div>`).join('')}${diffSections(cs, before, st, 'inline')}`; $('#sg-sum').textContent = cs.total ? `${cs.total} change${cs.total > 1 ? 's' : ''}` : 'Edit the clause on the left'; return cs; };
+    const draw = () => {
+      $('#sg-ed').innerHTML = `
+        ${base ? '' : `<label class="nabox ${st.na ? 'on' : ''}"><input type="checkbox" id="sg-na" ${st.na ? 'checked' : ''}><div><b>This clause does not apply to our department</b><div class="xs muted">${kids(m, cid).length ? 'Includes all its sub-clauses. ' : ''}Use only when the activity does not exist in your department.</div></div></label>`}
+        <div class="${st.na ? 'dimmed' : ''}">
+        <div class="dsh">Requirement text</div>
+        <textarea class="textarea sgt" id="sg-body" data-ag>${esc(st.body)}</textarea>
+        ${st.reqs.length ? `<div class="dsh">Limits <span class="xs muted" style="text-transform:none;letter-spacing:0">${base ? '— changes are reviewed by the owner' : '— stricter only'}</span></div>${st.reqs.map((q, i) => `<div class="sgl"><span class="grow small">${esc(q.label)} <span class="tpill ${q.type}">${q.type.toUpperCase()}</span><span class="xs muted"> corporate ${q.base} ${esc(q.unit)}</span></span><input class="input mono" type="number" step="any" data-q="${i}" value="${q.value}" style="width:90px"><span class="xs muted" style="width:56px">${esc(q.unit)}</span></div>`).join('')}` : ''}
+        <div class="dsh">Mandatory points <button class="tbtn right" id="sg-padd">${ic('plus', 'sm')} Add</button></div>
+        ${st.steps.map((p, i) => `<div class="sgp"><span class="mono xs" style="color:var(--accent)">${String(i + 1).padStart(2, '0')}</span><input class="input" data-p="${i}" value="${esc(p)}"><button class="tbtn" data-pdel="${i}" title="Remove">${ic('x', 'sm')}</button></div>`).join('') || '<div class="xs muted">No mandatory points.</div>'}
+        <div class="dsh">Response timeline <button class="tbtn right" id="sg-aadd">${ic('plus', 'sm')} Add</button></div>
+        ${st.actions.map((a, i) => `<div class="sgp"><input class="input mono" type="number" min="0" data-ao="${i}" value="${a.offset}" style="width:64px"><select class="select" data-au="${i}" style="width:96px">${['minutes','hours','days'].map(u => `<option ${a.unit === u ? 'selected' : ''}>${u}</option>`).join('')}</select><input class="input" data-aa="${i}" value="${esc(a.action)}" placeholder="Action"><button class="tbtn" data-adel="${i}">${ic('x', 'sm')}</button></div>`).join('') || '<div class="xs muted">No timed actions.</div>'}
+        </div>
+        <div class="dsh">Justification <span style="color:var(--red)">*</span></div>
+        <textarea class="textarea" id="sg-j" rows="3" placeholder="Why does your department need this change?">${esc(just)}</textarea>`;
+      $$('#sg-ed [data-ag]').forEach(autogrow);
+      if ($('#sg-na')) $('#sg-na').onchange = e => { st.na = e.target.checked; draw(); };
+      $('#sg-body').oninput = e => { st.body = e.target.value; autogrow(e.target); pv(); };
+      $$('#sg-ed [data-q]').forEach(el => el.oninput = () => { st.reqs[+el.dataset.q].value = el.value === '' ? '' : +el.value; pv(); });
+      $$('#sg-ed [data-p]').forEach(el => el.oninput = () => { st.steps[+el.dataset.p] = el.value; pv(); });
+      $$('#sg-ed [data-pdel]').forEach(el => el.onclick = () => { st.steps.splice(+el.dataset.pdel, 1); draw(); });
+      $('#sg-padd').onclick = () => { st.steps.push(''); draw(); const l = $$('#sg-ed [data-p]'); l[l.length - 1]?.focus(); };
+      $$('#sg-ed [data-ao]').forEach(el => el.oninput = () => { st.actions[+el.dataset.ao].offset = +el.value; pv(); });
+      $$('#sg-ed [data-au]').forEach(el => el.onchange = () => { st.actions[+el.dataset.au].unit = el.value; pv(); });
+      $$('#sg-ed [data-aa]').forEach(el => el.oninput = () => { st.actions[+el.dataset.aa].action = el.value; pv(); });
+      $$('#sg-ed [data-adel]').forEach(el => el.onclick = () => { st.actions.splice(+el.dataset.adel, 1); draw(); });
+      $('#sg-aadd').onclick = () => { const l = st.actions[st.actions.length - 1]; st.actions.push({ id:uid('a'), offset:l ? l.offset + 1 : 0, unit:l ? l.unit : 'days', action:'', owner:'' }); draw(); };
+      $('#sg-j').oninput = e => just = e.target.value;
+      pv();
+    };
+    draw();
+    $('#sg-ok').onclick = () => {
+      st.steps = st.steps.map(s => s.trim()).filter(Boolean); st.actions = st.actions.filter(a => a.action.trim());
+      const cs = changeSet(m, c, before, st, base);
+      if (!cs.total) return toast('No changes to submit', 'bad');
+      if (cs.limErr.length) return toast(cs.limErr[0], 'bad');
+      if (!just.trim()) { $('#sg-j').focus(); return toast('Add a justification', 'bad'); }
+      const data = { before, after:clone(st), justification:just.trim(), flags:cs.flags, findings:cs.findings };
+      if (pend) {
+        pend.rounds = pend.rounds || []; pend.rounds.push({ ts:now(), by:S.me, after:clone(st), justification:just.trim() });
+        const wasDraft = pend.status === 'draft';
+        Object.assign(pend, data, { status:wasDraft ? 'draft' : 'pending', ts:now(), decidedBy:null, decidedAt:null, comment:'' });
+        if (!wasDraft) pend.thread.push({ ts:now(), userId:S.me, text:`Resubmitted — round ${pend.rounds.length}` });
+        if (wasDraft) { closeModal(); return commit('Draft updated'); }
+        const gov = m.governanceDeptId || S.settings.governanceDeptId;
+        notify(base ? [m.ownerId] : deptUsers(gov).map(u => u.id).filter(u => u !== S.me), `${dept(D).name} resubmitted a ${base ? 'revision' : 'variation'} on ${n} ${c.title} (round ${pend.rounds.length})`, L(m) + (base ? '/t/dept' : '/t/variations'), 'variation');
+        log(m, `resubmitted ${dept(D).name} change request on ${n}`, 'variation');
+      } else if (base) {
+        list.unshift({ id:uid('p'), kind:'edit', scope:'base', origin:m.stage === 'approval' ? 'approval' : 'dept', status:'draft', ts:now(), requestedBy:S.me, thread:[], deptId:D, clauseId:cid, round:m.stage === 'approval' ? m.approval.round : m.deptReview.round, ...data, rounds:[{ ts:now(), by:S.me, after:clone(st), justification:just.trim() }] });
+      } else requestVariation(m, { kind:'edit', deptId:D, clauseId:cid, ...data, rounds:[{ ts:now(), by:S.me, after:clone(st), justification:just.trim() }] });
+      closeModal(); commit(base ? 'Saved as draft — send your review to the owner when you have finished' : cs.flags.length ? 'Submitted — flagged items will be highlighted for the approver' : 'Variation request submitted for approval');
+    };
+  },
+
+  /* ---------- Approver review ---------- */
+  reviewReq(mid, vid) {
+    const m = manual(mid), v = findReq(m, vid), c = clause(m, v.clauseId), n = nums(m)[v.clauseId], base = v.scope === 'base';
+    const draw = () => {
+      const cs = v.kind === 'edit' ? changeSet(m, c, v.before, v.after, base) : null;
+      const decider = v.status === 'pending' && v.requestedBy !== S.me && (base ? isOwner(m) && ['dept_review','approval'].includes(m.stage) : isGov(m)), owner = v.requestedBy === S.me;
+      const stale = base && v.status === 'pending' && snapshot(m, c, '').body !== v.before.body;
+      modal({ wide:true, title:`${base ? 'Proposed revision' : 'Department variation'} · ${n} ${esc(c.title)}`, icon:`<span class="mico" style="background:var(--navy)">${ic('eye')}</span>`,
+        body:`<div class="rvhead"><div class="row wrap gap8">${av(v.requestedBy)}<div><b>${esc(uname(v.requestedBy))}</b><div class="xs muted">${esc(dept(v.deptId).name)} · submitted ${rel(v.ts)}${(v.rounds || []).length > 1 ? ` · round ${v.rounds.length}` : ''}</div></div><span class="right">${varStatus(v)}</span></div>
+            <div class="row wrap gap4 mt12"><span class="pill ${base ? 'p-lav' : 'p-tan'}">${base ? 'Changes the corporate text · decided by the owner' : esc(dept(v.deptId).name) + ' edition only · decided by ' + esc(dept(m.governanceDeptId || S.settings.governanceDeptId).name)}</span>${cs ? summaryChips(cs, v.after) : ''}</div></div>
+          ${stale ? `<div class="note warn small mb8">${ic('alert', 'sm')} The corporate text of this clause changed after this revision was proposed. Compare carefully before accepting.</div>` : ''}
+          ${cs ? flagsHTML(cs) : ''}
+          ${cs ? `<div class="row mb12"><span class="dsh" style="margin:0">Changes</span><div class="seg right"><a class="${UI.diffMode === 'inline' ? 'on' : ''}" id="dm-i">Inline</a><a class="${UI.diffMode === 'side' ? 'on' : ''}" id="dm-s">Side by side</a></div></div>${diffSections(cs, v.before, v.after, UI.diffMode)}` : ''}
+          <div class="dsec"><div class="dsh">Justification</div><div class="small">${esc(v.justification)}</div></div>
+          <div class="dsec"><div class="dsh">Conversation</div>${(v.thread || []).length ? v.thread.map(t => `<div class="row gap8 small" style="padding:6px 0;align-items:flex-start">${t.userId ? av(t.userId, 'sm') : ''}<div class="grow"><b>${esc(t.userId ? uname(t.userId) : 'System')}</b> <span class="xs muted">${fmtDT(t.ts)}</span><div>${esc(t.text)}</div></div></div>`).join('') : '<div class="xs muted">No comments yet.</div>'}
+            ${decider || owner ? `<textarea class="textarea mt8" id="rv-c" rows="2" placeholder="${decider ? 'Comment to the department (required when returning)…' : 'Reply to the approver…'}"></textarea>` : ''}</div>`,
+        foot:`${owner && v.status === 'returned' ? `<button class="btn ghost" id="rv-w">Withdraw</button>` : ''}<span class="grow"></span>
+          ${decider || owner ? `<button class="btn" id="rv-cm">${ic('msg')} Comment</button>` : ''}
+          ${owner && v.status === 'returned' && v.kind === 'edit' ? `<button class="btn acc" id="rv-rev">${ic('edit')} Revise & resubmit</button>` : ''}
+          ${owner && v.status === 'draft' ? `<button class="btn danger" id="rv-del">${ic('trash')} Delete draft</button>` : ''}${decider && base ? `<button class="btn danger" id="rv-rej">${ic('ban')} Reject</button>` : ''}${decider ? `<button class="btn danger" id="rv-ret">${ic('undo')} Return for rework</button><button class="btn ok" id="rv-ap">${ic('check')} ${base ? 'Accept & apply to manual' : 'Approve variation'}</button>` : ''}` });
+      if ($('#dm-i')) { $('#dm-i').onclick = () => { UI.diffMode = 'inline'; draw(); }; $('#dm-s').onclick = () => { UI.diffMode = 'side'; draw(); }; }
+      const txt = () => ($('#rv-c')?.value || '').trim();
+      if ($('#rv-cm')) $('#rv-cm').onclick = () => { const t = txt(); if (!t) return toast('Write a comment', 'bad'); v.thread.push({ ts:now(), userId:S.me, text:t }); notify(owner ? (base ? [m.ownerId] : deptUsers(m.governanceDeptId || S.settings.governanceDeptId).map(u => u.id)) : v.requestedBy, `${uname(S.me)} commented on the ${n} ${base ? 'revision' : 'variation'}: ${t.slice(0, 80)}`, L(m) + (base ? '/t/dept' : '/t/variations'), 'comment'); save(); draw(); };
+      if ($('#rv-ap')) $('#rv-ap').onclick = () => { if (base) { applyProposal(m, v, txt()); closeModal(); A.lint(mid, v.clauseId); commit('Accepted — corporate text updated'); } else { decideVariation(m, vid, 'approve', txt()); closeModal(); commit(`Approved — ${dept(v.deptId).name} edition updated`); } };
+      if ($('#rv-ret')) $('#rv-ret').onclick = () => { const t = txt(); if (!t) { $('#rv-c').focus(); return toast('Add a comment explaining what to change', 'bad'); } if (base) { Object.assign(v, { status:'returned', decidedBy:S.me, decidedAt:now(), comment:t }); v.thread.push({ ts:now(), userId:S.me, text:'Returned: ' + t }); notify(v.requestedBy, `${uname(S.me)} returned your revision on ${n}: “${t.slice(0, 80)}”`, L(m) + '/t/book', 'changes'); log(m, `returned ${dept(v.deptId).name}'s revision on ${n}`, 'dept'); } else decideVariation(m, vid, 'return', t); closeModal(); commit('Returned to department with comments'); };
+      if ($('#rv-rev')) $('#rv-rev').onclick = () => { closeModal(); UI.lens[mid] = base ? '' : v.deptId; UI.suggest[mid] = true; go(L(m) + '/t/book'); setTimeout(() => A.suggest(mid, v.clauseId, vid), 60); };
+      if ($('#rv-rej')) $('#rv-rej').onclick = () => { const t = txt(); if (!t) { $('#rv-c').focus(); return toast('Add a reason for rejecting', 'bad'); } Object.assign(v, { status:'rejected', decidedBy:S.me, decidedAt:now(), comment:t }); v.thread.push({ ts:now(), userId:S.me, text:'Rejected: ' + t }); notify(v.requestedBy, `${uname(S.me)} rejected your revision on ${n}: “${t.slice(0, 80)}”`, L(m), 'changes'); log(m, `rejected ${dept(v.deptId).name}'s revision on ${n}`, 'dept'); closeModal(); commit('Revision rejected'); };
+      if ($('#rv-del')) $('#rv-del').onclick = () => { const l = reqList(m, 'base'); l.splice(l.indexOf(v), 1); closeModal(); commit('Draft deleted'); };
+      if ($('#rv-w')) $('#rv-w').onclick = () => { v.status = 'withdrawn'; log(m, 'withdrew change request on ' + n); closeModal(); commit('Withdrawn'); };
+    };
+    draw();
+  },
+});
+function editSummary(m, v) {
+  const c = clause(m, v.clauseId); if (!c || !v.before) return '';
+  const cs = changeSet(m, c, v.before, v.after, v.scope === 'base');
+  return `<div class="row wrap gap4 mt12">${summaryChips(cs, v.after)}${cs.flags.length ? `<span class="pill p-red">${ic('alert', 'sm')} ${cs.flags.length} weakening flag${cs.flags.length > 1 ? 's' : ''}</span>` : ''}</div>
+    ${cs.wd.changed ? `<div class="dtext mini mt8">${cs.wd.inline}</div>` : ''}`;
+}
+
+/* ============ Process-driven manual workspace: one screen per stage, one view per role ============ */
+UI.dsel = UI.dsel || {}; UI.asgF = UI.asgF || {};
+
+function roleIn(m) {
+  if (isOwner(m)) return 'owner';
+  if (m.stage === 'drafting' && (writeScope(m).size || reviewQueue(m).length)) return 'writer';
+  if (m.stage === 'dept_review' && m.deptReview && m.deptReview.items.some(i => i.deptId === me().deptId)) return 'deptrev';
+  if (m.stage === 'approval' && m.approval && m.approval.steps.some(s => s.userId === S.me)) return 'approver';
+  if (m.stage === 'published') return 'deptpub';
+  return 'viewer';
+}
+
+function viewManual(m, r) {
+  const legacy = { dept:'dept_review', approval:'approval', variations:'published', conflicts:'compliance' };
+  if (r.tab && legacy[r.tab]) { r.stage = legacy[r.tab]; r.tab = null; }
+  if (r.tab === 'clauses') r.tab = null;
+  const role = roleIn(m);
+  if (r.tab === 'book') return mHead(m, role, 'book') + tabBook(m);
+  if (r.tab === 'activity') return mHead(m, role, 'activity') + tabActivity(m);
+  if (role === 'owner') {
+    if (r.cid && ['setup','compliance'].includes(m.stage)) return mHead(m, role) + `<div class="subnav"><a href="${L(m)}">${ic('chev', 'sm flip')} Back to ${STAGES[stageIdx(m.stage)].l}</a></div>` + studio(m, r, 'write');
+    if (r.cid || r.rid || (m.stage === 'drafting' && !r.stage && r.sub)) return mHead(m, role) + draftingOwner(m, r);
+    const st = r.stage && stageIdx(r.stage) <= stageIdx(m.stage) ? r.stage : m.stage;
+    if (st === 'drafting' && r.sub && r.sub !== 'assign') return mHead(m, role) + draftingOwner(m, r);
+    return mHead(m, role) + stageBar(m, st) + stageScreen(m, st, r);
+  }
+  if (role === 'writer') return mHead(m, role) + writerScreen(m, r);
+  if (role === 'deptrev') return mHead(m, role) + deptReviewerScreen(m);
+  if (role === 'approver') return mHead(m, role) + approverScreen(m);
+  if (role === 'deptpub') return mHead(m, role) + publishedDeptScreen(m);
+  return mHead(m, role) + `<div class="note info mb16">${ic('eye', 'sm')} You have no task in this manual at the moment. Here is the current version.</div>` + tabBook(m);
+}
+
+function mHead(m, role, sub) {
+  const step = m.approval?.steps.find(s => s.userId === S.me);
+  const line = { writer:`You are writing ${writeScope(m).size} clause${writeScope(m).size === 1 ? '' : 's'}. Submit each to the person who assigned it.`, deptrev:`Department review for ${esc(dept(me().deptId)?.name || '')} — owner: ${esc(uname(m.ownerId))}`, approver:`Approval as ${esc(step?.role || 'approver')} — owner: ${esc(uname(m.ownerId))}`, deptpub:`Published standard · ${esc(dept(me().deptId)?.name || '')} edition`, viewer:'' }[role];
+  return `<div class="mhead"><div class="grow" style="min-width:0"><div class="row wrap gap8"><span class="eyebrow mono">${m.code} · v${m.version}</span>${stageBadge(m.stage)}</div>
+      <h1 class="h1 mt8" ${role === 'owner' ? `style="cursor:text" title="Click to rename" onclick="A.renameManual('${m.id}')"` : ''}>${esc(m.title)}</h1>${line ? `<div class="small muted mt8">${line}</div>` : ''}</div>
+    <div class="row wrap">${sub || (role === 'owner' && route().cid) ? `<a class="btn" href="${L(m)}">${ic('chev', 'sm flip')} ${role === 'owner' ? 'Process' : 'Back'}</a>` : ''}${sub !== 'book' ? `<a class="btn" href="${L(m)}/t/book">${ic('book')} Book</a>` : ''}${role === 'owner' && sub !== 'activity' ? `<a class="btn ghost" href="${L(m)}/t/activity">${ic('clock')} History</a>` : ''}</div></div>`;
+}
+
+function stageBar(m, st) {
+  const ci = stageIdx(m.stage);
+  return `<div class="pbar">${STAGES.map((s, i) => { const state = i < ci ? 'done' : i === ci ? 'cur' : 'todo';
+    return `${i ? '<i class="pl"></i>' : ''}<a class="ps ${state} ${s.id === st ? 'view' : ''}" ${i <= ci ? `href="${L(m)}/s/${s.id}"` : ''} title="${s.l}"><span class="n">${state === 'done' ? '✓' : i + 1}</span><span class="l">${s.l}</span></a>`; }).join('')}</div>`;
+}
+function stageScreen(m, st, r) {
+  const past = stageIdx(st) < stageIdx(m.stage);
+  if (st === 'setup') return past ? `<div class="note info mb16">${ic('check', 'sm')} Assignments were sent ${m.assignSent ? rel(m.assignSent) : ''}. This is the plan that was sent.</div>` + assignTree(m, true) : setupScreen(m);
+  if (st === 'drafting') return draftingOwner(m, r);
+  if (st === 'compliance') return complianceScreen(m, past);
+  if (st === 'dept_review') return deptOwner(m, past);
+  if (st === 'approval') return approvalOwner(m);
+  return publishedOwner(m);
+}
+const pill = (cls, t) => `<span class="pill ${cls}">${t}</span>`;
+function subNav(items, on, right = '') { return `<div class="subnav">${items.map(([k, l, n, h]) => `<a class="${k === on ? 'on' : ''}" href="${h}">${l}${n ? ` <span class="sn">${n}</span>` : ''}</a>`).join('')}<span class="grow"></span>${right}</div>`; }
+
+/* ================= 1 · Structure & Assignment ================= */
+function setupScreen(m) {
+  const n = nums(m), M = m.id;
+  const plan = {}; m.clauses.forEach(c => { if (c.assigneeId) (plan[c.assigneeId] = plan[c.assigneeId] || []).push(c); });
+  const own = m.clauses.filter(c => responsibleFor(m, c) === m.ownerId).length;
+  const rows = flat(m).map(({ c, d }) => `<div class="surow" style="--d:${d}">
+      <span class="num mono">${n[c.id]}</span>
+      <input class="lin grow sut ${d === 0 ? 'b' : ''}" value="${esc(c.title)}" onchange="A.suTitle('${M}','${c.id}',this.value)">
+      <select class="select susel" onchange="A.suAssign('${M}','${c.id}',this.value)"><option value="">${d === 0 ? 'I will write it' : 'Same as parent'}</option>${userOpts(c.assigneeId, u => u.id !== m.ownerId)}</select>
+      <input type="date" class="input sudate" value="${isoDate(c.deadline)}" ${c.assigneeId ? '' : 'disabled'} onchange="A.suDeadline('${M}','${c.id}',this.value)">
+      <span class="suact"><button class="tbtn" title="Add sub-clause" onclick="A.addSub('${M}','${c.id}')">${ic('plus', 'sm')}</button><button class="tbtn" title="Move up" onclick="A.move('${M}','${c.id}',-1)">${ic('arrowup', 'sm')}</button><button class="tbtn" title="Move down" onclick="A.move('${M}','${c.id}',1)">${ic('arrowdown', 'sm')}</button><button class="tbtn" title="Delete" onclick="A.delClause('${M}','${c.id}')">${ic('trash', 'sm')}</button></span></div>`).join('');
+  return `<div class="flowgrid">
+    <div class="card"><div class="hd"><h3>${ic('list')} Clause structure</h3><span class="small muted">Write the clauses and choose who writes each one. Nobody is notified until you send.</span><button class="btn sm right" onclick="A.addSub('${M}','')">${ic('plus', 'sm')} Add chapter</button></div>
+      <div class="suhead"><span>No.</span><span class="grow">Clause title</span><span style="width:200px">Writer</span><span style="width:140px">Deadline</span><span style="width:112px"></span></div>
+      <div class="sulist">${rows || '<div class="empty">Add the first chapter to start.</div>'}</div></div>
+    <div class="col gap16"><div class="card"><div class="hd"><h3>${ic('users')} Assignment plan</h3></div><div class="bd col gap12">
+      ${Object.entries(plan).map(([u, cs]) => `<div class="row gap12">${av(u)}<div class="grow"><b class="small">${esc(uname(u))}</b><div class="xs muted">${cs.map(c => n[c.id]).join(', ')}</div></div><span class="xs muted">${cs.map(c => c.deadline).filter(Boolean).length ? 'due ' + fmtD(Math.min(...cs.map(c => c.deadline).filter(Boolean))) : ''}</span></div>`).join('') || '<div class="small muted">No one assigned yet — use the Writer column.</div>'}
+      <div class="divider" style="margin:4px 0"></div><div class="row gap12">${av(m.ownerId)}<div class="grow"><b class="small">You</b><div class="xs muted">${own} clause${own === 1 ? '' : 's'} you write yourself</div></div></div></div>
+      <div class="hd" style="border-top:1px solid var(--line2);border-bottom:0"><button class="btn acc grow" ${m.clauses.length ? '' : 'disabled'} onclick="A.sendAssignments('${M}')">${ic('send')} Send assignments & start writing</button></div></div>
+      <div class="note small">${ic('alert', 'sm')} Each writer sees only the clauses assigned to them. They can add sub-clauses and delegate parts to others; their work comes back to you for review.</div></div></div>`;
+}
+
+/* ================= 2 · Writing & Review ================= */
+function draftingOwner(m, r) {
+  const sub = r.rid ? 'reviews' : r.cid ? 'write' : (r.sub || 'assign'), q = reviewQueue(m), ws = writeScope(m).size;
+  const ready = m.stage === 'drafting' && kids(m, null).length && kids(m, null).every(c => c.status === 'approved');
+  const nav = subNav([['assign', 'Assignments', 0, `${L(m)}/s/drafting/assign`], ['write', 'My writing', ws, `${L(m)}/s/drafting/write`], ['reviews', 'Reviews', q.length, `${L(m)}/s/drafting/reviews`]], sub,
+    m.stage === 'drafting' ? `<button class="btn ${ready ? 'acc' : ''}" ${ready ? '' : 'disabled title="All chapters must be approved first"'} onclick="A.toCompliance('${m.id}')">${ic('shield')} Run compliance check ${ic('chev', 'sm')}</button>` : '');
+  if (sub === 'write') return nav + studio(m, r, 'write');
+  if (sub === 'reviews') return nav + (r.rid ? studio(m, r, 'review') : reviewList(m, q));
+  return nav + assignTree(m, m.stage !== 'drafting');
+}
+function writerScreen(m, r) {
+  const q = reviewQueue(m), sub = r.rid ? 'reviews' : r.sub === 'reviews' ? 'reviews' : 'write';
+  const hasDeleg = m.clauses.some(c => c.assignedById === S.me && c.assigneeId !== S.me);
+  const nav = q.length || hasDeleg ? subNav([['write', 'My clauses', writeScope(m).size, `${L(m)}/s/drafting/write`], ['reviews', 'Reviews', q.length, `${L(m)}/s/drafting/reviews`]], sub) : '';
+  if (sub === 'reviews') return nav + (r.rid ? studio(m, r, 'review') : reviewList(m, q));
+  return nav + studio(m, r, 'write');
+}
+function reviewList(m, q) {
+  const n = nums(m);
+  return `<div class="card"><div class="hd"><h3>${ic('eye')} Waiting for your review</h3><span class="small muted">Open a submission to comment on the text and approve or return it</span></div><div class="bd col gap12">
+    ${q.map(c => `<a class="rqrow" href="#/m/${m.id}/r/${c.id}">${av(c.assigneeId)}<div class="grow"><b>${n[c.id]} ${esc(c.title)}</b><div class="xs muted">Submitted by ${esc(uname(c.assigneeId))} ${rel(c.submittedAt)} · ${descendants(m, c.id).length} sub-clause${descendants(m, c.id).length === 1 ? '' : 's'}</div></div>${pill('p-amb', 'In review')}<span class="btn sm acc">Review ${ic('chev', 'sm')}</span></a>`).join('') || '<div class="empty">Nothing waiting for you.</div>'}</div></div>`;
+}
+function chainOf(m, c) { const ch = [m.ownerId]; [...ancestors(m, c), c].forEach(x => { if (x.assigneeId && ch[ch.length - 1] !== x.assigneeId) ch.push(x.assigneeId); }); return ch; }
+function assignTree(m, readonly) {
+  const n = nums(m), f = UI.asgF[m.id] || '';
+  const ppl = {}; m.clauses.forEach(c => { if (c.assigneeId) { const p = ppl[c.assigneeId] || (ppl[c.assigneeId] = { n:0, ok:0, rev:0, od:0 }); p.n++; if (c.status === 'approved') p.ok++; if (c.status === 'submitted') p.rev++; if (c.deadline && c.deadline < now() && c.status !== 'approved') p.od++; } });
+  const rows = flat(m).filter(({ c }) => !f || responsibleFor(m, c) === f || c.assigneeId === f).map(({ c, d }) => { const di = dueInfo(c.deadline, c.status === 'approved'), ch = chainOf(m, c);
+    return `<tr><td><div class="row" style="padding-left:${d * 18}px"><span class="mono xs muted" style="min-width:40px">${n[c.id]}</span><span class="${d === 0 ? 'b' : ''} small">${esc(c.title)}</span></div></td>
+      <td><div class="row">${av(responsibleFor(m, c), 'sm')}<span class="small">${esc(uname(responsibleFor(m, c)))}</span>${c.assigneeId ? '' : '<span class="xs faint">(with parent)</span>'}</div></td>
+      <td><div class="chain">${ch.map((u, i) => `${i ? '<span class="arr">›</span>' : ''}${av(u, 'sm')}`).join('')}</div></td>
+      <td>${c.assigneeId ? `<span class="badge ${di.cls}">${di.t}</span>` : ''}</td>
+      <td><span class="badge ${ST[c.status].b}">${ST[c.status].l}</span></td>
+      <td class="nowrap">${!readonly && canAssign(m, c) ? `<button class="tbtn" onclick="A.assign('${m.id}','${c.id}')">${ic('user', 'sm')} ${c.assigneeId ? 'Reassign' : 'Assign'}</button>` : ''}<a class="tbtn" href="#/m/${m.id}/r/${c.id}">${ic('eye', 'sm')} View</a></td></tr>`; }).join('');
+  return `<div class="pcards">${Object.entries(ppl).map(([u, p]) => `<button class="pcard ${f === u ? 'on' : ''}" onclick="UI.asgF['${m.id}']=UI.asgF['${m.id}']==='${u}'?'':'${u}';rerender()">${av(u)}<div class="grow"><b class="small">${esc(uname(u))}</b><div class="xs muted">${p.n} assigned · ${p.ok} approved${p.rev ? ` · ${p.rev} in review` : ''}</div><div class="bar mt8" style="height:4px"><i style="width:${p.ok / p.n * 100}%;background:var(--teal)"></i></div></div>${p.od ? `<span class="badge b-red">${p.od} overdue</span>` : ''}</button>`).join('') || '<div class="small muted">No assignments.</div>'}</div>
+  <div class="card mt16"><div class="hd"><h3>${ic('git')} Who is writing what</h3><span class="small muted">The chain shows who assigned each clause to whom</span>${f ? `<button class="btn xs right" onclick="UI.asgF['${m.id}']='';rerender()">${ic('x', 'sm')} ${esc(uname(f))}</button>` : ''}</div>
+    <div style="overflow-x:auto"><table class="tbl"><thead><tr><th>Clause</th><th>Writer</th><th>Assigned by</th><th>Deadline</th><th>Status</th><th></th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+}
+
+/* ================= 3 · Compliance check ================= */
+function complianceScreen(m, past) {
+  const open = openConf(m).length, checked = m.conflictsAt && m.conflictsAt >= (m.complianceStartedAt || 0);
+  const sendCard = past ? '' : `<div class="card mt16"><div class="hd"><h3>${ic('building')} Next: send to departments</h3></div><div class="bd">
+    ${!checked ? `<div class="note warn small">${ic('alert', 'sm')} Run the compliance check first.</div>` : open ? `<div class="note warn small">${ic('alert', 'sm')} Resolve or dismiss the ${open} open finding${open > 1 ? 's' : ''} above before departments see the standard.</div>`
+      : `<p class="small muted" style="margin-top:0">Choose the departments that review this standard. They read it as a book and propose revisions; you decide on each one.</p>${deptPicker(m.id)}<div class="row mt16"><label class="small">Review period</label><input class="input" type="number" min="1" id="dr-days" value="${S.settings.defaultDeptDays}" style="width:80px"><span class="small muted">days</span><span class="grow"></span><button class="btn acc" onclick="A.sendDepts2('${m.id}')">${ic('send')} Send to ${UI.dsel[m.id].size} department${UI.dsel[m.id].size === 1 ? '' : 's'}</button></div>`}
+  </div></div>`;
+  return tabConflicts(m) + sendCard;
+}
+function allDivs() { const known = DIVS.flatMap(d => d.depts); const oth = S.departments.filter(d => !known.includes(d.id)).map(d => d.id); return [...DIVS, ...(oth.length ? [{ id:'D-OTH', name:'Other units', depts:oth }] : [])]; }
+function deptPicker(mid) {
+  const sel = UI.dsel[mid] || (UI.dsel[mid] = new Set(S.departments.filter(d => d.id !== 'EXE' && d.id !== (manual(mid).governanceDeptId || 'NONE')).map(d => d.id)));
+  return `<div class="dtree"><div class="dtroot">${ic('building', 'sm')} <b>${esc(S.settings.company)}</b><span class="xs muted">${sel.size} selected</span><button class="tbtn right" onclick="A.dselAll('${mid}')">Select all</button></div>
+    ${allDivs().map(dv => { const ids = dv.depts.filter(dept), k = ids.filter(i => sel.has(i)).length;
+      return `<div class="dtn"><label class="dtd"><input type="checkbox" ${k === ids.length && k ? 'checked' : ''} ${k && k < ids.length ? 'data-ind' : ''} onchange="A.dselDiv('${mid}','${dv.id}',this.checked)"><b>${dv.name}</b><span class="xs muted">${k}/${ids.length}</span></label>
+        <div class="dtc">${ids.map(id => `<label class="dtl"><input type="checkbox" ${sel.has(id) ? 'checked' : ''} onchange="A.dsel('${mid}','${id}',this.checked)">${esc(dept(id).name)}<span class="xs muted">· ${esc(uname(deptHead(id)))}</span></label>`).join('')}</div></div>`; }).join('')}</div>`;
+}
+
+/* ================= 4 · Department review ================= */
+const DI_ST = { pending:['p-amb','Reviewing'], accepted:['p-grn','No changes'], submitted:['p-lav','Revisions sent'], returned:['p-lav','Revisions sent'] };
+function deptOwner(m, past) {
+  const dr = m.deptReview; if (!dr) return '<div class="card empty">Not started.</div>';
+  const ps = (m.proposals || []).filter(p => p.status !== 'draft' && p.status !== 'withdrawn');
+  const pend = ps.filter(p => p.status === 'pending').length, waiting = dr.items.filter(i => i.status === 'pending');
+  const complete = !waiting.length && !pend;
+  const tree = allDivs().map(dv => { const its = dr.items.filter(i => dv.depts.includes(i.deptId)); if (!its.length) return '';
+    return `<div class="stdiv"><div class="stdh">${ic('building', 'sm')} ${dv.name}</div>${its.map(i => { const mine = ps.filter(p => p.deptId === i.deptId); const [c, l] = DI_ST[i.status] || DI_ST.pending; const d = dueInfo(i.deadline, i.status !== 'pending');
+      return `<div class="stdl">${av(i.reviewerId, 'sm')}<div class="grow"><b class="small">${esc(dept(i.deptId).name)}</b><div class="xs muted">${esc(uname(i.reviewerId))}</div></div>${mine.length ? `<span class="xs muted">${mine.length} revision${mine.length > 1 ? 's' : ''}${mine.filter(p => p.status === 'pending').length ? ` · <b style="color:var(--amber)">${mine.filter(p => p.status === 'pending').length} to decide</b>` : ''}</span>` : ''}${pill(c, l)}${i.status === 'pending' ? `<span class="badge ${d.cls}">${d.t}</span>${past ? '' : `<button class="tbtn" onclick="A.remind('${m.id}','${i.reviewerId}')">${ic('bell', 'sm')}</button>`}` : ''}</div>`; }).join('')}</div>`; }).join('');
+  return `<div class="flowgrid">
+    <div class="col gap16"><div class="card"><div class="hd"><h3>${ic('building')} Round ${dr.round}</h3><span class="small muted">sent ${fmtD(dr.startedAt)}</span>${(m.deptRounds || []).length ? `<span class="xs muted right">${m.deptRounds.length} earlier round${m.deptRounds.length > 1 ? 's' : ''}</span>` : ''}</div><div class="bd">${tree}</div></div>
+      ${proposalsCard(m)}</div>
+    <div class="col gap16">${past ? '' : `<div class="card"><div class="hd"><h3>${ic('flag')} Next step</h3></div><div class="bd col gap12">
+      ${complete ? `<div class="note good small">${ic('check', 'sm')} Every department has responded and every revision is decided.</div>
+        <button class="btn" onclick="A.newRound('${m.id}')">${ic('refresh')} Send another round</button><button class="btn acc" onclick="A.toApproval('${m.id}')">${ic('shieldck')} Send to approval chain</button>`
+      : `<div class="small">${waiting.length ? `Waiting for <b>${waiting.length}</b> department${waiting.length > 1 ? 's' : ''} to finish: ${waiting.map(i => esc(dept(i.deptId).name)).join(', ')}.` : ''}${pend ? `<div class="mt8"><b>${pend}</b> revision${pend > 1 ? 's' : ''} waiting for your decision.</div>` : ''}</div>`}
+    </div></div>`}
+    <div class="note small">${ic('book', 'sm')} Open the <a href="${L(m)}/t/book">Book</a> to see every pending revision marked on its clause.</div></div></div>`;
+}
+function myProposals(m) {
+  const ps = (m.proposals || []).filter(p => p.requestedBy === S.me && p.status !== 'withdrawn'), n = nums(m);
+  if (!ps.length) return '';
+  return `<div class="card mb16"><div class="hd"><h3>${ic('edit')} Your revisions</h3></div><div class="bd col gap8">${ps.map(p => `<div class="row gap12"><b class="mono small">${n[p.clauseId]}</b><span class="small grow">${esc(clause(m, p.clauseId)?.title || '')}</span>${varStatus(p)}<button class="btn xs" onclick="A.reviewReq('${m.id}','${p.id}')">${p.status === 'returned' ? 'See comments' : 'Open'}</button></div>`).join('')}</div></div>`;
+}
+function deptReviewerScreen(m) {
+  const it = m.deptReview.items.find(i => i.deptId === me().deptId), drafts = (m.proposals || []).filter(p => p.status === 'draft' && p.requestedBy === S.me);
+  const d = dueInfo(it.deadline, it.status !== 'pending');
+  if (it.status === 'pending') UI.suggest[m.id] = true; UI.lens[m.id] = '';
+  return `<div class="taskcard"><div class="grow"><div class="row wrap gap8"><b>${esc(dept(it.deptId).name)} review · round ${m.deptReview.round}</b>${pill((DI_ST[it.status] || DI_ST.pending)[0], (DI_ST[it.status] || DI_ST.pending)[1])}${it.status === 'pending' ? `<span class="badge ${d.cls}">${d.t}</span>` : ''}</div>
+      <div class="small muted mt8">${it.status === 'pending' ? 'Read the standard below. Click <b>Propose revision</b> on any clause to add, change or remove text — revisions stay as drafts until you send your review.' : `You sent your review ${rel(it.actedAt)}. The owner decides on each revision; returned ones come back to you.`}</div></div>
+    ${it.status === 'pending' ? (drafts.length ? `<button class="btn acc" onclick="A.sendDeptReview2('${m.id}')">${ic('send')} Send ${drafts.length} revision${drafts.length > 1 ? 's' : ''} to ${esc(uname(m.ownerId).split(' ')[0])}</button>` : `<button class="btn ok" onclick="A.sendDeptReview2('${m.id}')">${ic('check')} No changes — accept</button>`) : ''}</div>
+  ${myProposals(m)}${tabBook(m)}`;
+}
+
+/* ================= 5 · Approval ================= */
+function approvalOwner(m) { return tabApproval(m) + ((m.proposals || []).some(p => p.origin === 'approval' && p.status !== 'draft') ? `<div class="mt16">${proposalsCard(m, 'approval')}</div>` : ''); }
+function approverScreen(m) {
+  const s = m.approval.steps.find(x => x.userId === S.me), live = s.status === 'pending' && m.approval.status === 'in_progress';
+  const drafts = (m.proposals || []).filter(p => p.status === 'draft' && p.requestedBy === S.me);
+  UI.suggest[m.id] = live; UI.lens[m.id] = '';
+  const d = dueInfo(s.deadline, !live);
+  return `<div class="taskcard"><div class="grow"><div class="row wrap gap8"><b>${esc(s.role)}</b>${pill(live ? 'p-amb' : s.status === 'approved' ? 'p-grn' : 'p-gry', live ? 'Your approval is needed' : s.status === 'approved' ? 'You signed' : s.status === 'waiting' ? 'Waiting for earlier approvers' : s.status)}${live ? `<span class="badge ${d.cls}">${d.t}</span>` : ''}</div>
+      <div class="small muted mt8">${live ? 'Read the standard. If something must change, click <b>Propose revision</b> on the clause — then send your revisions to the owner instead of signing.' : ''}</div></div>
+    ${live ? `${drafts.length ? `<button class="btn" onclick="A.sendApproverChanges('${m.id}','${s.id}')">${ic('send')} Send ${drafts.length} revision${drafts.length > 1 ? 's' : ''} to owner</button>` : `<button class="btn ok" onclick="A.apAct('${m.id}','${s.id}','approve')">${ic('check')} Approve & sign</button>`}<button class="btn ghost" onclick="A.delegate('${m.id}','${s.id}')">${ic('fwd')} Delegate</button>` : ''}</div>
+  ${myProposals(m)}${tabBook(m)}`;
+}
+
+/* ================= 6 · Published ================= */
+function publishedOwner(m) { return `<div class="note info mb16 row wrap">${ic('book', 'sm')}<span class="grow">Published v${m.version} on ${fmtD(m.publishedAt)}. Departments request variations for their own edition — approved ones apply immediately.</span><a class="btn sm" href="${L(m)}/t/book">Open book</a><button class="btn sm ghost" onclick="A.revise('${m.id}')">${ic('git', 'sm')} Start new revision</button></div>` + tabVariations(m); }
+function publishedDeptScreen(m) { UI.varDept = me().deptId; const v = m.variations.some(x => x.deptId === me().deptId) ? tabVariations(m) : ''; UI.varDept = null; return tabBook(m) + (v ? `<div class="mt24">${v}</div>` : ''); }
+
+/* ================= shared ================= */
+function conflictCard(m, x, compact) {
+  const c = clause(m, x.clauseId), n = nums(m)[x.clauseId]; if (!c) return '';
+  const stale = x.quote && !c.body.includes(x.quote) && x.rule !== 'req';
+  const canFix = c.body.includes(x.quote) && (canEdit(m, c) || isOwner(m)) && m.stage !== 'published';
+  return `<div class="cfc" id="cf-${x.id}" onclick="${compact ? `A.flashMark('${x.id}')` : `go('#/m/${m.id}/r/${c.id}')`}">
+    <div class="row wrap"><span class="badge ${x.severity === 'high' ? 'b-red' : x.severity === 'medium' ? 'b-amber' : 'b-blue'}">${x.severity}</span><b class="small">${esc(x.reference)}</b>${!compact ? `<span class="mono small muted right">${n} ${esc(c.title)}</span>` : ''}</div>
+    <div class="q">“${esc(x.quote)}”</div><div class="small">${esc(x.explanation)}</div>
+    ${x.suggestion ? `<div class="note good small mt8"><b>Suggested:</b> ${esc(x.suggestion)}</div>` : ''}
+    ${stale ? `<div class="xs muted mt8">${ic('check', 'sm')} Text changed since the check — re-run to confirm.</div>` : ''}
+    <div class="row mt8 wrap" onclick="event.stopPropagation()">${canFix && x.suggestion ? `<button class="btn xs ok" onclick="A.applyFix('${m.id}','${x.id}')">${ic('check', 'sm')} Apply suggestion</button>` : ''}${isOwner(m) && m.stage === 'compliance' ? `<a class="btn xs" href="#/m/${m.id}/c/${c.id}">${ic('edit', 'sm')} Edit clause</a>` : ''}${isOwner(m) || controls(m, c) ? `<button class="btn xs ghost" onclick="A.dismissConf('${m.id}','${x.id}')">Dismiss</button>` : ''}</div></div>`;
+}
+function startDeptRound(m, ids, days) {
+  if (m.deptReview) (m.deptRounds = m.deptRounds || []).push(m.deptReview);
+  const round = m.deptReview ? m.deptReview.round + 1 : 1;
+  m.stage = 'dept_review';
+  m.deptReview = { round, startedAt:now(), items:ids.map(d => ({ deptId:d, reviewerId:deptHead(d), status:'pending', deadline:now() + days * DAY, note:'', actedAt:null })) };
+  m.deptReview.items.forEach(i => notify(i.reviewerId, `${m.title} is ready for ${dept(i.deptId).name} review (round ${round}) — due ${fmtD(i.deadline)}`, L(m), 'dept'));
+  log(m, `sent round ${round} to ${ids.length} departments`, 'dept');
+}
+
+Object.assign(A, {
+  suTitle(mid, cid, v) { const [m, c] = MC(mid, cid); c.title = v; save(); },
+  suAssign(mid, cid, u) { const [m, c] = MC(mid, cid); assignClause(m, c, u || null, u ? (c.deadline || now() + S.settings.defaultClauseDays * DAY) : null); commit(); },
+  suDeadline(mid, cid, v) { const [m, c] = MC(mid, cid); c.deadline = fromIso(v); save(); },
+  sendAssignments(mid) {
+    const m = manual(mid), by = {}; m.clauses.forEach(c => { if (c.assigneeId && c.assigneeId !== m.ownerId) (by[c.assigneeId] = by[c.assigneeId] || []).push(c); });
+    m.stage = 'drafting'; m.assignSent = now();
+    Object.entries(by).forEach(([u, cs]) => notify(u, `${uname(S.me)} assigned you ${cs.length} clause${cs.length > 1 ? 's' : ''} to write in ${m.title} — first due ${fmtD(Math.min(...cs.map(c => c.deadline || 9e15)))}`, '#/writing', 'assign'));
+    log(m, `sent assignments to ${Object.keys(by).length} writers`, 'assign');
+    commit(`Assignments sent to ${Object.keys(by).length} writer${Object.keys(by).length === 1 ? '' : 's'}`); go(L(m) + '/s/drafting/assign');
+  },
+  toCompliance(mid) { const m = manual(mid); m.stage = 'compliance'; m.complianceStartedAt = now(); log(m, 'moved to compliance check'); save(); go(L(m)); setTimeout(() => A.check(mid), 50); },
+  dselRefresh(mid) { if ($('#nr-tree')) { $('#nr-tree').innerHTML = deptPicker(mid); $$('#nr-tree [data-ind]').forEach(e => e.indeterminate = true); } else rerender(); },
+  dsel(mid, id, on) { const s = UI.dsel[mid]; on ? s.add(id) : s.delete(id); A.dselRefresh(mid); },
+  dselDiv(mid, dv, on) { const s = UI.dsel[mid]; allDivs().find(d => d.id === dv).depts.forEach(id => on ? s.add(id) : s.delete(id)); A.dselRefresh(mid); },
+  dselAll(mid) { const s = UI.dsel[mid]; S.departments.forEach(d => s.add(d.id)); A.dselRefresh(mid); },
+  sendDepts2(mid) { const m = manual(mid), ids = [...UI.dsel[mid]]; if (!ids.length) return toast('Select at least one department', 'bad'); startDeptRound(m, ids, +($('#dr-days')?.value) || S.settings.defaultDeptDays); commit(`Sent to ${ids.length} departments`); go(L(m)); },
+  newRound(mid) {
+    const m = manual(mid); UI.dsel[mid] = new Set(m.deptReview.items.map(i => i.deptId));
+    modal({ title:`Send round ${m.deptReview.round + 1}`, wide:true, body:`<p class="small muted" style="margin-top:0">Choose who reviews the updated standard again.</p><div id="nr-tree">${deptPicker(mid)}</div><div class="row mt16"><label class="small">Review period</label><input class="input" type="number" min="1" id="dr-days" value="${S.settings.defaultDeptDays}" style="width:80px"><span class="small muted">days</span></div>`,
+      foot:`<button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn acc" id="nr-ok">${ic('send')} Send round</button>` });
+    $$('#nr-tree [data-ind]').forEach(e => e.indeterminate = true);
+    $('#nr-ok').onclick = () => { const ids = [...UI.dsel[mid]]; if (!ids.length) return toast('Select at least one department', 'bad'); startDeptRound(m, ids, +$('#dr-days').value || 7); closeModal(); commit(`Round ${m.deptReview.round} sent`); };
+  },
+  toApproval(mid) { const m = manual(mid); m.stage = 'approval'; m.approval = null; UI.chain = null; log(m, 'department review completed'); commit(); go(L(m)); },
+  sendDeptReview2(mid) {
+    const m = manual(mid), it = m.deptReview.items.find(i => i.deptId === me().deptId), drafts = (m.proposals || []).filter(p => p.status === 'draft' && p.requestedBy === S.me);
+    drafts.forEach(p => { p.status = 'pending'; p.ts = now(); });
+    it.status = drafts.length ? 'submitted' : 'accepted'; it.actedAt = now(); it.actedBy = S.me;
+    notify(m.ownerId, drafts.length ? `${dept(it.deptId).name} sent ${drafts.length} revision${drafts.length > 1 ? 's' : ''} on ${m.title}` : `${dept(it.deptId).name} accepted ${m.title} without changes`, L(m), drafts.length ? 'variation' : 'approved');
+    log(m, drafts.length ? `${dept(it.deptId).name} sent ${drafts.length} revisions` : `${dept(it.deptId).name} accepted without changes`, 'dept');
+    commit(drafts.length ? 'Review sent to the owner' : 'Accepted without changes');
+  },
+  sendApproverChanges(mid, sid) {
+    const m = manual(mid), drafts = (m.proposals || []).filter(p => p.status === 'draft' && p.requestedBy === S.me);
+    drafts.forEach(p => { p.status = 'pending'; p.ts = now(); });
+    approvalAct(m, sid, 'return', `Proposed ${drafts.length} revision${drafts.length > 1 ? 's' : ''} — please decide on them and resubmit`);
+    commit('Revisions sent to the owner');
+  },
+});
 
 boot();
 </script>
