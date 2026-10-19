@@ -984,6 +984,47 @@ textarea.pp-title{border-bottom:1.5px dashed var(--line)} textarea.pp-title:focu
 .stn{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;text-decoration:none;color:inherit}
 .stn .mono{color:var(--muted);min-width:34px} .stn:hover{background:var(--surface2)} .stn.on{background:var(--accent-soft)} .stn.on .mono{color:var(--accent)}
 .st-sec{padding:12px 14px;border-top:1px solid var(--line2)}
+/* compact cards in the clause panel */
+.pcard2{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.pc-h{display:flex;align-items:center;gap:8px;padding:10px 12px;background:var(--surface2);border-bottom:1px solid var(--line2);font-size:13px}
+.pc-row{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;border-top:1px solid var(--line2);background:transparent;padding:10px 12px;cursor:pointer;font:inherit;color:inherit}
+.pc-row:first-of-type{border-top:0} .pc-row:hover{background:var(--accent-soft)}
+.pc-t{font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc-s{font-size:11.5px;color:var(--muted);display:flex;gap:4px;align-items:center;margin-top:2px} .pc-s.red{color:var(--red)}
+.pc-v{font:700 15px var(--sans);white-space:nowrap} .pc-v small{font-weight:500;font-size:11.5px;color:var(--muted)}
+.pc-empty{padding:12px;font-size:12.5px;color:var(--muted)}
+.pc-list{margin:0;padding:10px 12px 10px 32px;font-size:13px;line-height:1.6} .pc-list li::marker{color:var(--accent);font-weight:700}
+.pc-tl{padding:6px 12px}
+.pc-tli{display:flex;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line2)} .pc-tli:last-child{border-bottom:0}
+.pc-when{font:700 11px var(--sans);color:var(--accent);min-width:84px}
+/* pop-up editors */
+.ed-sec{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px;background:var(--surface)}
+.ed-h{display:flex;align-items:center;gap:8px;font:600 12px var(--sans);text-transform:uppercase;letter-spacing:.8px;color:var(--ink2);margin-bottom:12px}
+.ed-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px}
+.seg2{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden} .seg2 button{flex:1;border:0;background:var(--surface);padding:9px;font:600 12.5px var(--sans);cursor:pointer;color:var(--muted)}
+.seg2 button.on.max{background:var(--red-soft);color:var(--red)} .seg2 button.on.min{background:var(--teal-soft);color:var(--teal)}
+.le-sum{margin-top:14px;padding:10px 12px;border-radius:9px;background:var(--surface2);font-size:13.5px}
+.ed-step{border:1px solid #F3C9C9;border-left:4px solid var(--red);border-radius:10px;padding:12px;margin-bottom:10px;background:color-mix(in srgb,var(--red-soft) 40%,var(--surface))}
+.ed-step-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px} .ed-step-h .select,.ed-step-h .input{padding:6px 8px}
+.ed-acts{display:flex;flex-direction:column;gap:6px}
+.ed-ah,.ed-ar{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) 32px;gap:8px;align-items:center}
+.ed-ah span{font:600 11px var(--sans);color:var(--muted)}
+.ed-ar .input{padding:7px 10px}
+.ed-pt{display:flex;align-items:center;gap:8px;margin-bottom:8px} .ed-n{font:700 12px var(--mono);color:var(--accent);width:24px}
+.ed-tlh,.ed-tl{display:grid;grid-template-columns:184px minmax(0,2fr) minmax(0,1fr) 32px;gap:8px;align-items:center}
+.ed-tlh{margin-bottom:6px} .ed-tlh span{font:600 11px var(--sans);color:var(--muted)} .ed-tl{margin-bottom:8px}
+@media (max-width:700px){ .ed-grid,.ed-tlh,.ed-tl{grid-template-columns:1fr} .ed-ah{display:none} .ed-ar{grid-template-columns:1fr 32px} .ed-ar .input:nth-child(2){grid-column:1} }
+
+.pc-sub{font:600 10.5px var(--sans);text-transform:uppercase;letter-spacing:.8px;color:var(--muted);padding:10px 12px 4px;border-top:1px solid var(--line2)}
+.pc-h + .pc-sub{border-top:0}
+.rq-item{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden;background:var(--surface)}
+.rq-item.open{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.rq-row{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer} .rq-row:hover{background:var(--surface2)}
+.rq-n{width:24px;height:24px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;font:700 11px var(--sans);flex:none}
+.rq-item.open .rq-n{background:var(--accent);color:#fff}
+.rq-row .pc-s{white-space:normal;line-height:1.45}
+.rq-chev{color:var(--muted)}
+.rq-form{padding:14px 16px 16px;border-top:1px dashed var(--line);background:var(--surface2)}
 
 </style>
 </head>
@@ -3925,8 +3966,7 @@ function propsPanel(m, c, ed, scope, inScope) {
       <div class="pp-row"><span class="pp-l">Status</span><span class="pp-v"><span class="pchip st" style="--sc:${ST[c.status].c}"><i></i>${ST[c.status].l}</span></span></div>
       <div class="pp-row"><span class="pp-l">Progress</span><span class="pp-v">${ring(prog(m, c), 'sm', ST[c.status].c)}<span class="mono small">${prog(m, c)}%</span></span></div>
     </div>
-    <div class="pp-x">${xLimits(m, c, ed)}${xPoints(m, c, ed)}${xActions(m, c, ed)}
-      ${ed ? `<div class="addrow">${!c.requirements.length ? `<button class="tbtn" onclick="A.reqAdd('${m.id}','${c.id}')">${ic('target', 'sm')} Add limit</button>` : ''}${!c.steps.length ? `<button class="tbtn" onclick="A.ptAdd('${m.id}','${c.id}')">${ic('list', 'sm')} Add mandatory points</button>` : ''}${!c.actions.length ? `<button class="tbtn" onclick="A.actAdd('${m.id}','${c.id}')">${ic('clock', 'sm')} Add action timeline</button>` : ''}</div>` : ''}
+    <div class="pp-x">${pReq(m, c, ed)}${pActions(m, c, ed)}
       <div class="xbox"><div class="xh">${ic('git', 'sm')} Sub-clauses${canStructure(m, c) ? `<button class="tbtn right" onclick="A.addSub('${m.id}','${c.id}')">${ic('plus', 'sm')} Add</button>` : ''}</div>
         ${kidsL.length ? kidsL.map(k => `<a class="ppk" href="#/m/${m.id}/c/${k.id}"><span class="mono xs" style="color:var(--accent)">${nums(m)[k.id]}</span><span class="grow small">${esc(k.title)}</span>${k.assigneeId && k.assigneeId !== S.me ? av(k.assigneeId, 'sm') : ''}<span class="sdot" style="background:${ST[k.status].c}"></span></a>`).join('') : '<div class="xs muted" style="padding:10px 12px">No sub-clauses.</div>'}</div>
     </div>`;
@@ -4008,6 +4048,187 @@ Object.assign(A, {
   rtips() { modal({ title:'Writing tips', body:`<ul class="small" style="line-height:1.8;margin:0;padding-left:18px"><li>Use <b>shall</b> for mandatory requirements, <b>should</b> for recommendations.</li><li>Put numeric limits (MIN/MAX) in the clause panel, not in the text — the system checks them live.</li><li>Use the mandatory points for steps that must always happen.</li><li>Keep one requirement per sentence so reviewers can comment precisely.</li></ul>` }); },
   setDeadline(mid, cid, v) { const [m, c] = MC(mid, cid); c.deadline = fromIso(v); c.history.push({ ts:now(), userId:S.me, text:'Deadline set to ' + fmtD(c.deadline) }); if (c.assigneeId && c.assigneeId !== S.me && m.stage !== 'setup') notify(c.assigneeId, `${uname(S.me)} changed the deadline of ${nums(m)[c.id]} “${c.title}” to ${fmtD(c.deadline)}`, '#/writing', 'reminder'); commit('Deadline updated'); },
 });
+
+/* ============ Clause panel: compact summaries + roomy pop-up editors ============ */
+const UNITS = ['minutes','hours','days','weeks','months','years','%','m','persons','per week'];
+function pLimits(m, c, ed) {
+  const rows = c.requirements.map(q => { const st = q.breach || [], na = st.reduce((s, x) => s + x.actions.length, 0);
+    return `<button class="pc-row" ${ed ? `onclick="A.limitEditor('${m.id}','${c.id}','${q.id}')"` : `onclick="A.limitEditor('${m.id}','${c.id}','${q.id}',true)"`}>
+      <div class="grow" style="min-width:0"><div class="pc-t">${esc(q.label)}</div><div class="pc-s ${st.length ? 'red' : ''}">${st.length ? `${ic('alert', 'sm')} If breached: ${st.length} step${st.length > 1 ? 's' : ''} · ${na} action${na === 1 ? '' : 's'}` : 'No breach response yet'}</div></div>
+      <span class="tpill ${q.type}">${q.type.toUpperCase()}</span><b class="pc-v">${q.value}<small> ${esc(q.unit)}</small></b>${ed ? ic('chev', 'sm') : ''}</button>`; }).join('');
+  return `<div class="pcard2"><div class="pc-h">${ic('target', 'sm')}<b>Limits</b><span class="xs muted grow">${c.requirements.length || ''}</span>${ed ? `<button class="btn xs" onclick="A.limitEditor('${m.id}','${c.id}')">${ic('plus', 'sm')} Add limit</button>` : ''}</div>
+    ${rows || `<div class="pc-empty">No limits. ${ed ? 'Add a MIN/MAX limit and what must happen if it is breached.' : ''}</div>`}</div>`;
+}
+function pPoints(m, c, ed) {
+  return `<div class="pcard2"><div class="pc-h">${ic('list', 'sm')}<b>Mandatory points</b><span class="xs muted grow">${c.steps.length || ''}</span>${ed ? `<button class="btn xs" onclick="A.pointsEditor('${m.id}','${c.id}')">${ic(c.steps.length ? 'edit' : 'plus', 'sm')} ${c.steps.length ? 'Edit' : 'Add'}</button>` : ''}</div>
+    ${c.steps.length ? `<ol class="pc-list">${c.steps.map(p => `<li>${esc(p)}</li>`).join('')}</ol>` : '<div class="pc-empty">No mandatory points.</div>'}</div>`;
+}
+function pActions(m, c, ed) {
+  const acts = c.actions.slice().sort((a, b) => KB.toHours(a.offset, a.unit) - KB.toHours(b.offset, b.unit));
+  return `<div class="pcard2"><div class="pc-h">${ic('clock', 'sm')}<b>Action timeline</b><span class="xs muted grow">${acts.length || ''}</span>${ed ? `<button class="btn xs" onclick="A.timelineEditor('${m.id}','${c.id}')">${ic(acts.length ? 'edit' : 'plus', 'sm')} ${acts.length ? 'Edit' : 'Add'}</button>` : ''}</div>
+    ${acts.length ? `<div class="pc-tl">${acts.map(a => `<div class="pc-tli"><span class="pc-when">${actLabel(a)}</span><span class="grow small">${esc(a.action)}${a.owner ? `<span class="xs muted"> · ${esc(a.owner)}</span>` : ''}</span></div>`).join('')}</div>` : '<div class="pc-empty">No timed actions.</div>'}</div>`;
+}
+
+Object.assign(A, {
+  limitEditor(mid, cid, qid, readOnly) {
+    const [m, c] = MC(mid, cid), orig = qid ? c.requirements.find(q => q.id === qid) : null;
+    const st = orig ? JSON.parse(JSON.stringify(orig)) : { id:uid('q'), label:'', type:'max', value:1, unit:'days', breach:[{ id:uid('b'), offset:0, unit:'hours', actions:[{ id:uid('x'), text:'', owner:'' }] }] };
+    st.breach = st.breach || [];
+    const ro = readOnly ? 'disabled' : '';
+    modal({ wide:true, title:orig ? (readOnly ? 'Limit' : 'Edit limit') : 'New limit', icon:`<span class="mico" style="background:var(--red)">${ic('target')}</span>`, body:'<div id="le"></div>',
+      foot:`${orig && !readOnly ? `<button class="btn danger" id="le-del">${ic('trash')} Delete limit</button>` : ''}<span class="grow"></span><button class="btn ghost" onclick="closeModal()">${readOnly ? 'Close' : 'Cancel'}</button>${readOnly ? '' : `<button class="btn acc" id="le-ok">${ic('check')} Save limit</button>`}` });
+    const draw = () => {
+      $('#le').innerHTML = `
+        <div class="ed-sec"><div class="ed-h">1 · The limit</div>
+          <div class="field"><label class="lbl">What is limited?</label><input class="input" id="le-l" ${ro} value="${esc(st.label)}" placeholder="e.g. Preliminary investigation report"></div>
+          <div class="ed-grid">
+            <div><label class="lbl">Type</label><div class="seg2"><button ${ro} class="${st.type === 'max' ? 'on max' : ''}" data-t="max">Maximum</button><button ${ro} class="${st.type === 'min' ? 'on min' : ''}" data-t="min">Minimum</button></div><div class="xs muted mt8">${st.type === 'max' ? 'Must not take longer / exceed. Departments may set a lower value.' : 'Must be at least. Departments may set a higher value.'}</div></div>
+            <div><label class="lbl">Value</label><input class="input mono" type="number" step="any" id="le-v" ${ro} value="${st.value}"></div>
+            <div><label class="lbl">Unit</label><input class="input" id="le-u" ${ro} list="le-units" value="${esc(st.unit)}"><datalist id="le-units">${UNITS.map(u => `<option value="${u}">`).join('')}</datalist></div>
+          </div>
+          <div class="le-sum"><span class="tpill ${st.type}">${st.type.toUpperCase()}</span> <b>${esc(st.label || 'This limit')}</b> — ${st.type === 'max' ? 'no more than' : 'at least'} <b>${st.value} ${esc(st.unit)}</b></div>
+        </div>
+        <div class="ed-sec"><div class="ed-h">2 · If the limit is breached — response sequence ${readOnly ? '' : `<button class="btn xs right" id="le-addstep">${ic('plus', 'sm')} Add step</button>`}</div>
+          ${st.breach.length ? st.breach.map((s, i) => `<div class="ed-step"><div class="ed-step-h"><span class="brn">${i + 1}</span><b>Step ${i + 1}</b><span class="xs muted">When</span>
+              <input class="input mono" type="number" min="0" style="width:84px" ${ro} data-so="${i}" value="${s.offset}"><select class="select" style="width:110px" ${ro} data-su="${i}">${['minutes','hours','days'].map(u => `<option ${s.unit === u ? 'selected' : ''}>${u}</option>`).join('')}</select><span class="small muted">after the breach${+s.offset === 0 ? ' — immediately' : ''}</span>
+              ${readOnly ? '' : `<button class="tbtn right" data-sdel="${i}" title="Remove step">${ic('trash', 'sm')}</button>`}</div>
+            <div class="ed-acts"><div class="ed-ah"><span>Action to take</span><span>Responsible role</span><span></span></div>
+              ${s.actions.map((a, j) => `<div class="ed-ar"><input class="input" ${ro} data-at="${i}.${j}" value="${esc(a.text)}" placeholder="e.g. Notify the HSE Manager"><input class="input" ${ro} data-ao="${i}.${j}" value="${esc(a.owner)}" placeholder="e.g. Supervisor"><button class="tbtn" ${ro} data-adel="${i}.${j}" title="Remove action">${ic('x', 'sm')}</button></div>`).join('')}
+              ${readOnly ? '' : `<button class="tbtn" data-aadd="${i}">${ic('plus', 'sm')} Add action</button>`}</div></div>`).join('') : '<div class="pc-empty">No response defined. Add the first step — what happens immediately when the limit is breached.</div>'}
+        </div>`;
+      const bind = (sel, ev, fn) => $$(sel).forEach(el => el[ev] = () => fn(el));
+      $('#le-l').oninput = e => { st.label = e.target.value; };
+      $('#le-v').oninput = e => { st.value = +e.target.value; };
+      $('#le-u').oninput = e => { st.unit = e.target.value; };
+      bind('#le [data-t]', 'onclick', el => { st.type = el.dataset.t; draw(); });
+      bind('#le [data-so]', 'oninput', el => { st.breach[+el.dataset.so].offset = +el.value; });
+      bind('#le [data-su]', 'onchange', el => { st.breach[+el.dataset.su].unit = el.value; });
+      bind('#le [data-sdel]', 'onclick', el => { st.breach.splice(+el.dataset.sdel, 1); draw(); });
+      bind('#le [data-at]', 'oninput', el => { const [i, j] = el.dataset.at.split('.'); st.breach[i].actions[j].text = el.value; });
+      bind('#le [data-ao]', 'oninput', el => { const [i, j] = el.dataset.ao.split('.'); st.breach[i].actions[j].owner = el.value; });
+      bind('#le [data-adel]', 'onclick', el => { const [i, j] = el.dataset.adel.split('.'); st.breach[i].actions.splice(j, 1); draw(); });
+      bind('#le [data-aadd]', 'onclick', el => { st.breach[+el.dataset.aadd].actions.push({ id:uid('x'), text:'', owner:'' }); draw(); const l = $$(`#le [data-at^="${el.dataset.aadd}."]`); l[l.length - 1]?.focus(); });
+      if ($('#le-addstep')) $('#le-addstep').onclick = () => { const l = st.breach[st.breach.length - 1]; st.breach.push({ id:uid('b'), offset:l ? +l.offset + 1 : 0, unit:l ? l.unit : 'hours', actions:[{ id:uid('x'), text:'', owner:'' }] }); draw(); };
+    };
+    draw();
+    if ($('#le-ok')) $('#le-ok').onclick = () => {
+      if (!st.label.trim()) { $('#le-l').focus(); return toast('Describe what is limited', 'bad'); }
+      if (isNaN(+st.value)) return toast('Enter a number', 'bad');
+      st.breach.forEach(s => s.actions = s.actions.filter(a => a.text.trim())); st.breach = st.breach.filter(s => s.actions.length);
+      st.breach.sort((a, b) => KB.toHours(a.offset, a.unit) - KB.toHours(b.offset, b.unit));
+      if (orig) Object.assign(orig, st); else c.requirements.push(st);
+      touchClause(c); c.history.push({ ts:now(), userId:S.me, text:`${orig ? 'Updated' : 'Added'} limit “${st.label}”` }); closeModal(); A.lint(mid, cid); commit(orig ? 'Limit updated' : 'Limit added');
+    };
+    if ($('#le-del')) $('#le-del').onclick = () => { c.requirements = c.requirements.filter(q => q.id !== qid); touchClause(c); closeModal(); commit('Limit deleted'); };
+    if (!orig) setTimeout(() => $('#le-l')?.focus(), 30);
+  },
+  pointsEditor(mid, cid) {
+    const [m, c] = MC(mid, cid), st = c.steps.length ? c.steps.slice() : [''];
+    modal({ title:'Mandatory points', icon:`<span class="mico" style="background:var(--accent)">${ic('list')}</span>`, body:'<p class="small muted" style="margin-top:0">Steps that must always happen for this clause. Press Enter to add the next one.</p><div id="pe"></div>',
+      foot:`<button class="btn" id="pe-add">${ic('plus')} Add point</button><span class="grow"></span><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn acc" id="pe-ok">${ic('check')} Save</button>` });
+    const draw = focus => {
+      $('#pe').innerHTML = st.map((p, i) => `<div class="ed-pt"><span class="ed-n">${String(i + 1).padStart(2, '0')}</span><input class="input" data-p="${i}" value="${esc(p)}" placeholder="Mandatory step"><button class="tbtn" data-up="${i}" ${i ? '' : 'disabled'}>${ic('arrowup', 'sm')}</button><button class="tbtn" data-dn="${i}" ${i < st.length - 1 ? '' : 'disabled'}>${ic('arrowdown', 'sm')}</button><button class="tbtn" data-x="${i}">${ic('x', 'sm')}</button></div>`).join('') || '<div class="pc-empty">No points.</div>';
+      $$('#pe [data-p]').forEach(el => { el.oninput = () => st[+el.dataset.p] = el.value; el.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); st.splice(+el.dataset.p + 1, 0, ''); draw(+el.dataset.p + 1); } }; });
+      $$('#pe [data-up]').forEach(el => el.onclick = () => { const i = +el.dataset.up; [st[i - 1], st[i]] = [st[i], st[i - 1]]; draw(); });
+      $$('#pe [data-dn]').forEach(el => el.onclick = () => { const i = +el.dataset.dn; [st[i + 1], st[i]] = [st[i], st[i + 1]]; draw(); });
+      $$('#pe [data-x]').forEach(el => el.onclick = () => { st.splice(+el.dataset.x, 1); draw(); });
+      if (focus != null) $$('#pe [data-p]')[focus]?.focus();
+    };
+    draw(0);
+    $('#pe-add').onclick = () => { st.push(''); draw(st.length - 1); };
+    $('#pe-ok').onclick = () => { c.steps = st.map(s => s.trim()).filter(Boolean); touchClause(c); closeModal(); commit('Mandatory points saved'); };
+  },
+  timelineEditor(mid, cid) {
+    const [m, c] = MC(mid, cid), st = c.actions.length ? JSON.parse(JSON.stringify(c.actions)) : [{ id:uid('a'), offset:0, unit:'hours', action:'', owner:'' }];
+    modal({ wide:true, title:'Action timeline', icon:`<span class="mico" style="background:var(--navy)">${ic('clock')}</span>`, body:'<p class="small muted" style="margin-top:0">What must happen, and when, after the triggering event (e.g. an incident).</p><div class="ed-tlh"><span>When</span><span>Action</span><span>Responsible role</span><span></span></div><div id="te"></div>',
+      foot:`<button class="btn" id="te-add">${ic('plus')} Add action</button><span class="grow"></span><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn acc" id="te-ok">${ic('check')} Save</button>` });
+    const draw = () => {
+      $('#te').innerHTML = st.map((a, i) => `<div class="ed-tl"><div class="row gap4"><input class="input mono" type="number" min="0" data-o="${i}" value="${a.offset}" style="width:74px"><select class="select" data-u="${i}" style="width:100px">${['minutes','hours','days'].map(u => `<option ${a.unit === u ? 'selected' : ''}>${u}</option>`).join('')}</select></div><input class="input" data-a="${i}" value="${esc(a.action)}" placeholder="What must happen"><input class="input" data-w="${i}" value="${esc(a.owner)}" placeholder="e.g. Area Manager"><button class="tbtn" data-x="${i}">${ic('x', 'sm')}</button></div>`).join('') || '<div class="pc-empty">No actions.</div>';
+      $$('#te [data-o]').forEach(el => el.oninput = () => st[+el.dataset.o].offset = +el.value);
+      $$('#te [data-u]').forEach(el => el.onchange = () => st[+el.dataset.u].unit = el.value);
+      $$('#te [data-a]').forEach(el => el.oninput = () => st[+el.dataset.a].action = el.value);
+      $$('#te [data-w]').forEach(el => el.oninput = () => st[+el.dataset.w].owner = el.value);
+      $$('#te [data-x]').forEach(el => el.onclick = () => { st.splice(+el.dataset.x, 1); draw(); });
+    };
+    draw();
+    $('#te-add').onclick = () => { const l = st[st.length - 1]; st.push({ id:uid('a'), offset:l ? l.offset + 1 : 0, unit:l ? l.unit : 'days', action:'', owner:'' }); draw(); $$('#te [data-a]').pop()?.focus(); };
+    $('#te-ok').onclick = () => { c.actions = st.filter(a => a.action.trim()).sort((a, b) => KB.toHours(a.offset, a.unit) - KB.toHours(b.offset, b.unit)); touchClause(c); closeModal(); commit('Timeline saved'); };
+  },
+});
+
+/* ============ One page: limits (with breach actions) listed, then mandatory points ============ */
+function pReq(m, c, ed) {
+  const lim = c.requirements.map(q => { const st = q.breach || [], na = st.reduce((s, x) => s + x.actions.length, 0);
+    return `<button class="pc-row" onclick="A.reqEditor('${m.id}','${c.id}','${q.id}')"><div class="grow" style="min-width:0"><div class="pc-t">${esc(q.label)}</div><div class="pc-s ${st.length ? 'red' : ''}">${st.length ? `${ic('alert', 'sm')} If breached: ${st.length} step${st.length > 1 ? 's' : ''} · ${na} action${na === 1 ? '' : 's'}` : 'No breach response yet'}</div></div><span class="tpill ${q.type}">${q.type.toUpperCase()}</span><b class="pc-v">${q.value}<small> ${esc(q.unit)}</small></b></button>`; }).join('');
+  return `<div class="pcard2"><div class="pc-h">${ic('target', 'sm')}<b class="grow">Limits & mandatory points</b><button class="btn xs ${ed ? 'acc' : ''}" onclick="A.reqEditor('${m.id}','${c.id}')">${ic(ed ? 'edit' : 'eye', 'sm')} ${ed ? 'Edit' : 'View'}</button></div>
+    <div class="pc-sub">Limits</div>${lim || '<div class="pc-empty">No limits yet.</div>'}
+    <div class="pc-sub">Mandatory points</div>${c.steps.length ? `<ol class="pc-list">${c.steps.map(p => `<li>${esc(p)}</li>`).join('')}</ol>` : '<div class="pc-empty">No mandatory points yet.</div>'}</div>`;
+}
+const newLimit = () => ({ id:uid('q'), label:'', type:'max', value:1, unit:'days', breach:[{ id:uid('b'), offset:0, unit:'hours', actions:[{ id:uid('x'), text:'', owner:'' }] }] });
+A.reqEditor = function (mid, cid, focusQid) {
+  const [m, c] = MC(mid, cid), ro = !(canEdit(m, c) && (!c.assigneeId || c.assigneeId === S.me || m.stage === 'setup'));
+  const Ls = JSON.parse(JSON.stringify(c.requirements)).map(q => ({ ...q, breach:q.breach || [] })), P = c.steps.slice();
+  let open = focusQid || null;
+  if (!Ls.length && !ro) { const q = newLimit(); Ls.push(q); open = q.id; }
+  const D = ro ? 'disabled' : '';
+  modal({ wide:true, title:`Limits & mandatory points · ${nums(m)[c.id]} ${esc(c.title)}`, icon:`<span class="mico" style="background:var(--red)">${ic('target')}</span>`, body:'<div id="rq"></div>',
+    foot:`<span class="grow xs muted" id="rq-n"></span><button class="btn ghost" onclick="closeModal()">${ro ? 'Close' : 'Cancel'}</button>${ro ? '' : `<button class="btn acc" id="rq-ok">${ic('check')} Save</button>`}` });
+  const form = (q, i) => `<div class="rq-form">
+      <div class="field"><label class="lbl">What is limited?</label><input class="input" ${D} data-f="label" data-i="${i}" value="${esc(q.label)}" placeholder="e.g. Preliminary investigation report"></div>
+      <div class="ed-grid"><div><label class="lbl">Type</label><div class="seg2"><button ${D} class="${q.type === 'max' ? 'on max' : ''}" data-ty="max" data-i="${i}">Maximum</button><button ${D} class="${q.type === 'min' ? 'on min' : ''}" data-ty="min" data-i="${i}">Minimum</button></div></div>
+        <div><label class="lbl">Value</label><input class="input mono" type="number" step="any" ${D} data-f="value" data-i="${i}" value="${q.value}"></div>
+        <div><label class="lbl">Unit</label><input class="input" list="rq-units" ${D} data-f="unit" data-i="${i}" value="${esc(q.unit)}"></div></div>
+      <div class="ed-h" style="margin:16px 0 8px">If breached — response sequence ${ro ? '' : `<button class="btn xs right" data-addstep="${i}">${ic('plus', 'sm')} Add step</button>`}</div>
+      ${q.breach.map((s, j) => `<div class="ed-step"><div class="ed-step-h"><span class="brn">${j + 1}</span><b>Step ${j + 1}</b><span class="xs muted">When</span><input class="input mono" type="number" min="0" style="width:80px" ${D} data-so="${i}.${j}" value="${s.offset}"><select class="select" style="width:106px" ${D} data-su="${i}.${j}">${['minutes','hours','days'].map(u => `<option ${s.unit === u ? 'selected' : ''}>${u}</option>`).join('')}</select><span class="small muted">after the breach${+s.offset === 0 ? ' — immediately' : ''}</span>${ro ? '' : `<button class="tbtn right" data-sdel="${i}.${j}" title="Remove step">${ic('trash', 'sm')}</button>`}</div>
+        <div class="ed-acts"><div class="ed-ah"><span>Action to take</span><span>Responsible role</span><span></span></div>
+          ${s.actions.map((a, k) => `<div class="ed-ar"><input class="input" ${D} data-at="${i}.${j}.${k}" value="${esc(a.text)}" placeholder="e.g. Notify the HSE Manager"><input class="input" ${D} data-ao="${i}.${j}.${k}" value="${esc(a.owner)}" placeholder="e.g. Supervisor"><button class="tbtn" ${D} data-adel="${i}.${j}.${k}" title="Remove action">${ic('x', 'sm')}</button></div>`).join('')}
+          ${ro ? '' : `<button class="tbtn" data-aadd="${i}.${j}">${ic('plus', 'sm')} Add action</button>`}</div></div>`).join('') || '<div class="pc-empty">No response defined yet.</div>'}
+    </div>`;
+  const summary = q => q.breach.length ? 'If breached: ' + q.breach.map((s, j) => `${j + 1}) ${+s.offset === 0 ? 'immediately' : s.offset + ' ' + s.unit} — ${s.actions.filter(a => a.text).map(a => esc(a.text)).join('; ') || '…'}`).join(' · ') : 'No breach response';
+  const draw = () => {
+    $('#rq').innerHTML = `<datalist id="rq-units">${UNITS.map(u => `<option value="${u}">`).join('')}</datalist>
+      <div class="ed-sec"><div class="ed-h">${ic('target', 'sm')} Limits & breach response <span class="xs muted" style="text-transform:none;letter-spacing:0">${Ls.length}</span>${ro ? '' : `<button class="btn xs acc right" id="rq-add">${ic('plus', 'sm')} Add limit</button>`}</div>
+        ${Ls.length ? Ls.map((q, i) => { const isOpen = open === q.id;
+          return `<div class="rq-item ${isOpen ? 'open' : ''}"><div class="rq-row" data-open="${q.id}"><span class="rq-n">${i + 1}</span><div class="grow" style="min-width:0"><div class="pc-t">${esc(q.label) || '<span class="muted">New limit</span>'}</div><div class="pc-s ${q.breach.length ? 'red' : ''}">${summary(q)}</div></div>
+            <span class="tpill ${q.type}">${q.type.toUpperCase()}</span><b class="pc-v">${q.value}<small> ${esc(q.unit)}</small></b>${ro ? '' : `<button class="tbtn" data-ldel="${i}" title="Delete limit">${ic('trash', 'sm')}</button>`}<span class="rq-chev">${ic(isOpen ? 'chevd' : 'chev', 'sm')}</span></div>
+            ${isOpen ? form(q, i) : ''}</div>`; }).join('') : '<div class="pc-empty">No limits yet.</div>'}
+      </div>
+      <div class="ed-sec"><div class="ed-h">${ic('list', 'sm')} Mandatory points <span class="xs muted" style="text-transform:none;letter-spacing:0">${P.length}</span>${ro ? '' : `<button class="btn xs right" id="rq-padd">${ic('plus', 'sm')} Add point</button>`}</div>
+        ${P.map((p, i) => `<div class="ed-pt"><span class="ed-n">${String(i + 1).padStart(2, '0')}</span><input class="input" ${D} data-p="${i}" value="${esc(p)}" placeholder="Mandatory step — press Enter for the next"><button class="tbtn" ${D} data-up="${i}" ${i ? '' : 'disabled'}>${ic('arrowup', 'sm')}</button><button class="tbtn" ${D} data-dn="${i}" ${i < P.length - 1 ? '' : 'disabled'}>${ic('arrowdown', 'sm')}</button><button class="tbtn" ${D} data-px="${i}">${ic('x', 'sm')}</button></div>`).join('') || '<div class="pc-empty">No mandatory points yet.</div>'}
+      </div>`;
+    $('#rq-n').textContent = `${Ls.length} limit${Ls.length === 1 ? '' : 's'} · ${P.filter(Boolean).length} mandatory point${P.filter(Boolean).length === 1 ? '' : 's'}`;
+    const B = (s, ev, fn) => $$('#rq ' + s).forEach(el => el[ev] = e => fn(el, e));
+    const ix = s => s.split('.').map(Number);
+    B('[data-open]', 'onclick', (el, e) => { if (e.target.closest('[data-ldel]')) return; open = open === el.dataset.open ? null : el.dataset.open; draw(); });
+    B('[data-ldel]', 'onclick', el => { Ls.splice(+el.dataset.ldel, 1); draw(); });
+    B('[data-f]', 'oninput', el => { const q = Ls[+el.dataset.i]; q[el.dataset.f] = el.dataset.f === 'value' ? +el.value : el.value; const row = el.closest('.rq-item').querySelector('.rq-row'); row.querySelector('.pc-t').textContent = q.label || 'New limit'; row.querySelector('.pc-v').innerHTML = `${q.value}<small> ${esc(q.unit)}</small>`; });
+    B('[data-ty]', 'onclick', el => { Ls[+el.dataset.i].type = el.dataset.ty; draw(); });
+    B('[data-addstep]', 'onclick', el => { const q = Ls[+el.dataset.addstep], l = q.breach[q.breach.length - 1]; q.breach.push({ id:uid('b'), offset:l ? +l.offset + 1 : 0, unit:l ? l.unit : 'hours', actions:[{ id:uid('x'), text:'', owner:'' }] }); draw(); });
+    B('[data-so]', 'oninput', el => { const [i, j] = ix(el.dataset.so); Ls[i].breach[j].offset = +el.value; });
+    B('[data-su]', 'onchange', el => { const [i, j] = ix(el.dataset.su); Ls[i].breach[j].unit = el.value; });
+    B('[data-sdel]', 'onclick', el => { const [i, j] = ix(el.dataset.sdel); Ls[i].breach.splice(j, 1); draw(); });
+    B('[data-at]', 'oninput', el => { const [i, j, k] = ix(el.dataset.at); Ls[i].breach[j].actions[k].text = el.value; });
+    B('[data-ao]', 'oninput', el => { const [i, j, k] = ix(el.dataset.ao); Ls[i].breach[j].actions[k].owner = el.value; });
+    B('[data-adel]', 'onclick', el => { const [i, j, k] = ix(el.dataset.adel); Ls[i].breach[j].actions.splice(k, 1); draw(); });
+    B('[data-aadd]', 'onclick', el => { const [i, j] = ix(el.dataset.aadd); Ls[i].breach[j].actions.push({ id:uid('x'), text:'', owner:'' }); draw(); const l = $$(`#rq [data-at^="${i}.${j}."]`); l[l.length - 1]?.focus(); });
+    B('[data-p]', 'oninput', el => { P[+el.dataset.p] = el.value; });
+    B('[data-p]', 'onkeydown', (el, e) => { if (e.key === 'Enter') { e.preventDefault(); P.splice(+el.dataset.p + 1, 0, ''); draw(); $$('#rq [data-p]')[+el.dataset.p + 1]?.focus(); } });
+    B('[data-up]', 'onclick', el => { const i = +el.dataset.up; [P[i - 1], P[i]] = [P[i], P[i - 1]]; draw(); });
+    B('[data-dn]', 'onclick', el => { const i = +el.dataset.dn; [P[i + 1], P[i]] = [P[i], P[i + 1]]; draw(); });
+    B('[data-px]', 'onclick', el => { P.splice(+el.dataset.px, 1); draw(); });
+    if ($('#rq-add')) $('#rq-add').onclick = () => { const q = newLimit(); Ls.push(q); open = q.id; draw(); $(`#rq [data-f="label"][data-i="${Ls.length - 1}"]`)?.focus(); };
+    if ($('#rq-padd')) $('#rq-padd').onclick = () => { P.push(''); draw(); $$('#rq [data-p]').pop()?.focus(); };
+  };
+  draw();
+  if ($('#rq-ok')) $('#rq-ok').onclick = () => {
+    const keep = Ls.filter(q => q.label.trim() || q.breach.some(s => s.actions.some(a => a.text.trim())));
+    const bad = keep.findIndex(q => !q.label.trim()); if (bad >= 0) { open = keep[bad].id; draw(); return toast('Every limit needs a name', 'bad'); }
+    keep.forEach(q => { q.breach.forEach(s => s.actions = s.actions.filter(a => a.text.trim())); q.breach = q.breach.filter(s => s.actions.length).sort((a, b) => KB.toHours(a.offset, a.unit) - KB.toHours(b.offset, b.unit)); });
+    c.requirements = keep; c.steps = P.map(s => s.trim()).filter(Boolean); touchClause(c);
+    c.history.push({ ts:now(), userId:S.me, text:`Updated limits (${keep.length}) and mandatory points (${c.steps.length})` });
+    closeModal(); A.lint(mid, cid); commit('Limits & mandatory points saved');
+  };
+};
 
 boot();
 </script>
