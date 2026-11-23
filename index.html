@@ -1093,6 +1093,60 @@ textarea.pp-title{border-bottom:1.5px dashed var(--line)} textarea.pp-title:focu
 @media (max-width:1250px){.rk-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:1100px){.rk-top,.rk-foot{grid-template-columns:1fr}.rk-side{border-left:0;border-top:1px solid var(--line2)}.rk-foot > div + div{border-left:0;border-top:1px solid var(--line2)}.rk-pill{display:none}}
 @media (max-width:760px){.rk-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Compliance Center: scope navigation and sections */
+.cc-crumbs{display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-size:13px;color:#B7BCC8;margin-top:10px}
+.cc-crumbs a{color:#DDE2EC;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:3px}
+.cc-crumbs a:hover{color:#fff;text-decoration-color:#fff}
+.cc-crumbs b{color:#fff;font-weight:600}
+.cc-crumbs span{opacity:.45}
+.cc-sec{display:flex;gap:12px;align-items:center;margin-top:14px;padding-bottom:2px}
+.cc-sec>span{width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:600 13px var(--sans);flex:none}
+.cc-sec h2{margin:0;font:600 19px/1.2 var(--serif)}
+.cc-sec p{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+.cc-sec{scroll-margin-top:190px}
+.cc-jump{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
+.cc-jump a{font-size:12px;padding:5px 9px;border-radius:7px;color:var(--ink2);cursor:pointer}
+.cc-jump a:hover{background:var(--surface2);color:var(--ink)}
+.cc-prof{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;padding:16px 20px;align-items:center;border-left:5px solid var(--accent)}
+.cc-prof-main{display:flex;gap:14px;align-items:center;min-width:0}
+.cc-prof-main .rk-badge{flex:none}
+.cc-prof h2{margin:2px 0 4px;font:600 23px/1.15 var(--serif)}
+.cc-prof p{margin:0;font-size:13px;color:var(--ink2)}
+.cc-facts{display:grid;grid-template-columns:repeat(5,auto);gap:6px 28px}
+.cc-facts span{display:block;font-size:11px;color:var(--muted)}
+.cc-facts b{display:block;font-size:17px;font-weight:600;white-space:nowrap}
+.cc-facts em{display:block;font-style:normal;font-size:11px;color:var(--muted);max-width:190px}
+.areagrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.heat2 tr.hsel td{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.heat2 .hn a{color:inherit;text-decoration:none}
+.heat2 .hn a:hover{text-decoration:underline}
+@media (max-width:1100px){.cc-prof{grid-template-columns:1fr}.cc-facts{grid-template-columns:repeat(3,auto)}.cc-jump{display:none}}
+
+/* Compliance Center: manual picker and run stamps */
+.cc-hero{overflow:visible}
+.cc-hero:before{left:0;bottom:0;width:360px;height:260px;border-radius:0 0 0 20px;background:radial-gradient(circle at 0 100%,rgba(184,146,90,.22),transparent 70%)}
+.cc-man{position:relative;display:inline-block;margin-bottom:10px;z-index:30}
+.cc-man-btn{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border-radius:9px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#C9CED8;font:500 12.5px var(--sans);cursor:pointer;max-width:100%}
+.cc-man-btn:hover{border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.1)}
+.cc-man-btn b{color:#fff;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:330px}
+.cc-man-btn i{font-style:normal;opacity:.7}
+.cc-man-pop{position:absolute;left:0;top:40px;width:400px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;box-shadow:0 24px 60px -18px rgba(0,0,0,.45);overflow:hidden}
+.cc-mhd{display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line2);font-size:13px}
+.cc-mhd a{margin-left:auto;font-size:12px;color:var(--accent);cursor:pointer}
+.cc-mlist{max-height:320px;overflow:auto;padding:6px}
+.cc-mrow{display:flex;gap:10px;align-items:flex-start;padding:8px;border-radius:8px;cursor:pointer;font-size:12.5px}
+.cc-mrow:hover{background:var(--surface2)}
+.cc-mrow input{margin-top:3px;accent-color:var(--accent)}
+.cc-mrow b{font-family:var(--mono);font-size:11.5px}
+.cc-mrow em{display:block;font-style:normal;font-size:11px;color:var(--muted)}
+.cc-mrow.off{cursor:not-allowed;opacity:.55}
+.cc-msep{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:10px 8px 4px}
+.cc-mft{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-top:1px solid var(--line2)}
+.cc-stamps{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:#9AA0AC;margin-bottom:14px}
+.cc-stamps span{display:inline-flex;align-items:center;gap:6px}
+.cc-stamps b{color:#fff;font-weight:600}
+.cc-stamps i{font-style:normal;opacity:.75}
 </style>
 </head>
 <body>
@@ -3145,7 +3199,9 @@ const BANKS = {
 const AREAS = ['Workshop A','Warehouse','Pump house','Main office','Laydown yard','Substation','Control room','Gate 3','Site 2 – Jubail','Fabrication bay'];
 const DQ = { HSE:.96, HR:.95, ENG:.91, EXE:.93, OPS:.86, MNT:.79, PRJ:.7 };
 const DIVS = [{ id:'D-OPS', name:'Operations Division', depts:['OPS','MNT','PRJ'] }, { id:'D-TEC', name:'Technical Division', depts:['ENG','HSE'] }, { id:'D-SUP', name:'Corporate Services', depts:['HR','EXE'] }];
-UI.cf = UI.cf || { days:90, dept:'', mod:'' };
+UI.cf = UI.cf || { days:90, dept:'', mod:'', area:'', mans:[] }; if (UI.cf.area == null) UI.cf.area = ''; if (!Array.isArray(UI.cf.mans)) UI.cf.mans = [];
+const manOk = x => !UI.cf.mans.length || UI.cf.mans.includes(x.lim.m.id);
+const rulesInScope = () => CRULES.filter(r => { const l = limitFor(r, ''); return l && (!UI.cf.mans.length || UI.cf.mans.includes(l.m.id)); });
 
 function integ() { return S.integration || (S.integration = { system:'Safety+ HSE Platform', endpoint:'https://safetyplus.company.example/api/v1', interval:'15 min', disabled:[], notified:{} }); }
 function rng(seed) { let a = 0; for (const ch of seed) a = (a * 31 + ch.charCodeAt(0)) | 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
@@ -3243,10 +3299,91 @@ function cube0() {
   const T = now(), f = UI.cf;
   const inPeriod = x => x.rule.kind === 'interval' || x.state === 'overdue' || x.start >= T - f.days * DAY;
   const deptSet = f.dept ? (f.dept.startsWith('div:') ? (DIVS.find(d => d.id === f.dept.slice(4))?.depts || []) : [f.dept]) : null;
-  const scoped = all.filter(x => inPeriod(x) && (!deptSet || deptSet.includes(x.dept)) && (!f.mod || x.mod === f.mod));
-  return { all, scoped, period:all.filter(inPeriod) };
+  const scoped = all.filter(x => inPeriod(x) && manOk(x) && (!deptSet || deptSet.includes(x.dept)) && (!f.area || x.area === f.area) && (!f.mod || x.mod === f.mod));
+  return { all, scoped, period:all.filter(x => inPeriod(x) && manOk(x)) };
 }
 function liveBreaches() { try { return cube().period.filter(x => x.state === 'overdue').length || 0; } catch (e) { return 0; } }
+
+/* ---------- Manual picker: check against one, several or all published manuals ---------- */
+const stamp = t => t ? new Date(t).toLocaleString('en-GB', { day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' }) : '—';
+const pubManuals = () => S.manuals.filter(m => m.stage === 'published');
+const checkedManuals = () => pubManuals().filter(m => !UI.cf.mans.length || UI.cf.mans.includes(m.id));
+const rulesOfManual = m => CRULES.filter(r => limitFor(r, '')?.m.id === m.id).length;
+function manualPicker() {
+  const pub = pubManuals(), sel = UI.cf.mans, picked = pub.filter(m => sel.includes(m.id));
+  const label = !sel.length ? `All published manuals (${pub.length})` : picked.length === 1 ? `${picked[0].code} · ${picked[0].title}` : `${picked.length} manuals selected`;
+  const stageName = { setup:'Setting up', compliance:'Compliance check', drafting:'In writing', dept_review:'Department review', approval:'In approval' };
+  const row = m => { const live0 = m.stage === 'published', on = live0 && (!sel.length || sel.includes(m.id)), live = m.stage === 'published', n = live ? rulesOfManual(m) : 0;
+    return `<label class="cc-mrow ${live ? '' : 'off'}" title="${live ? '' : 'Only published manuals are checked against live records'}"><input type="checkbox" ${on ? 'checked' : ''} ${live ? `onchange="A.ccMan('${m.id}')"` : 'disabled'}><span class="grow" style="min-width:0"><b>${esc(m.code)}</b> ${esc(m.title)}<em>${live ? `v${esc(m.version)} · ${n} control point${n === 1 ? '' : 's'}` : esc(stageName[m.stage] || m.stage) + ' · not checked yet'}</em></span></label>`; };
+  return `<div class="cc-man"><button class="cc-man-btn" aria-haspopup="true" aria-expanded="${!!UI.manOpen}" onclick="A.ccManOpen()">${ic('book', 'sm')}<span>Manuals</span><b>${esc(label)}</b><i>▾</i></button>
+    ${UI.manOpen ? `<div class="cc-man-pop" role="dialog" aria-label="Choose manuals"><div class="cc-mhd"><b>Check against</b><a onclick="A.ccManAll()">${sel.length ? 'Select all' : 'All selected'}</a></div>
+      <div class="cc-mlist">${pub.map(row).join('')}${S.manuals.some(m => m.stage !== 'published') ? `<div class="cc-msep">Not published</div>${S.manuals.filter(m => m.stage !== 'published').map(row).join('')}` : ''}</div>
+      <div class="cc-mft"><span class="xs muted">${sel.length ? `${picked.length} of ${pub.length} selected` : 'Every published manual is checked'}</span><button class="btn sm acc" onclick="A.ccManOpen()">Done</button></div></div>` : ''}</div>`;
+}
+Object.assign(A, {
+  ccManOpen() { UI.manOpen = !UI.manOpen; rerender(); },
+  ccMan(id) { const all = pubManuals().map(m => m.id), cur = UI.cf.mans.length ? UI.cf.mans : all, next = cur.includes(id) ? cur.filter(x => x !== id) : [...cur, id]; if (!next.length) { toast('Keep at least one manual selected', 'bad'); rerender(); return; } UI.cf.mans = next.length === all.length ? [] : next; rerender(); },
+  ccManAll() { UI.cf.mans = []; rerender(); },
+});
+document.addEventListener('click', e => { if (UI.manOpen && !e.target.closest('.cc-man')) { UI.manOpen = false; rerender(); } });
+
+/* ---------- Scope: company › division › department › area. Every card reads it ---------- */
+function scopeInfo() {
+  const f = UI.cf.dept, all = S.departments.map(d => d.id);
+  if (!f) return { kind:'co', name:S.settings.company, ids:all, peers:all };
+  if (f.startsWith('div:')) { const dv = DIVS.find(d => d.id === f.slice(4)), ids = (dv?.depts || []).filter(dept); return { kind:'div', dv, name:dv?.name || 'Division', ids, peers:ids }; }
+  const dv = DIVS.find(d => d.depts.includes(f)), d = dept(f);
+  return { kind:UI.cf.area ? 'area' : 'dept', d, dv, name:UI.cf.area || d?.name, deptName:d?.name, ids:[f], peers:dv ? dv.depts.filter(dept) : [f], area:UI.cf.area || '' };
+}
+const areasOf = (list, id) => [...new Set(list.filter(x => x.dept === id && x.area).map(x => x.area))].sort();
+function scopeCrumbs() {
+  const sc = scopeInfo(), c = [sc.kind === 'co' ? `<b>${esc(S.settings.company)}</b>` : `<a onclick="A.ccScope('')">${esc(S.settings.company)}</a>`];
+  if (sc.kind === 'div') c.push(`<b>${esc(sc.name)}</b>`);
+  if (sc.d) { if (sc.dv) c.push(`<a onclick="A.ccScope('div:${sc.dv.id}')">${esc(sc.dv.name)}</a>`); c.push(sc.area ? `<a onclick="A.ccScope('${sc.d.id}')">${esc(sc.deptName)}</a>` : `<b>${esc(sc.deptName)}</b>`); }
+  if (sc.area) c.push(`<b>${esc(sc.area)}</b>`);
+  return `<nav class="cc-crumbs" aria-label="Scope">${c.join('<span>›</span>')}</nav>`;
+}
+const ccSec = (n, t, p) => `<div class="span12 cc-sec" id="ccs${n}"><span>${n}</span><div><h2>${t}</h2><p>${p}</p></div></div>`;
+function scopeProfile(period) {
+  const sc = scopeInfo(); if (sc.kind === 'co') return '';
+  const f = UI.cf, m = x => !f.mod || x.mod === f.mod, base = period.filter(m), mine = base.filter(x => sc.ids.includes(x.dept) && (!sc.area || x.area === sc.area));
+  const co = score(base), s0 = score(mine), r = scopeRisk(), dlt = s0 != null && co != null ? Math.round((s0 - co) * 10) / 10 : null, facts = [];
+  if (sc.kind === 'div') {
+    const ds = sc.ids.map(id => ({ d:dept(id), s:score(base.filter(x => x.dept === id)) })).filter(x => x.s != null).sort((a, b) => b.s - a.s);
+    facts.push(['Departments', sc.ids.length, sc.ids.map(id => esc(dept(id).name)).join(', ')], ['Workforce', num(headsOf(sc.ids)), 'people'], ['Strongest', ds[0] ? esc(ds[0].d.name) : '—', ds[0] ? ds[0].s + '%' : ''], ['Weakest', ds.length > 1 ? esc(ds.at(-1).d.name) : '—', ds.length > 1 ? ds.at(-1).s + '%' : '']);
+  } else {
+    const id = sc.d.id, e = stdManual() ? effective(stdManual(), id) : { na:{}, tight:{} }, nt = Object.keys(e.tight).length, nn = Object.keys(e.na).length;
+    if (sc.area) { const ar = areasOf(base, id).map(a => ({ a, s:score(base.filter(x => x.dept === id && x.area === a)) })).filter(x => x.s != null).sort((a, b) => b.s - a.s), k = ar.findIndex(x => x.a === sc.area) + 1;
+      facts.push(['Department', esc(sc.deptName), 'head ' + esc(uname(deptHead(id)))], ['Workforce', num(r.heads), 'estimated for this area'], ['Rank in department', k ? `#${k} of ${ar.length}` : '—', 'areas by score'], ['Records', mine.length, `in the last ${f.days} days`]); }
+    else { const rk = S.departments.map(d => ({ id:d.id, s:score(base.filter(x => x.dept === d.id)) })).filter(x => x.s != null).sort((a, b) => b.s - a.s), k = rk.findIndex(x => x.id === id) + 1;
+      facts.push(['Head', esc(uname(deptHead(id))), sc.dv ? esc(sc.dv.name) : ''], ['Workforce', num(r.heads), 'people'], ['Rank', k ? `#${k} of ${rk.length}` : '—', 'departments by score'], ['Own edition', nt + nn, `${nt} stricter limit${nt === 1 ? '' : 's'} · ${nn} N/A`], ['Areas', areasOf(base, id).length, 'with records']); }
+  }
+  const t = tierOf(r.level);
+  return `<div class="card span12 cc-prof" style="border-left-color:${t.col}"><div class="cc-prof-main"><span class="rk-badge" style="background:${t.col};color:${t.ink}">L${r.level}</span><div><div class="eyebrow">${sc.kind === 'div' ? 'Division' : sc.area ? 'Area in ' + esc(sc.deptName) : 'Department'}</div><h2>${esc(sc.name)}</h2>
+    <p>${s0 == null ? 'No records in this period' : `<b style="color:${scoreCol(s0)}">${s0}%</b> compliant${dlt != null ? ` · <span style="color:${dlt >= 0 ? 'var(--teal)' : 'var(--red)'}">${dlt >= 0 ? '+' : ''}${dlt} pts vs company</span>` : ''} · ${mine.filter(x => x.state === 'overdue').length} live breaches · Level ${r.level} ${esc(t.level)}`}</p></div></div>
+    <div class="cc-facts">${facts.map(([l, v, n]) => `<div><span>${l}</span><b>${v}</b><em>${n}</em></div>`).join('')}</div></div>`;
+}
+function drillCard(period, dScore) {
+  const sc = scopeInfo();
+  const tree = `<div class="card span12"><div class="hd"><h3>${ic('building')} Organisation compliance tree</h3><span class="small muted">Click a division or department to drill in</span><div class="legend right"><span><i style="background:var(--teal)"></i>≥ 90%</span><span><i style="background:var(--amber)"></i>75–90%</span><span><i style="background:var(--red)"></i>&lt; 75%</span></div></div><div class="bd" style="overflow-x:auto">${orgTree(period, dScore)}</div></div>`;
+  if (!sc.d) return tree;
+  const id = sc.d.id, base = period.filter(x => x.dept === id && (!UI.cf.mod || x.mod === UI.cf.mod));
+  const tiles = areasOf(base, id).map(a => { const xs = base.filter(x => x.area === a); return { a, s:score(xs), o:xs.filter(x => x.state === 'overdue').length, n:xs.length }; }).sort((p, q) => (p.s ?? 101) - (q.s ?? 101));
+  return tree + `<div class="card span12"><div class="hd"><h3>${ic('target')} Areas in ${esc(sc.deptName)}</h3><span class="small muted">Worst first · click an area to see only its records</span>${sc.area ? `<button class="btn sm right" onclick="A.ccScope('${id}')">${ic('x', 'sm')} All of ${esc(sc.deptName)}</button>` : ''}</div><div class="bd"><div class="areagrid">${tiles.map(t => `<div class="onode leaf ${sc.area === t.a ? 'sel' : ''}" style="--sc:${scoreCol(t.s)};max-width:none" onclick="A.ccArea('${encodeURIComponent(t.a)}')"><div class="row"><div class="grow" style="min-width:0"><div class="ot">${esc(t.a)}</div><div class="os">${t.n} records</div></div><div class="opct">${t.s == null ? '—' : Math.round(t.s) + '%'}</div></div><div class="bar mt8" style="height:5px"><i style="width:${t.s ?? 0}%;background:${scoreCol(t.s)}"></i></div>${t.o ? `<div class="obad">${ic('alert', 'sm')} ${t.o} live breach${t.o > 1 ? 'es' : ''}</div>` : '<div class="ook">No live breaches</div>'}</div>`).join('') || '<div class="empty small">No records with an area in this period.</div>'}</div></div></div>`;
+}
+function rankCard(period) {
+  const sc = scopeInfo(), f = UI.cf, m = x => !f.mod || x.mod === f.mod, row = (l, xs, go) => ({ l, s:score(xs), o:xs.filter(x => x.state === 'overdue').length, go });
+  let title, rows;
+  if (!sc.d) { title = sc.kind === 'co' ? 'Department ranking' : `Departments in ${sc.name}`; rows = sc.ids.map(id => row(dept(id).name, period.filter(x => x.dept === id && m(x)), `A.ccScope('${id}')`)); }
+  else if (!sc.area) { title = `Areas in ${sc.deptName}`; rows = areasOf(period, sc.d.id).map(a => row(a, period.filter(x => x.dept === sc.d.id && x.area === a && m(x)), `A.ccArea('${encodeURIComponent(a)}')`)); }
+  else { title = `Control points in ${sc.area}`; rows = rulesInScope().map(rr => row(rr.name, period.filter(x => x.dept === sc.d.id && x.area === sc.area && x.rule.id === rr.id && m(x)), `A.ccDrill('','','${rr.id}')`)); }
+  rows = rows.filter(x => x.s != null).sort((a, b) => b.s - a.s);
+  return `<div class="card span5"><div class="hd"><h3>${ic('trend')} ${esc(title)}</h3><span class="small muted right">Click to drill in</span></div><div class="bd col gap12" style="max-height:420px;overflow:auto">${rows.map((x, i) => `<div class="row gap12 click-row" onclick="${x.go}"><span class="mono xs muted" style="width:16px">${i + 1}</span><div style="width:150px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" class="small" title="${esc(x.l)}"><b>${esc(x.l)}</b></div><div class="bar grow" style="height:8px"><i style="width:${x.s}%;background:${scoreCol(x.s)}"></i></div><b class="mono small" style="width:46px;text-align:right;color:${scoreCol(x.s)}">${x.s.toFixed(0)}%</b>${x.o ? `<span class="badge b-red plain">${x.o}</span>` : '<span style="width:26px"></span>'}</div>`).join('') || '<div class="empty small">No records in this scope.</div>'}</div></div>`;
+}
+Object.assign(A, {
+  ccScope(v) { UI.cf.dept = v; UI.cf.area = ''; UI.sim.depts = []; rerender(); },
+  ccArea(a) { a = decodeURIComponent(a); UI.cf.area = UI.cf.area === a ? '' : a; rerender(); },
+});
 
 /* ---------- Visual helpers ---------- */
 function gauge(p, size = 210) {
@@ -3289,57 +3426,73 @@ function viewCompliance(sub) {
   if (sub === 'integration') return viewIntegration();
   const sm = stdManual();
   if (!sm) return `<div class="card empty"><div class="h2">No published standard yet</div>Publish a manual with MIN/MAX limits to start checking live compliance.</div>`;
-  const { all, scoped, period } = cube(), f = UI.cf, I = integ(), F = feed();
+  const { scoped, period } = cube(), f = UI.cf, I = integ(), F = feed(), sc0 = scopeInfo();
+  if (f.area && !(sc0.d && areasOf(period, sc0.d.id).includes(f.area))) f.area = '';
   const sc = score(scoped), trend = weekly(scoped), prev = trend.slice(-8, -4).filter(x => x != null), last = trend.slice(-4).filter(x => x != null);
   const delta = prev.length && last.length ? (last.reduce((a, b) => a + b, 0) / last.length) - (prev.reduce((a, b) => a + b, 0) / prev.length) : 0;
   const over = scoped.filter(x => x.state === 'overdue').sort((a, b) => b.due - a.due), risk = scoped.filter(x => x.state === 'risk' || x.state === 'due').sort((a, b) => b.frac - a.frac);
-  const breaches = scoped.filter(x => x.state === 'breach');
+  const breaches = scoped.filter(x => x.state === 'breach'), r = scopeRisk();
   const dScore = id => score(period.filter(x => x.dept === id && (!f.mod || x.mod === f.mod)));
-  const fLabel = f.dept ? (f.dept.startsWith('div:') ? DIVS.find(d => d.id === f.dept.slice(4))?.name : dept(f.dept)?.name) : 'Whole company';
+  const title = sc0.area ? `${sc0.deptName} · ${sc0.area}` : sc0.name;
+  const heatTitle = sc0.d ? `Heatmap — areas of ${esc(sc0.deptName)} × modules` : sc0.kind === 'div' ? `Heatmap — ${esc(sc0.name)} × modules` : 'Heatmap — departments × modules';
   return `
   <div class="cc-hero">
     <div class="cc-left">
+      ${manualPicker()}
+      <div class="cc-stamps"><span>${ic('refresh', 'sm')} Last run <b>${stamp(F.at)}</b> <i>${rel(F.at)}</i></span><span>${ic('clock', 'sm')} Today <b>${new Date().toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' })}</b></span></div>
       <div class="eyebrow" style="color:#8C909C">${ic('shield', 'sm')} Compliance Command Center</div>
-      <h1 class="h1" style="color:#fff;margin:10px 0 6px">${esc(fLabel)}${f.mod ? ` · <span style="color:${mod(f.mod).color}">${esc(mod(f.mod).name)}</span>` : ''}</h1>
-      <div class="cc-sub">Live check of <b>${esc(I.system)}</b> records against <a href="${L(sm)}/t/book">${esc(sm.code)} v${sm.version}</a> and each department's approved edition · ${F.source === 'import' ? 'imported data' : 'synced ' + rel(F.at)}</div>
-      <div class="row wrap mt16"><button class="btn acc" onclick="A.ccSync(this)">${ic('refresh')} Sync now</button><button class="btn cc-ghost" onclick="A.ccBrief()">${ic('sparkles')} Executive brief</button><button class="btn cc-ghost" onclick="A.ccReturn()">${ic('flag')} National return</button><a class="btn cc-ghost" href="#/compliance/integration">${ic('link')} ${esc(I.system)} · 18 modules</a></div>
+      ${scopeCrumbs()}
+      <h1 class="h1" style="color:#fff;margin:8px 0 6px">${esc(title)}${f.mod ? ` · <span style="color:${mod(f.mod).color}">${esc(mod(f.mod).name)}</span>` : ''}</h1>
+      <div class="cc-sub">Live check of <b>${esc(I.system)}</b> records against ${checkedManuals().map(m => `<a href="${L(m)}/t/book">${esc(m.code)} v${m.version}</a>`).join(', ') || 'no published manual'} and each department's approved edition · ${F.source === 'import' ? 'imported data' : 'synced ' + rel(F.at)}</div>
+      <div class="row wrap mt16"><button class="btn acc" onclick="A.ccSync(this)">${ic('refresh')} Sync now</button><button class="btn cc-ghost" onclick="A.ccBrief()">${ic('sparkles')} Executive brief</button><button class="btn cc-ghost" onclick="A.ccReturn()" title="Always for the whole company">${ic('flag')} National return</button><a class="btn cc-ghost" href="#/compliance/integration">${ic('link')} ${esc(I.system)} · 18 modules</a></div>
     </div>
-    <div class="cc-gauge">${gauge(sc)}<div class="cc-delta ${delta >= 0 ? 'up' : 'down'}">${delta >= 0 ? '▲' : '▼'} ${Math.abs(delta).toFixed(1)} pts vs previous 4 weeks</div><span class="cc-level">${levelTag(riskOf(scopeDepts()).level)}Risk level ${riskOf(scopeDepts()).level} of 5</span></div>
+    <div class="cc-gauge">${gauge(sc)}<div class="cc-delta ${delta >= 0 ? 'up' : 'down'}">${delta >= 0 ? '▲' : '▼'} ${Math.abs(delta).toFixed(1)} pts vs previous 4 weeks</div><span class="cc-level">${levelTag(r.level)}Risk level ${r.level} of 5</span></div>
     <div class="cc-stats">
       <div><span>Live breaches</span><b style="color:#FF7A7C">${over.length}</b><em>open & past the limit</em></div>
       <div><span>At risk</span><b style="color:#FFC24B">${risk.length}</b><em>close to the limit</em></div>
       <div><span>Closed late / failed</span><b>${breaches.length}</b><em>in last ${f.days} days</em></div>
-      <div><span>Records checked</span><b>${scoped.length}</b><em>${CRULES.length} control points</em></div>
+      <div><span>Records checked</span><b>${scoped.length}</b><em>${rulesInScope().length} control points</em></div>
       <div class="cc-spark"><span>12-week trend</span>${spark(trend, 240, 44, '#0FA88A')}</div>
     </div>
   </div>
   <div class="cc-filters">
     <div class="seg">${[30, 90].map(d => `<a class="${f.days === d ? 'on' : ''}" onclick="UI.cf.days=${d};rerender()">${d} days</a>`).join('')}</div>
-    <select class="select" style="width:auto" onchange="UI.cf.dept=this.value;rerender()"><option value="">All departments</option>${DIVS.map(dv => `<optgroup label="${dv.name}"><option value="div:${dv.id}" ${f.dept === 'div:' + dv.id ? 'selected' : ''}>${dv.name} (all)</option>${dv.depts.filter(dept).map(id => `<option value="${id}" ${f.dept === id ? 'selected' : ''}>${esc(dept(id).name)}</option>`).join('')}</optgroup>`).join('')}</select>
-    <select class="select" style="width:auto" onchange="UI.cf.mod=this.value;rerender()"><option value="">All 18 modules</option>${MODS.map(mo => `<option value="${mo.id}" ${f.mod === mo.id ? 'selected' : ''}>${mo.name}</option>`).join('')}</select>
-    ${f.dept || f.mod ? `<button class="btn sm ghost" onclick="UI.cf.dept='';UI.cf.mod='';rerender()">${ic('x', 'sm')} Clear filters</button>` : ''}
+    <select class="select" style="width:auto" aria-label="Department" onchange="A.ccScope(this.value)"><option value="">Whole company</option>${DIVS.map(dv => `<optgroup label="${dv.name}"><option value="div:${dv.id}" ${f.dept === 'div:' + dv.id ? 'selected' : ''}>${dv.name} (all)</option>${dv.depts.filter(dept).map(id => `<option value="${id}" ${f.dept === id ? 'selected' : ''}>${esc(dept(id).name)}</option>`).join('')}</optgroup>`).join('')}</select>
+    ${sc0.d ? `<select class="select" style="width:auto" aria-label="Area" onchange="UI.cf.area=this.value;rerender()"><option value="">All areas</option>${areasOf(period, sc0.d.id).map(a => `<option ${f.area === a ? 'selected' : ''}>${esc(a)}</option>`).join('')}</select>` : ''}
+    <select class="select" style="width:auto" aria-label="Module" onchange="UI.cf.mod=this.value;rerender()"><option value="">All 18 modules</option>${MODS.map(mo => `<option value="${mo.id}" ${f.mod === mo.id ? 'selected' : ''}>${mo.name}</option>`).join('')}</select>
+    ${f.dept || f.mod ? `<button class="btn sm ghost" onclick="UI.cf.mod='';A.ccScope('')">${ic('x', 'sm')} Clear filters</button>` : ''}
+    <span class="cc-jump">${[['1', 'Scope'], ['2', 'Risk'], ['3', 'Act'], ['4', 'Gaps'], ['5', 'Plan'], ['6', 'Standard']].map(([n, l]) => `<a onclick="document.getElementById('ccs${n}').scrollIntoView({behavior:'smooth',block:'start'})">${l}</a>`).join('')}</span>
   </div>
 
   <div class="dash">
-    ${riskCards()}
-    <div class="card span12"><div class="hd"><h3>${ic('building')} Organisation compliance tree</h3><span class="small muted">Click a division or department to drill in</span><div class="legend right"><span><i style="background:var(--teal)"></i>≥ 90%</span><span><i style="background:var(--amber)"></i>75–90%</span><span><i style="background:var(--red)"></i>&lt; 75%</span></div></div>
-      <div class="bd" style="overflow-x:auto">${orgTree(period, dScore)}</div></div>
+    ${ccSec(1, 'Scope', 'Choose the part of the company to look at. Every number on this page follows your choice.')}
+    ${scopeProfile(period)}
+    ${drillCard(period, dScore)}
 
+    ${ccSec(2, 'Risk position', `Where ${esc(title)} sits on the pyramid, worked out from the last 12 months of events and open control failures.`)}
+    ${riskCards()}
+
+    ${ccSec(3, 'Act now', 'Controls past their limit and those about to reach it.')}
     <div class="card span7"><div class="hd"><h3 style="color:var(--red)">${ic('alert')} Live breaches — action required</h3><span class="badge b-red plain right">${over.length}</span></div>
-      <div class="bd col gap12" style="max-height:620px;overflow:auto">${over.length ? over.slice(0, 14).map(breachCard).join('') : `<div class="empty">${ic('shieldck', 'lg')}<div class="mt8">No live breaches in this scope.</div></div>`}</div></div>
+      <div class="bd col gap12" style="max-height:620px;overflow:auto">${over.length ? over.slice(0, 14).map(breachCard).join('') + (over.length > 14 ? `<button class="btn sm" onclick="A.ccDrill('','','')">See all ${over.length} records</button>` : '') : `<div class="empty">${ic('shieldck', 'lg')}<div class="mt8">No live breaches in this scope.</div></div>`}</div></div>
     <div class="span5 col gap16">
-      <div class="card"><div class="hd"><h3>${ic('trend')} Department ranking</h3></div><div class="bd col gap12">${S.departments.map(d => ({ d, s:dScore(d.id), o:period.filter(x => x.dept === d.id && x.state === 'overdue').length })).filter(x => x.s != null).sort((a, b) => b.s - a.s).map(({ d, s, o }, i) => `<div class="row gap12 click-row" onclick="UI.cf.dept='${d.id}';rerender()"><span class="mono xs muted" style="width:16px">${i + 1}</span><div style="width:118px" class="small"><b>${esc(d.name)}</b></div><div class="bar grow" style="height:8px"><i style="width:${s}%;background:${scoreCol(s)}"></i></div><b class="mono small" style="width:46px;text-align:right;color:${scoreCol(s)}">${s.toFixed(0)}%</b>${o ? `<span class="badge b-red plain">${o}</span>` : '<span style="width:26px"></span>'}</div>`).join('')}</div></div>
-      <div class="card"><div class="hd"><h3 style="color:var(--amber)">${ic('clock')} Where you are — due soon</h3><span class="badge b-amber plain right">${risk.length}</span></div><div class="bd col gap12" style="max-height:340px;overflow:auto">${risk.slice(0, 8).map(breachCard).join('') || '<div class="empty small">Nothing close to its limit.</div>'}</div></div>
+      <div class="card"><div class="hd"><h3 style="color:var(--amber)">${ic('clock')} Due soon</h3><span class="badge b-amber plain right">${risk.length}</span></div><div class="bd col gap12" style="max-height:340px;overflow:auto">${risk.slice(0, 8).map(breachCard).join('') || '<div class="empty small">Nothing close to its limit.</div>'}</div></div>
+      ${ageing(over)}
     </div>
 
-    ${insightCards(scoped, over)}
-
-    <div class="card span12"><div class="hd"><h3>${ic('dashboard')} Compliance by system module</h3><span class="small muted">${esc(I.system)} · click a module to filter</span></div><div class="bd"><div class="modgrid">${MODS.map(mo => { const xs = scoped.filter(x => x.mod === mo.id), s = score(xs), o = xs.filter(x => x.state === 'overdue').length; const off = I.disabled.includes(mo.id);
+    ${ccSec(4, 'Where the gaps are', 'Which units, controls and system modules hold the non-compliance.')}
+    ${rankCard(period)}
+    ${pareto(scoped)}
+    <div class="card span12"><div class="hd"><h3>${ic('dashboard')} Compliance by system module</h3><span class="small muted">${esc(I.system)} · ${esc(title)} · click a module to filter</span></div><div class="bd"><div class="modgrid">${MODS.map(mo => { const xs = scoped.filter(x => x.mod === mo.id), s = score(xs), o = xs.filter(x => x.state === 'overdue').length; const off = I.disabled.includes(mo.id);
       return `<div class="modt ${f.mod === mo.id ? 'on' : ''} ${off ? 'off' : ''}" onclick="UI.cf.mod=UI.cf.mod==='${mo.id}'?'':'${mo.id}';rerender()">${modTile(mo)}<div class="grow" style="min-width:0"><div class="mn">${mo.name}</div><div class="bar mt8" style="height:5px"><i style="width:${s ?? 0}%;background:${scoreCol(s)}"></i></div></div><div class="ms"><b style="color:${scoreCol(s)}">${s == null ? '—' : Math.round(s) + '%'}</b>${o ? `<span class="badge b-red plain">${o} live</span>` : `<span class="xs faint">${xs.length} rec</span>`}</div></div>`; }).join('')}</div></div></div>
+    <div class="card span12"><div class="hd"><h3>${ic('target')} ${heatTitle}</h3><span class="small muted">Click a name to drill in, or a cell to see the records</span></div><div class="bd" style="overflow-x:auto">${heatmap(period)}</div></div>
 
-    <div class="card span12"><div class="hd"><h3>${ic('target')} Heatmap — departments × modules</h3><span class="small muted">Click any cell to see the records</span></div><div class="bd" style="overflow-x:auto">${heatmap(period)}</div></div>
+    ${ccSec(5, 'Plan ahead', 'What falls due next, and what closing breaches would change.')}
+    ${forecast(scoped)}
+    ${simulator(scoped)}
 
-    <div class="card span12"><div class="hd"><h3>${ic('book')} Control points from the standard</h3><span class="small muted">Each limit in ${esc(sm.code)} becomes a live check. Department editions apply automatically.</span></div><div class="bd" style="padding:0;overflow-x:auto">${controlTable(scoped)}</div></div>
+    ${ccSec(6, 'The standard', `Each limit in ${esc(sm.code)} becomes a live check. Department editions apply automatically.`)}
+    <div class="card span12"><div class="hd"><h3>${ic('book')} Control points from the standard</h3><span class="small muted">Results for ${esc(title)}</span></div><div class="bd" style="padding:0;overflow-x:auto">${controlTable(scoped)}</div></div>
   </div>`;
 }
 
@@ -3348,10 +3501,10 @@ function orgTree(period, dScore) {
   const node = (cls, title, sub, s, o, onclick, extra = '') => `<div class="onode ${cls} ${UI.cf.dept && onclick.includes(`'${UI.cf.dept}'`) ? 'sel' : ''}" onclick="${onclick}" style="--sc:${scoreCol(s)}"><div class="row"><div class="grow" style="min-width:0"><div class="ot">${title}</div><div class="os">${sub}</div></div><div class="opct">${s == null ? '—' : Math.round(s) + '%'}</div></div><div class="bar mt8" style="height:5px"><i style="width:${s ?? 0}%;background:${scoreCol(s)}"></i></div>${o ? `<div class="obad">${ic('alert', 'sm')} ${o} live breach${o > 1 ? 'es' : ''}</div>` : '<div class="ook">No live breaches</div>'}${extra}</div>`;
   const known = DIVS.flatMap(d => d.depts), others = S.departments.filter(d => !known.includes(d.id)).map(d => d.id);
   const divs = [...DIVS, ...(others.length ? [{ id:'D-OTH', name:'Other units', depts:others }] : [])];
-  return `<div class="org"><ul><li>${node('root', esc(S.settings.company), `CEO · ${esc(uname(ceo))}`, score(period), period.filter(x => x.state === 'overdue').length, "UI.cf.dept='';rerender()")}
-    <ul>${divs.map(dv => { const xs = period.filter(x => dv.depts.includes(x.dept)); return `<li>${node('div', dv.name, `${dv.depts.length} departments`, score(xs), xs.filter(x => x.state === 'overdue').length, `UI.cf.dept='div:${dv.id}';rerender()`)}
+  return `<div class="org"><ul><li>${node('root', esc(S.settings.company), `CEO · ${esc(uname(ceo))}`, score(period), period.filter(x => x.state === 'overdue').length, "A.ccScope('')")}
+    <ul>${divs.map(dv => { const xs = period.filter(x => dv.depts.includes(x.dept)); return `<li>${node('div', dv.name, `${dv.depts.length} departments`, score(xs), xs.filter(x => x.state === 'overdue').length, `A.ccScope('div:${dv.id}')`)}
       <div class="oleaves">${dv.depts.filter(dept).map(id => { const xs2 = period.filter(x => x.dept === id); const e = stdManual() ? effective(stdManual(), id) : { na:{}, tight:{} }; const nv = Object.keys(e.na).length + Object.keys(e.tight).length;
-        return node('leaf', esc(dept(id).name), `${esc(uname(deptHead(id)))}${nv ? ` · <span title="Approved department variations">${nv} variation${nv > 1 ? 's' : ''}</span>` : ''}`, dScore(id), xs2.filter(x => x.state === 'overdue').length, `UI.cf.dept='${id}';rerender()`); }).join('')}</div></li>`; }).join('')}</ul></li></ul></div>`;
+        return node('leaf', esc(dept(id).name), `${esc(uname(deptHead(id)))}${nv ? ` · <span title="Approved department variations">${nv} variation${nv > 1 ? 's' : ''}</span>` : ''}`, dScore(id), xs2.filter(x => x.state === 'overdue').length, `A.ccScope('${id}')`); }).join('')}</div></li>`; }).join('')}</ul></li></ul></div>`;
 }
 function breachCard(x) {
   const mo = mod(x.mod), I = integ(), n = nums(x.lim.m)[x.lim.c.id];
@@ -3371,14 +3524,16 @@ function respPlan(x) {
     return `<div class="rps ${due ? 'due' : ''}"><span class="rpn">${i + 1}</span><span class="grow small"><b>${stepLabel(s)}</b> — ${s.actions.map(a => esc(a.text) + (a.owner ? ` <i class="muted">(${esc(a.owner)})</i>` : '')).join('; ')}</span>${due ? '<span class="pill p-red">due now</span>' : `<span class="xs muted">in ${fmtDur(h - over)}</span>`}</div>`; }).join('')}</div>`;
 }
 function heatmap(period) {
-  const I = integ();
+  const sc = scopeInfo(), inDept = sc.kind === 'dept' || sc.kind === 'area';
+  const rows = inDept ? areasOf(period, sc.d.id).map(a => ({ l:a, xs:period.filter(x => x.dept === sc.d.id && x.area === a), dep:sc.d.id, area:encodeURIComponent(a), on:sc.area === a }))
+    : sc.ids.map(id => ({ l:dept(id).name, xs:period.filter(x => x.dept === id), dep:id, area:'', on:false }));
   return `<table class="heat2"><thead><tr><th></th>${MODS.map(mo => `<th title="${mo.name}"><span class="mico sm" style="background:${mo.color}">${ic(mo.icon, 'sm')}</span></th>`).join('')}<th>Total</th></tr></thead><tbody>
-    ${S.departments.map(d => { const row = period.filter(x => x.dept === d.id); return `<tr><td class="hn">${esc(d.name)}</td>${MODS.map(mo => { const xs = row.filter(x => x.mod === mo.id); const na = xs.length && xs.every(x => x.state === 'na'); const s = score(xs);
-      return `<td><button class="hc" style="background:${na ? 'repeating-linear-gradient(135deg,var(--surface2) 0 5px,var(--line2) 5px 10px)' : heatBg(s)};color:${s == null ? 'var(--faint)' : '#fff'}" ${xs.length ? `onclick="A.ccDrill('${d.id}','${mo.id}')"` : 'disabled'} title="${esc(d.name)} · ${mo.name}: ${na ? 'Not applicable (approved)' : s == null ? 'no records' : s + '%'}">${na ? 'N/A' : s == null ? '·' : Math.round(s)}</button></td>`; }).join('')}<td><b style="color:${scoreCol(score(row))}">${score(row) == null ? '—' : Math.round(score(row)) + '%'}</b></td></tr>`; }).join('')}</tbody></table>
+    ${rows.map(row => `<tr class="${row.on ? 'hsel' : ''}"><td class="hn"><a class="click-row" onclick="${inDept ? `A.ccArea('${row.area}')` : `A.ccScope('${row.dep}')`}">${esc(row.l)}</a></td>${MODS.map(mo => { const xs = row.xs.filter(x => x.mod === mo.id); const na = xs.length && xs.every(x => x.state === 'na'); const s = score(xs);
+      return `<td><button class="hc" style="background:${na ? 'repeating-linear-gradient(135deg,var(--surface2) 0 5px,var(--line2) 5px 10px)' : heatBg(s)};color:${s == null ? 'var(--faint)' : '#fff'}" ${xs.length ? `onclick="A.ccDrill('${row.dep}','${mo.id}','','${row.area}')"` : 'disabled'} title="${esc(row.l)} · ${mo.name}: ${na ? 'Not applicable (approved)' : s == null ? 'no records' : s + '%'}">${na ? 'N/A' : s == null ? '·' : Math.round(s)}</button></td>`; }).join('')}<td><b style="color:${scoreCol(score(row.xs))}">${score(row.xs) == null ? '—' : Math.round(score(row.xs)) + '%'}</b></td></tr>`).join('')}</tbody></table>
     <div class="legend mt12"><span><i style="background:${heatBg(98)}"></i>Excellent</span><span><i style="background:${heatBg(85)}"></i>Watch</span><span><i style="background:${heatBg(65)}"></i>Non-compliant</span><span><i style="background:var(--line2)"></i>N/A approved / no activity</span></div>`;
 }
 function controlTable(scoped) {
-  const rows = CRULES.map(rule => { const xs = scoped.filter(x => x.rule.id === rule.id); const base = limitFor(rule, ''); return { rule, xs, base, s:score(xs) }; }).filter(r => r.base);
+  const rows = rulesInScope().map(rule => { const xs = scoped.filter(x => x.rule.id === rule.id); const base = limitFor(rule, ''); return { rule, xs, base, s:score(xs) }; });
   return `<table class="tbl"><thead><tr><th>Control point</th><th>Standard clause</th><th>Corporate limit</th><th>Department editions</th><th>Checked</th><th style="width:180px">Compliance</th></tr></thead><tbody>
     ${rows.map(({ rule, xs, base, s }) => { const mo = mod(rule.mod), n = nums(base.m)[base.c.id]; const ov = S.departments.map(d => ({ d, l:limitFor(rule, d.id) })).filter(x => x.l && (x.l.tightened || x.l.na));
       return `<tr class="click" onclick="A.ccDrill('','${rule.mod}','${rule.id}')"><td><div class="row">${modTile(mo)}<div><b class="small">${esc(rule.name)}</b><div class="xs muted">${esc(mo.name)}</div>${potTag(rule)}</div></div></td><td class="small"><a href="${L(base.m, base.c)}" onclick="event.stopPropagation()">${esc(base.m.code)} §${n}</a><div class="xs muted">${esc(base.c.title)}</div></td><td><span class="tpill ${base.type}">${base.type.toUpperCase()}</span> <b>${base.base}</b> ${esc(base.unit)}</td>
@@ -3426,30 +3581,34 @@ Object.assign(A, {
     notify(h, `Compliance breach in ${dept(x.dept).name}: ${x.id} ${x.title} — ${x.rule.name} (${limTxt(x.lim)} per ${x.lim.m.code} §${nums(x.lim.m)[x.lim.c.id]}). ${x.state === 'overdue' ? 'Overdue now.' : ''}`, '#/compliance', 'escalation');
     integ().notified[id] = now(); log(null, `notified ${uname(h)} about compliance breach ${id}`, 'escalation'); commit(`${uname(h)} notified`); },
   ccToggle(id) { const I = integ(); I.disabled = I.disabled.includes(id) ? I.disabled.filter(x => x !== id) : [...I.disabled, id]; FEED = null; save(); rerender(); },
-  ccDrill(deptId, modId, ruleId) {
-    const xs = cube().period.filter(x => (!deptId || x.dept === deptId) && (!modId || x.mod === modId) && (!ruleId || x.rule.id === ruleId)).sort((a, b) => ['overdue','breach','risk','due','open','ok','na'].indexOf(a.state) - ['overdue','breach','risk','due','open','ok','na'].indexOf(b.state));
-    const mo = modId ? mod(modId) : null, s = score(xs);
-    modal({ wide:true, title:`${deptId ? esc(dept(deptId).name) + ' · ' : ''}${ruleId ? esc(CRULES.find(r => r.id === ruleId).name) : mo ? mo.name : 'Records'}`, icon:mo ? modTile(mo) : '',
+  ccDrill(deptId, modId, ruleId, area) {
+    const sc = scopeInfo(), ids = deptId ? [deptId] : sc.ids, ar = area != null ? decodeURIComponent(area) : deptId ? '' : (sc.area || '');
+    const order = ['overdue','breach','risk','due','open','ok','na'];
+    const xs = cube().period.filter(x => ids.includes(x.dept) && (!ar || x.area === ar) && (!modId || x.mod === modId) && (!ruleId || x.rule.id === ruleId)).sort((a, b) => order.indexOf(a.state) - order.indexOf(b.state));
+    const mo = modId ? mod(modId) : null, s = score(xs), where = [deptId ? dept(deptId).name : sc.kind === 'area' ? sc.deptName : sc.name, ar].filter(Boolean).map(esc).join(' · ');
+    modal({ wide:true, title:`${where} · ${ruleId ? esc(CRULES.find(r => r.id === ruleId).name) : mo ? mo.name : 'Records'}`, icon:mo ? modTile(mo) : '',
       body:`<div class="row gap16 mb16"><div class="h1" style="color:${scoreCol(s)}">${s == null ? '—' : s + '%'}</div><div class="small muted">${xs.length} records · ${xs.filter(x => x.state === 'overdue').length} live breaches · ${xs.filter(x => x.state === 'breach').length} closed late / failed</div></div>
-      <div class="col gap8">${xs.slice(0, 80).map(x => `<div class="drow"><span class="badge ${STATE_B[x.state][0]}" style="min-width:96px;justify-content:center">${STATE_B[x.state][1]}</span><div class="grow" style="min-width:0"><div class="small"><b class="mono">${esc(x.id)}</b> ${esc(x.title)} <span class="muted">· ${esc(dept(x.dept).id)} · ${esc(x.rule.name)}</span></div>${x.state === 'na' ? '<div class="xs muted">Clause approved as not applicable for this department</div>' : `<div class="xs muted">${whereTxt(x)}</div>${whereBar(x)}`}</div></div>`).join('') || '<div class="empty">No records.</div>'}</div>` });
+      <div class="col gap8">${xs.slice(0, 80).map(x => `<div class="drow"><span class="badge ${STATE_B[x.state][0]}" style="min-width:96px;justify-content:center">${STATE_B[x.state][1]}</span><div class="grow" style="min-width:0"><div class="small"><b class="mono">${esc(x.id)}</b> ${esc(x.title)} <span class="muted">· ${esc(dept(x.dept).id)}${x.area ? ' · ' + esc(x.area) : ''} · ${esc(x.rule.name)}</span></div>${x.state === 'na' ? '<div class="xs muted">Clause approved as not applicable for this department</div>' : `<div class="xs muted">${whereTxt(x)}</div>${whereBar(x)}`}</div></div>`).join('') || '<div class="empty">No records.</div>'}${xs.length > 80 ? `<div class="xs muted">Showing 80 of ${xs.length}.</div>` : ''}</div>` });
   },
   ccBrief() {
-    const { period } = cube(), sc = score(period), over = period.filter(x => x.state === 'overdue');
-    const ds = S.departments.map(d => ({ d, s:score(period.filter(x => x.dept === d.id)), o:period.filter(x => x.dept === d.id && x.state === 'overdue').length })).filter(x => x.s != null).sort((a, b) => a.s - b.s);
-    const ms = MODS.map(mo => ({ mo, s:score(period.filter(x => x.mod === mo.id)) })).filter(x => x.s != null).sort((a, b) => a.s - b.s);
-    const worstRule = CRULES.map(r => ({ r, s:score(period.filter(x => x.rule.id === r.id)), n:period.filter(x => x.rule.id === r.id && BAD.has(x.state)).length })).filter(x => x.s != null).sort((a, b) => b.n - a.n)[0];
-    const top = over.sort((a, b) => b.frac - a.frac)[0];
-    const tight = S.departments.filter(d => stdManual() && Object.keys(effective(stdManual(), d.id).tight).length);
-    modal({ title:'Executive brief', icon:`<span class="mico" style="background:var(--accent)">${ic('sparkles')}</span>`, wide:true, body:`<div class="brief">
-      <p class="lead2">Overall compliance with <b>${esc(stdManual().code)}</b> is <b style="color:${scoreCol(sc)}">${sc}%</b> over the last ${UI.cf.days} days, with <b>${over.length}</b> live breaches open right now. The company is at <b>risk level ${riskOf(null).level} of 5 (${esc(tierOf(riskOf(null).level).level)})</b>.</p>
-      <h4>Risk position</h4><ul>${riskOf(null).active.map(x => `<li>${x.why}. ${x.fix}.</li>`).join('')}<li>${reportingNote(riskOf(null))}</li></ul>
+    const sc = scopeInfo(), { scoped } = cube(), score0 = score(scoped), over = scoped.filter(x => x.state === 'overdue'), r = scopeRisk();
+    const name = sc.kind === 'area' ? `${sc.deptName} · ${sc.area}` : sc.name, word = sc.kind === 'dept' ? 'area' : 'department';
+    const units = sc.kind === 'co' || sc.kind === 'div' ? sc.ids.map(id => ({ n:dept(id).name, xs:scoped.filter(x => x.dept === id) })) : sc.kind === 'dept' ? areasOf(scoped, sc.d.id).map(a => ({ n:a, xs:scoped.filter(x => x.area === a) })) : [];
+    const ds = units.map(u => ({ ...u, s:score(u.xs), o:u.xs.filter(x => x.state === 'overdue').length })).filter(x => x.s != null).sort((a, b) => a.s - b.s);
+    const ms = MODS.map(mo => ({ mo, s:score(scoped.filter(x => x.mod === mo.id)) })).filter(x => x.s != null).sort((a, b) => a.s - b.s);
+    const worstRule = CRULES.map(rr => ({ r:rr, n:scoped.filter(x => x.rule.id === rr.id && BAD.has(x.state)).length })).filter(x => x.n).sort((a, b) => b.n - a.n)[0];
+    const top = [...over].sort((a, b) => b.frac - a.frac)[0];
+    const tight = sc.ids.map(dept).filter(d => d && stdManual() && Object.keys(effective(stdManual(), d.id).tight).length);
+    modal({ title:`Executive brief · ${esc(name)}`, icon:`<span class="mico" style="background:var(--accent)">${ic('sparkles')}</span>`, wide:true, body:`<div class="brief">
+      <p class="lead2">Compliance of <b>${esc(name)}</b> with <b>${esc(stdManual().code)}</b> is <b style="color:${scoreCol(score0)}">${score0 ?? '—'}%</b> over the last ${UI.cf.days} days${UI.cf.mod ? ` in ${esc(mod(UI.cf.mod).name)}` : ''}, with <b>${over.length}</b> live breach${over.length === 1 ? '' : 'es'} open right now. It is at <b>risk level ${r.level} of 5 (${esc(tierOf(r.level).level)})</b>.</p>
+      <h4>Risk position</h4><ul>${r.active.map(x => `<li>${x.why}. ${x.fix}.</li>`).join('')}<li>${reportingNote(r)}</li></ul>
       <h4>Where to act</h4><ul>
-        ${ds[0] ? `<li><b>${esc(ds[0].d.name)}</b> is the lowest-scoring department at <b>${ds[0].s}%</b>${ds[0].o ? ` with ${ds[0].o} live breach${ds[0].o > 1 ? 'es' : ''}` : ''}.</li>` : ''}
+        ${ds.length > 1 ? `<li><b>${esc(ds[0].n)}</b> is the lowest-scoring ${word} at <b>${ds[0].s}%</b>${ds[0].o ? ` with ${ds[0].o} live breach${ds[0].o > 1 ? 'es' : ''}` : ''}.</li>` : ''}
         ${ms[0] ? `<li>Weakest system module: <b>${ms[0].mo.name}</b> (${ms[0].s}%).</li>` : ''}
         ${worstRule ? `<li>Most frequently missed control: <b>${esc(worstRule.r.name)}</b> — ${worstRule.n} non-compliant records.</li>` : ''}
-        ${top ? `<li>Most urgent: <b>${esc(top.id)} ${esc(top.title)}</b> (${esc(dept(top.dept).name)}) — ${whereTxt(top).replace(/<[^>]+>/g, '')}.</li>` : ''}</ul>
-      <h4>What is working</h4><ul>${ds.slice(-2).reverse().map(x => `<li><b>${esc(x.d.name)}</b> leads at ${x.s}%.</li>`).join('')}${tight.length ? `<li>${tight.map(d => esc(d.name)).join(', ')} operate stricter-than-corporate limits and are checked against their own edition.</li>` : ''}</ul>
-      <h4>Recommended actions</h4><ol><li>Close the ${over.length} live breaches this week — notify department heads from the breach list.</li>${ms[0] ? `<li>Run a focused review of ${ms[0].mo.name} processes with ${esc(ds[0]?.d.name || 'the lowest department')}.</li>` : ''}<li>Review the standard's limits at the next management review using this trend.</li></ol></div>` });
+        ${top ? `<li>Most urgent: <b>${esc(top.id)} ${esc(top.title)}</b> (${esc(dept(top.dept).name)}${top.area ? ', ' + esc(top.area) : ''}) — ${whereTxt(top).replace(/<[^>]+>/g, '')}.</li>` : ''}</ul>
+      ${ds.length > 1 || tight.length ? `<h4>What is working</h4><ul>${ds.length > 1 ? ds.slice(-2).reverse().map(x => `<li><b>${esc(x.n)}</b> leads at ${x.s}%.</li>`).join('') : ''}${tight.length ? `<li>${tight.map(d => esc(d.name)).join(', ')} operate${tight.length === 1 ? 's' : ''} stricter-than-corporate limits and ${tight.length === 1 ? 'is' : 'are'} checked against ${tight.length === 1 ? 'its' : 'their'} own edition.</li>` : ''}</ul>` : ''}
+      <h4>Recommended actions</h4><ol>${over.length ? `<li>Close the ${over.length} live breach${over.length === 1 ? '' : 'es'} this week — notify the heads from the breach list.</li>` : ''}${ms[0] ? `<li>Run a focused review of ${ms[0].mo.name} processes${ds.length > 1 ? ' in ' + esc(ds[0].n) : ''}.</li>` : ''}<li>Review the standard's limits at the next management review using this trend.</li></ol></div>` });
   },
   ccImport(inp) { const f = inp.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { try { const j = JSON.parse(r.result.replace(/\/\/.*$/gm, '')); const recs = (j.records || j).map(x => ({ ...x, start:new Date(x.start).getTime(), end:x.end ? new Date(x.end).getTime() : x.end ?? undefined, mod:x.mod || CRULES.find(c => c.id === x.rule)?.mod })).filter(x => x.mod && x.dept);
     const evs = (j.events || []).map(x => ({ ...x, date:new Date(x.date).getTime(), tier:CLASS_TIER[x.class] })).filter(x => x.tier && x.dept); integ().imported = recs; integ().importedEvents = evs; integ().importedAt = now(); FEED = null; commit(`Imported ${recs.length} records and ${evs.length} events`); } catch (e) { toast('Import failed: ' + e.message, 'bad'); } }; r.readAsText(f); },
@@ -3508,11 +3667,11 @@ function riskEvents() {
 }
 
 /* ---------- Level: the highest rule that is true. Reporting a hazard or near miss never raises it ---------- */
-function riskOf(deptIds, closed) {
-  const T = now(), inScope = x => !deptIds || deptIds.includes(x.dept), ageDays = t => (T - t) / DAY;
+function riskOf(deptIds, closed, area) {
+  const T = now(), inScope = x => (!deptIds || deptIds.includes(x.dept)) && (!area || x.area === area), ageDays = t => (T - t) / DAY;
   const ev = riskEvents().filter(e => inScope(e) && ageDays(e.date) <= YEAR_DAYS);
   const tiers = TIERS.map(t => { const events = ev.filter(e => e.tier === t.id).sort((a, b) => b.date - a.date); return { ...t, events, n:events.length }; });
-  const live = cube().all.filter(inScope);
+  const live = cube().all.filter(x => inScope(x) && manOk(x));
   const pre = live.filter(x => (x.state === 'overdue' && !closed?.(x)) || (x.state === 'breach' && ageDays(x.start) <= FAILED_DAYS));
   const life = pre.filter(x => potOf(x.rule) === LIFE), lifeOpen = life.filter(x => x.state === 'overdue').length, open = pre.filter(x => x.state === 'overdue').length;
   const lifeBase = live.filter(x => potOf(x.rule) === LIFE && (x.rule.kind === 'interval' || ageDays(x.start) <= FAILED_DAYS) && x.state !== 'na').length;
@@ -3527,14 +3686,17 @@ function riskOf(deptIds, closed) {
     { level:2, on:pre.length > 0, why:`${pre.length} control${pre.length > 1 ? 's' : ''} failed or overdue`, fix:`Close ${open} overdue control${open === 1 ? '' : 's'}; failed checks age out after ${FAILED_DAYS} days` },
   ];
   // A group is never safer than its worst department
-  if (!deptIds || deptIds.length > 1) (deptIds || S.departments.map(d => d.id)).filter(dept).forEach(id => { const l = riskOf([id], closed).level; rules.push({ level:l, on:l > 1, why:`${dept(id).name} is at Level ${l}`, fix:`Bring ${dept(id).name} below Level ${l}` }); });
+  if (!area && (!deptIds || deptIds.length > 1)) (deptIds || S.departments.map(d => d.id)).filter(dept).forEach(id => { const l = riskOf([id], closed).level; rules.push({ level:l, on:l > 1, why:`${dept(id).name} is at Level ${l}`, fix:`Bring ${dept(id).name} below Level ${l}` }); });
   const level = Math.max(1, ...rules.filter(x => x.on).map(x => x.level));
-  const hurt = tiers[2].n + tiers[3].n + tiers[4].n, recordable = hurt + tiers[1].events.filter(e => e.class === 'MTC' || e.class === 'RWC').length, heads = headsOf(deptIds), hours = heads * HOURS_PER_HEAD;
+  const hurt = tiers[2].n + tiers[3].n + tiers[4].n, recordable = hurt + tiers[1].events.filter(e => e.class === 'MTC' || e.class === 'RWC').length, heads = area ? areaHeads(deptIds, area) : headsOf(deptIds), hours = heads * HOURS_PER_HEAD;
   return { level, tiers, active:rules.filter(x => x.on && x.level === level), pre, life, hurt, heads, ltifr:hurt * 1e6 / hours, trir:recordable * 2e5 / hours, perLta:hurt ? tiers[1].n / hurt : null, hazPer100:tiers[0].n / heads * 100 };
 }
+// Workers in one area: the department's headcount shared by where its records happen
+function areaHeads(deptIds, area) { const ev = riskEvents().filter(e => !deptIds || deptIds.includes(e.dept)); return Math.max(1, Math.round(headsOf(deptIds) * (ev.length ? ev.filter(e => e.area === area).length / ev.length : 0))); }
+const scopeRisk = closed => riskOf(scopeDepts(), closed, UI.cf.area || '');
 function scopeDepts() { const f = UI.cf.dept; return f ? (f.startsWith('div:') ? DIVS.find(d => d.id === f.slice(4))?.depts || [] : [f]) : null; }
-function levelHistory(deptIds) {
-  const T = now(), ev = riskEvents().filter(e => !deptIds || deptIds.includes(e.dept));
+function levelHistory(deptIds, area) {
+  const T = now(), ev = riskEvents().filter(e => (!deptIds || deptIds.includes(e.dept)) && (!area || e.area === area));
   return Array.from({ length:12 }, (_, i) => {
     const end = new Date(T); end.setDate(1); end.setHours(0, 0, 0, 0); end.setMonth(end.getMonth() - (10 - i)); const t = i === 11 ? T : end.getTime() - 1;
     const within = (tier, days) => ev.some(e => e.tier === tier && e.date <= t && t - e.date <= days * DAY);
@@ -3569,10 +3731,10 @@ function reportingNote(r) {
     : `<b>The base of the pyramid is thin.</b> ${Math.round(r.perLta)} near misses and minor cases per lost time accident against a reference of 100, so small events are probably going unreported.`;
 }
 function riskCards() {
-  const ids = scopeDepts(), r = riskOf(ids), t = tierOf(r.level), f = UI.cf, hist = levelHistory(ids);
+  const ids = scopeDepts(), r = scopeRisk(), t = tierOf(r.level), f = UI.cf, hist = levelHistory(ids, f.area), sc0 = scopeInfo();
   hist[11].level = r.level;
-  const scopeName = f.dept ? (f.dept.startsWith('div:') ? DIVS.find(d => d.id === f.dept.slice(4))?.name : dept(f.dept)?.name) : S.settings.company;
-  const deptChips = S.departments.map(d => ({ d, l:riskOf([d.id]).level })).sort((a, b) => b.l - a.l).map(({ d, l }) => `<a class="rk-chip ${f.dept === d.id ? 'on' : ''}" onclick="UI.cf.dept=UI.cf.dept==='${d.id}'?'':'${d.id}';rerender()" title="${esc(d.name)}: Level ${l} ${tierOf(l).level}">${levelTag(l)}${esc(d.name)}</a>`).join('');
+  const scopeName = sc0.kind === 'area' ? `${sc0.deptName} · ${sc0.area}` : sc0.name;
+  const deptChips = sc0.peers.map(dept).filter(Boolean).map(d => ({ d, l:riskOf([d.id]).level })).sort((a, b) => b.l - a.l).map(({ d, l }) => `<a class="rk-chip ${f.dept === d.id ? 'on' : ''}" onclick="A.ccScope(UI.cf.dept==='${d.id}'?'':'${d.id}')" title="${esc(d.name)}: Level ${l} ${tierOf(l).level}">${levelTag(l)}${esc(d.name)}</a>`).join('');
   const kpi = (l, v, n) => `<div class="rk-kpi"><span>${l}</span><b>${v}</b><em>${n}</em></div>`;
   return `<div class="card span12"><div class="hd"><h3>${ic('pyramid')} Risk pyramid · ${esc(scopeName)}</h3><span class="small muted">Last 12 months from ${esc(integ().system)} · click a tier to see the records</span><button class="btn sm right" onclick="A.ccMethod()">${ic('info', 'sm')} How the level is worked out</button></div>
     <div class="rk-top"><div class="rk-pyr">${pyramidSvg(r)}</div>
@@ -3582,7 +3744,7 @@ function riskCards() {
         ${r.level > 1 ? `<div><div class="rk-sec">To reach Level ${r.level - 1}</div>${r.active.map(x => `<div class="rk-li">${ic('flag')}<span>${x.fix}</span></div>`).join('')}</div>` : ''}
         <div class="note ${r.perLta != null && r.perLta < 100 ? 'warn' : 'info'} small">${reportingNote(r)}</div>
       </div></div>
-    <div class="rk-foot"><div><div class="rk-sec">Level by department</div><div class="rk-chips">${deptChips}</div></div>
+    <div class="rk-foot"><div><div class="rk-sec">${sc0.kind === 'co' ? 'Level by department' : sc0.kind === 'div' ? 'Departments in this division' : 'Departments in the same division'}</div><div class="rk-chips">${deptChips}</div></div>
       <div><div class="rk-sec">Level over 12 months</div><div class="rk-hist">${hist.map(h => `<span style="background:${tierOf(h.level).col};color:${tierOf(h.level).ink}" title="${h.label}: Level ${h.level} ${tierOf(h.level).level}">${h.level}</span>`).join('')}</div><div class="rk-histx">${hist.map(h => `<span>${h.label}</span>`).join('')}</div></div></div></div>
   <div class="span12 rk-kpis">
     ${kpi('LTIFR', r.ltifr.toFixed(2), 'Lost time injuries per million hours')}
@@ -3610,26 +3772,26 @@ function pareto(scoped) {
   const total = rows.reduce((s, x) => s + x.n, 0); let run = 0, cut = 0;
   rows.forEach((x, i) => { run += x.n; x.cum = run / total * 100; if (!cut && x.cum >= 80) cut = i + 1; });
   const mx = rows[0]?.n || 1;
-  return `<div class="card span6"><div class="hd"><h3>${ic('target')} Where non-compliance comes from</h3></div><div class="bd">
-    ${total ? `<p class="small muted" style="margin:0 0 10px"><b style="color:var(--ink)">${cut} of ${CRULES.length} control points</b> cause 80% of the ${total} non-compliant records.</p>` : '<div class="empty small">No non-compliant records in this scope.</div>'}
+  return `<div class="card span7"><div class="hd"><h3>${ic('target')} Where non-compliance comes from</h3></div><div class="bd">
+    ${total ? `<p class="small muted" style="margin:0 0 10px"><b style="color:var(--ink)">${cut} of ${rulesInScope().length} control points</b> cause 80% of the ${total} non-compliant records.</p>` : '<div class="empty small">No non-compliant records in this scope.</div>'}
     ${rows.slice(0, 7).map(x => `<div class="pa-row" onclick="A.ccDrill('','${x.rule.mod}','${x.rule.id}')" title="${esc(x.rule.name)}: ${x.n} records, ${Math.round(x.cum)}% cumulative"><span class="nm">${esc(x.rule.name)}</span><div class="bar" style="height:8px"><i style="width:${x.n / mx * 100}%;background:var(--blue)"></i></div><b class="mono small" style="text-align:right">${x.n}</b><span class="xs muted" style="text-align:right">${Math.round(x.cum)}%</span></div>`).join('')}</div></div>`;
 }
 function ageing(over) {
   const T = now(), buckets = [['Under 24 hours', 0, 1], ['1 to 3 days', 1, 3], ['3 to 7 days', 3, 7], ['7 to 30 days', 7, 30], ['Over 30 days', 30, 1e9]].map(([l, a, b]) => ({ l, n:over.filter(x => { const d = (T - x.due) / DAY; return d >= a && d < b; }).length }));
   const mx = Math.max(1, ...buckets.map(b => b.n));
-  return `<div class="card span5"><div class="hd"><h3>${ic('alert')} Age of live breaches</h3><button class="btn sm right" onclick="A.ccNotifyAll()" ${over.length ? '' : 'disabled'}>${ic('bell', 'sm')} Notify all heads</button></div><div class="bd">${buckets.map(b => `<div class="age-row"><span class="muted">${b.l}</span><div class="bar" style="height:10px"><i style="width:${b.n / mx * 100}%;background:var(--red)"></i></div><b class="mono small" style="text-align:right">${b.n}</b></div>`).join('')}</div></div>`;
+  return `<div class="card"><div class="hd"><h3>${ic('alert')} Age of live breaches</h3><button class="btn sm right" onclick="A.ccNotifyAll()" ${over.length ? '' : 'disabled'}>${ic('bell', 'sm')} Notify all heads</button></div><div class="bd">${buckets.map(b => `<div class="age-row"><span class="muted">${b.l}</span><div class="bar" style="height:10px"><i style="width:${b.n / mx * 100}%;background:var(--red)"></i></div><b class="mono small" style="text-align:right">${b.n}</b></div>`).join('')}</div></div>`;
 }
 function simulator(scoped) {
-  const ids = scopeDepts(), sim = UI.sim, before = riskOf(ids), sel = x => x.state === 'overdue' && ((sim.life && potOf(x.rule) === LIFE) || sim.depts.includes(x.dept));
-  const after = riskOf(ids, sel), s0 = score(scoped), s1 = score(scoped.map(x => sel(x) ? { ...x, state:'ok' } : x));
+  const ids = scopeDepts(), sim = UI.sim, before = scopeRisk(), sel = x => x.state === 'overdue' && ((sim.life && potOf(x.rule) === LIFE) || sim.depts.includes(x.dept));
+  const after = scopeRisk(sel), s0 = score(scoped), s1 = score(scoped.map(x => sel(x) ? { ...x, state:'ok' } : x));
   const closing = scoped.filter(sel).length, lifeOpen = scoped.filter(x => x.state === 'overdue' && potOf(x.rule) === LIFE).length;
   const opts = S.departments.map(d => ({ d, n:scoped.filter(x => x.state === 'overdue' && x.dept === d.id).length })).filter(x => x.n);
-  return `<div class="card span7"><div class="hd"><h3>${ic('sliders')} What if we close…</h3><span class="small muted">Choose live breaches to close and see the result</span></div><div class="bd">
+  return `<div class="card span6"><div class="hd"><h3>${ic('sliders')} What if we close…</h3><span class="small muted">Choose live breaches to close and see the result</span></div><div class="bd">
     <div class="sim-opts"><a class="sim-o ${sim.life ? 'on' : ''}" onclick="UI.sim.life=!UI.sim.life;rerender()">All life-critical (${lifeOpen})</a>${opts.map(({ d, n }) => `<a class="sim-o ${sim.depts.includes(d.id) ? 'on' : ''}" onclick="A.ccSim('${d.id}')">${esc(d.name)} (${n})</a>`).join('')}</div>
     <div class="sim-out"><div><span>Compliance score</span><b>${s0 ?? '—'}%<i class="arrow">→</i>${s1 ?? '—'}%</b></div><div><span>Risk level</span><b>L${before.level}<i class="arrow">→</i>L${after.level}</b></div></div>
     <p class="xs muted" style="margin:10px 0 0">${closing ? `Closes ${closing} live breach${closing > 1 ? 'es' : ''}. ` : ''}Recent injuries and failed checks stay on record, so they hold the level until they age out.</p></div></div>`;
 }
-function insightCards(scoped, over) { return forecast(scoped) + pareto(scoped) + ageing(over) + simulator(scoped); }
+
 
 /* ---------- National reporting ---------- */
 const NAT = {"eastern":["Al Ahsa","Qatif","Dammam","Hafr Al Batin","Jubail","Al Khobar","Al Khafji","Abqaiq","Qaryah Al Ulya","Dhahran","Sharurah","Ras Tanura","Al Nuayriyah","Al Udayd"],"riyadh":["Riyadh","Al Majmaah","Dawadmi","Az Zulfi","Al Kharj","Al Quwayiyah","Ar Rayn","Wadi Ad Dawasir","Ad Diriyah","Duruma","Shaqra","Afif","Hawtat Bani Tamim","Al Ghat","Rumah","Ad Dilam","Al Muzahimiyah","Al Aflaj","Huraymila","As Sulayyil","Al Hariq","Thadiq","Marat"],"makkah":["Jeddah","Taif","Makkah","Rabigh","Al Jumum","Ranyah","Khulays","Al Khurmah","Al Lith","Bahrah","Al Ardiyat","Al Qunfudhah","Turubah","Al Kamil","Maysan","Adam","Farat Ghamid Az Zinad","Al Birk"],"jazan":["Sabya","Abu Arish","Ahad Al Masarihah","Jazan","Samtah","Al Aridah","Al Harth","Damad","Fayfa","Farasan","Ad Darb","Al Aydabi","Ar Rayth","At Tuwal","Harub","Ad Dair","Baish"],"madinah":["Madinah","Yanbu","Al Mahd","Al Ula","Badr","Khaybar","Al Hinakiyah","Al Is","Wadi Al Fara"],"qassim":["Buraydah","Unaizah","Ar Rass","Uqlat As Suqur","Al Bukayriyah","Al Badai","Dariyah","Ash Shimasiyah","Al Mithnab","Al Asyah","Riyadh Al Khabra","An Nabhaniyah","Uyun Al Jiwa"],"jouf":["Sakaka","Al Qurayyat","Dumat Al Jandal","Tabarjal"],"asir":["Khamis Mushait","Abha","Bisha","Muhayil","Balqarn","An Namas","Tathlith","Tarib","Ahad Rufaydah","Tanumah","Al Majardah","Sarat Abidah","Bariq","Zahran Al Janub","Al Harjah","Rijal Al Ma"],"najran":["Najran","Yadamah","Khubash","Habuna","Thar","Badr Al Janub"],"northern":["Arar","Rafha","Turaif","Al Uwayqilah"],"tabuk":["Tabuk","Tayma","Haqil","Umluj","Al Wajh","Duba","Al Bad"],"hail":["Hail","Ash Shamli","Baqaa","Ash Shinan","Mawqaq","As Sulaymi","Al Hait","Simira","Al Ghazalah"],"baha":["Al Baha","Al Aqiq","Bani Hasan","Baljurashi","Al Hajrah","Al Mikhwah","Qilwah","Al Qara","Al Mandaq"]};
@@ -3650,7 +3812,7 @@ function nationalReturn() {
 /* ---------- Actions ---------- */
 Object.assign(A, {
   ccTier(id) {
-    const r = riskOf(scopeDepts()), t = r.tiers[id - 1];
+    const r = scopeRisk(), t = r.tiers[id - 1];
     modal({ wide:true, title:`${esc(t.name)} · ${num(t.n)} in 12 months`, icon:`<span class="mico" style="background:${t.col};color:${t.ink};font:700 13px var(--sans)">L${id}</span>`,
       body:`<p class="small muted" style="margin-top:0">Safety+ classes counted here: ${Object.values(t.classes).map(esc).join(', ')}.</p><div class="col gap8">${t.events.slice(0, 60).map(e => `<div class="drow"><span class="badge b-gray" style="min-width:128px;justify-content:center">${esc(t.classes[e.class] || e.class)}</span><div class="grow" style="min-width:0"><div class="small"><b class="mono">${esc(e.id)}</b> ${esc(e.title)}</div><div class="xs muted">${fmtD(e.date)} · ${esc(dept(e.dept)?.name || e.dept)}${e.area ? ' · ' + esc(e.area) : ''} · ${esc(mod(e.mod)?.name || '')}</div></div></div>`).join('') || '<div class="empty">No records at this level in the last 12 months.</div>'}${t.n > 60 ? `<div class="xs muted">Showing the latest 60 of ${num(t.n)}.</div>` : ''}</div>` });
   },
@@ -3665,7 +3827,7 @@ Object.assign(A, {
   },
   ccSim(id) { const s = UI.sim; s.depts = s.depts.includes(id) ? s.depts.filter(x => x !== id) : [...s.depts, id]; rerender(); },
   ccNotifyAll() {
-    const over = cube().period.filter(x => x.state === 'overdue'), I = integ(), by = {}; over.forEach(x => (by[x.dept] = by[x.dept] || []).push(x));
+    const over = cube().scoped.filter(x => x.state === 'overdue'), I = integ(), by = {}; over.forEach(x => (by[x.dept] = by[x.dept] || []).push(x));
     Object.entries(by).forEach(([d, xs]) => { notify(deptHead(d), `${xs.length} live compliance breach${xs.length > 1 ? 'es' : ''} in ${dept(d).name} need closing.`, '#/compliance', 'escalation'); xs.forEach(x => I.notified[x.id] = now()); });
     log(null, `notified ${Object.keys(by).length} department heads about ${over.length} live breaches`, 'escalation'); commit(`${Object.keys(by).length} department heads notified`);
   },
