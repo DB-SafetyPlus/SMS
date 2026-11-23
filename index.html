@@ -1026,6 +1026,73 @@ textarea.pp-title{border-bottom:1.5px dashed var(--line)} textarea.pp-title:focu
 .rq-chev{color:var(--muted)}
 .rq-form{padding:14px 16px 16px;border-top:1px dashed var(--line);background:var(--surface2)}
 
+
+/* =================== v8: risk pyramid & decision tools =================== */
+.rk-top{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(320px,1fr);gap:0}
+.rk-pyr{padding:18px 20px 12px;min-width:0;align-self:center}
+.rk-pyr svg{width:100%;height:auto;display:block}
+.rk-band{cursor:pointer;transition:filter .15s}
+.rk-band:hover{filter:brightness(1.07) saturate(1.08)}
+.rk-band:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.rk-ring{fill:none;stroke:var(--ink);stroke-width:2.5;animation:rkpulse 2.2s ease-in-out infinite}
+@keyframes rkpulse{0%,100%{stroke-opacity:1}50%{stroke-opacity:.35}}
+@media (prefers-reduced-motion:reduce){.rk-ring{animation:none}}
+.rk-lead{stroke:var(--line);stroke-width:1.5;stroke-dasharray:2 4}
+.rk-t1{font:600 17px var(--sans);fill:var(--ink)}
+.rk-t2{font:400 13.5px var(--sans);fill:var(--muted)}
+.rk-here{font:700 10.5px var(--sans);letter-spacing:.6px;fill:#fff}
+.rk-side{border-left:1px solid var(--line2);padding:18px 20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.rk-level{display:flex;align-items:center;gap:14px}
+.rk-badge{width:66px;height:66px;border-radius:16px;display:grid;place-items:center;font:700 30px var(--sans);flex:none;box-shadow:inset 0 -3px 0 rgba(0,0,0,.14)}
+.rk-level h4{margin:0;font:700 19px/1.2 var(--sans);color:var(--ink)}
+.rk-level p{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+.rk-sec{font:600 10.5px var(--sans);letter-spacing:1.1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.rk-li{display:flex;gap:8px;font-size:12.5px;line-height:1.45;padding:3px 0;color:var(--ink2)}
+.rk-li svg{width:15px;height:15px;flex:none;margin-top:2px}
+.rk-li b{color:var(--ink)}
+.rk-foot{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:0;border-top:1px solid var(--line2)}
+.rk-foot > div{padding:14px 20px;min-width:0} .rk-foot > div + div{border-left:1px solid var(--line2)}
+.rk-chips{display:flex;flex-wrap:wrap;gap:6px}
+.rk-chip{display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 4px;border:1px solid var(--line);border-radius:9px;background:var(--surface);font-size:12px;cursor:pointer;color:var(--ink2)}
+.rk-chip:hover{border-color:var(--faint)} .rk-chip.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.rk-tag{display:inline-grid;place-items:center;min-width:26px;height:22px;padding:0 5px;border-radius:6px;font:700 11px var(--mono)}
+.rk-hist{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
+.rk-hist span{height:30px;border-radius:5px;display:grid;place-items:center;font:700 10.5px var(--mono)}
+.rk-histx{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin-top:3px;font-size:10px;color:var(--muted);text-align:center}
+.rk-kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.rk-kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 15px;box-shadow:var(--shadow);min-width:0}
+.rk-kpi span{display:block;font-size:11.5px;color:var(--muted);font-weight:500}
+.rk-kpi b{display:block;font:600 25px/1.2 var(--sans);color:var(--ink);margin-top:3px}
+.rk-kpi em{display:block;font-style:normal;font-size:11px;color:var(--muted);margin-top:2px;line-height:1.35}
+.rk-pill{display:inline-flex;align-items:center;gap:7px;padding:5px 10px 5px 5px;border-radius:10px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-size:12px;white-space:nowrap;color:var(--ink)}
+.rk-pill:hover{border-color:var(--faint)}
+.cc-level{display:inline-flex;align-items:center;gap:8px;margin-top:6px;padding:4px 11px 4px 4px;border-radius:9px;background:rgba(255,255,255,.08);color:#fff;font-size:12px;font-weight:600;text-decoration:none}
+.fc-bars{display:flex;align-items:flex-end;gap:2px;height:96px;border-bottom:1px solid var(--line)}
+.fc-bars i{flex:1;min-width:0;background:var(--blue);border-radius:3px 3px 0 0;min-height:0}
+.fc-bars i:hover{background:var(--accent)}
+.fc-x{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px}
+.fc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.fc-stats div{background:var(--surface2);border-radius:10px;padding:9px 12px}
+.fc-stats span{display:block;font-size:11px;color:var(--muted)} .fc-stats b{font:600 20px var(--sans);color:var(--ink)}
+.pa-row{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 34px 42px;gap:10px;align-items:center;padding:4px;border-radius:7px;cursor:pointer;font-size:12.5px}
+.pa-row:hover{background:var(--surface2)}
+.pa-row .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.age-row{display:grid;grid-template-columns:96px minmax(0,1fr) 30px;gap:10px;align-items:center;font-size:12.5px;padding:5px 0}
+.sim-opts{display:flex;flex-wrap:wrap;gap:6px}
+.sim-o{padding:6px 11px;border:1px solid var(--line);border-radius:9px;background:var(--surface);font-size:12.5px;cursor:pointer;color:var(--ink2)}
+.sim-o.on{background:var(--navy,#1C2B4A);border-color:var(--navy,#1C2B4A);color:#fff}
+.sim-out{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.sim-out > div{background:var(--surface2);border-radius:12px;padding:12px 14px}
+.sim-out span{display:block;font-size:11.5px;color:var(--muted)}
+.sim-out b{font:600 24px var(--sans);color:var(--ink)}
+.sim-out .arrow{color:var(--muted);font-weight:400;margin:0 6px}
+.mth td,.mth th{padding:7px 9px;font-size:12.5px;text-align:left;border-bottom:1px solid var(--line2);vertical-align:top}
+.mth{border-collapse:collapse;width:100%}
+.pot{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);white-space:nowrap}
+.pot i{width:9px;height:9px;border-radius:3px;display:inline-block}
+@media (max-width:1250px){.rk-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:1100px){.rk-top,.rk-foot{grid-template-columns:1fr}.rk-side{border-left:0;border-top:1px solid var(--line2)}.rk-foot > div + div{border-left:0;border-top:1px solid var(--line2)}.rk-pill{display:none}}
+@media (max-width:760px){.rk-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -1988,6 +2055,7 @@ function shell(r) {
       <button class="sqbtn menu-toggle" onclick="$('#side').classList.toggle('open')">${ic('menu')}</button>
       <a class="pill-alert ${br ? '' : 'ok'}" href="#/compliance">${ic(br ? 'alert' : 'shieldck')}<span class="grow">${br ? `You have ${br} live compliance breach${br > 1 ? 'es' : ''}` : 'No live compliance breaches'}</span></a>
       <a class="pill-info" href="#/inbox">${ic('inbox')}<span class="grow">${tasks ? `${tasks} item${tasks > 1 ? 's' : ''} waiting for you` : 'Nothing waiting for you'}</span></a>
+      ${riskPill()}
       <span class="grow"></span>
       <a class="btn acc cc-top" href="#/compliance">${ic('shieldck')}<span>Compliance Center</span></a>
       <button class="sqbtn" onclick="A.palette()" title="Search (Ctrl K)">${ic('search')}</button>
@@ -3234,9 +3302,9 @@ function viewCompliance(sub) {
       <div class="eyebrow" style="color:#8C909C">${ic('shield', 'sm')} Compliance Command Center</div>
       <h1 class="h1" style="color:#fff;margin:10px 0 6px">${esc(fLabel)}${f.mod ? ` · <span style="color:${mod(f.mod).color}">${esc(mod(f.mod).name)}</span>` : ''}</h1>
       <div class="cc-sub">Live check of <b>${esc(I.system)}</b> records against <a href="${L(sm)}/t/book">${esc(sm.code)} v${sm.version}</a> and each department's approved edition · ${F.source === 'import' ? 'imported data' : 'synced ' + rel(F.at)}</div>
-      <div class="row wrap mt16"><button class="btn acc" onclick="A.ccSync(this)">${ic('refresh')} Sync now</button><button class="btn cc-ghost" onclick="A.ccBrief()">${ic('sparkles')} Executive brief</button><a class="btn cc-ghost" href="#/compliance/integration">${ic('link')} ${esc(I.system)} · 18 modules</a></div>
+      <div class="row wrap mt16"><button class="btn acc" onclick="A.ccSync(this)">${ic('refresh')} Sync now</button><button class="btn cc-ghost" onclick="A.ccBrief()">${ic('sparkles')} Executive brief</button><button class="btn cc-ghost" onclick="A.ccReturn()">${ic('flag')} National return</button><a class="btn cc-ghost" href="#/compliance/integration">${ic('link')} ${esc(I.system)} · 18 modules</a></div>
     </div>
-    <div class="cc-gauge">${gauge(sc)}<div class="cc-delta ${delta >= 0 ? 'up' : 'down'}">${delta >= 0 ? '▲' : '▼'} ${Math.abs(delta).toFixed(1)} pts vs previous 4 weeks</div></div>
+    <div class="cc-gauge">${gauge(sc)}<div class="cc-delta ${delta >= 0 ? 'up' : 'down'}">${delta >= 0 ? '▲' : '▼'} ${Math.abs(delta).toFixed(1)} pts vs previous 4 weeks</div><span class="cc-level">${levelTag(riskOf(scopeDepts()).level)}Risk level ${riskOf(scopeDepts()).level} of 5</span></div>
     <div class="cc-stats">
       <div><span>Live breaches</span><b style="color:#FF7A7C">${over.length}</b><em>open & past the limit</em></div>
       <div><span>At risk</span><b style="color:#FFC24B">${risk.length}</b><em>close to the limit</em></div>
@@ -3253,6 +3321,7 @@ function viewCompliance(sub) {
   </div>
 
   <div class="dash">
+    ${riskCards()}
     <div class="card span12"><div class="hd"><h3>${ic('building')} Organisation compliance tree</h3><span class="small muted">Click a division or department to drill in</span><div class="legend right"><span><i style="background:var(--teal)"></i>≥ 90%</span><span><i style="background:var(--amber)"></i>75–90%</span><span><i style="background:var(--red)"></i>&lt; 75%</span></div></div>
       <div class="bd" style="overflow-x:auto">${orgTree(period, dScore)}</div></div>
 
@@ -3262,6 +3331,8 @@ function viewCompliance(sub) {
       <div class="card"><div class="hd"><h3>${ic('trend')} Department ranking</h3></div><div class="bd col gap12">${S.departments.map(d => ({ d, s:dScore(d.id), o:period.filter(x => x.dept === d.id && x.state === 'overdue').length })).filter(x => x.s != null).sort((a, b) => b.s - a.s).map(({ d, s, o }, i) => `<div class="row gap12 click-row" onclick="UI.cf.dept='${d.id}';rerender()"><span class="mono xs muted" style="width:16px">${i + 1}</span><div style="width:118px" class="small"><b>${esc(d.name)}</b></div><div class="bar grow" style="height:8px"><i style="width:${s}%;background:${scoreCol(s)}"></i></div><b class="mono small" style="width:46px;text-align:right;color:${scoreCol(s)}">${s.toFixed(0)}%</b>${o ? `<span class="badge b-red plain">${o}</span>` : '<span style="width:26px"></span>'}</div>`).join('')}</div></div>
       <div class="card"><div class="hd"><h3 style="color:var(--amber)">${ic('clock')} Where you are — due soon</h3><span class="badge b-amber plain right">${risk.length}</span></div><div class="bd col gap12" style="max-height:340px;overflow:auto">${risk.slice(0, 8).map(breachCard).join('') || '<div class="empty small">Nothing close to its limit.</div>'}</div></div>
     </div>
+
+    ${insightCards(scoped, over)}
 
     <div class="card span12"><div class="hd"><h3>${ic('dashboard')} Compliance by system module</h3><span class="small muted">${esc(I.system)} · click a module to filter</span></div><div class="bd"><div class="modgrid">${MODS.map(mo => { const xs = scoped.filter(x => x.mod === mo.id), s = score(xs), o = xs.filter(x => x.state === 'overdue').length; const off = I.disabled.includes(mo.id);
       return `<div class="modt ${f.mod === mo.id ? 'on' : ''} ${off ? 'off' : ''}" onclick="UI.cf.mod=UI.cf.mod==='${mo.id}'?'':'${mo.id}';rerender()">${modTile(mo)}<div class="grow" style="min-width:0"><div class="mn">${mo.name}</div><div class="bar mt8" style="height:5px"><i style="width:${s ?? 0}%;background:${scoreCol(s)}"></i></div></div><div class="ms"><b style="color:${scoreCol(s)}">${s == null ? '—' : Math.round(s) + '%'}</b>${o ? `<span class="badge b-red plain">${o} live</span>` : `<span class="xs faint">${xs.length} rec</span>`}</div></div>`; }).join('')}</div></div></div>
@@ -3286,7 +3357,7 @@ function breachCard(x) {
   const mo = mod(x.mod), I = integ(), n = nums(x.lim.m)[x.lim.c.id];
   return `<div class="bcard ${x.state}">
     <div class="row gap12">${modTile(mo)}<div class="grow" style="min-width:0"><div class="row wrap gap4"><b class="mono small">${esc(x.id)}</b><span class="small" style="font-weight:600">${esc(x.title)}</span></div>
-      <div class="xs muted">${esc(mo.name)} · ${esc(dept(x.dept).name)}${x.area ? ' · ' + esc(x.area) : ''}</div></div><span class="badge ${STATE_B[x.state][0]}">${STATE_B[x.state][1]}</span></div>
+      <div class="xs muted">${esc(mo.name)} · ${esc(dept(x.dept).name)}${x.area ? ' · ' + esc(x.area) : ''}</div>${potTag(x.rule)}</div><span class="badge ${STATE_B[x.state][0]}">${STATE_B[x.state][1]}</span></div>
     <div class="small mt8">${whereTxt(x)}</div>
     ${whereBar(x)}${respPlan(x)}
     <div class="row wrap mt8"><span class="xs muted">Standard: <a href="${L(x.lim.m, x.lim.c)}">${esc(x.lim.m.code)} §${n} ${esc(x.lim.c.title)}</a> — ${esc(x.lim.q.label)} ${limTxt(x.lim)}${x.lim.tightened ? ` <span class="badge b-orange plain">${esc(x.dept)} edition (corporate ${x.lim.base} ${esc(x.lim.unit)})</span>` : ''}</span>
@@ -3310,7 +3381,7 @@ function controlTable(scoped) {
   const rows = CRULES.map(rule => { const xs = scoped.filter(x => x.rule.id === rule.id); const base = limitFor(rule, ''); return { rule, xs, base, s:score(xs) }; }).filter(r => r.base);
   return `<table class="tbl"><thead><tr><th>Control point</th><th>Standard clause</th><th>Corporate limit</th><th>Department editions</th><th>Checked</th><th style="width:180px">Compliance</th></tr></thead><tbody>
     ${rows.map(({ rule, xs, base, s }) => { const mo = mod(rule.mod), n = nums(base.m)[base.c.id]; const ov = S.departments.map(d => ({ d, l:limitFor(rule, d.id) })).filter(x => x.l && (x.l.tightened || x.l.na));
-      return `<tr class="click" onclick="A.ccDrill('','${rule.mod}','${rule.id}')"><td><div class="row">${modTile(mo)}<div><b class="small">${esc(rule.name)}</b><div class="xs muted">${esc(mo.name)}</div></div></div></td><td class="small"><a href="${L(base.m, base.c)}" onclick="event.stopPropagation()">${esc(base.m.code)} §${n}</a><div class="xs muted">${esc(base.c.title)}</div></td><td><span class="tpill ${base.type}">${base.type.toUpperCase()}</span> <b>${base.base}</b> ${esc(base.unit)}</td>
+      return `<tr class="click" onclick="A.ccDrill('','${rule.mod}','${rule.id}')"><td><div class="row">${modTile(mo)}<div><b class="small">${esc(rule.name)}</b><div class="xs muted">${esc(mo.name)}</div>${potTag(rule)}</div></div></td><td class="small"><a href="${L(base.m, base.c)}" onclick="event.stopPropagation()">${esc(base.m.code)} §${n}</a><div class="xs muted">${esc(base.c.title)}</div></td><td><span class="tpill ${base.type}">${base.type.toUpperCase()}</span> <b>${base.base}</b> ${esc(base.unit)}</td>
         <td>${ov.map(x => `<span class="badge ${x.l.na ? 'b-gray' : 'b-orange'} plain" style="margin:1px">${esc(x.d.id)}: ${x.l.na ? 'N/A' : x.l.value + ' ' + esc(x.l.unit)}</span>`).join('') || '<span class="xs faint">Baseline everywhere</span>'}</td>
         <td class="mono small">${xs.length}</td><td><div class="row"><div class="bar grow"><i style="width:${s ?? 0}%;background:${scoreCol(s)}"></i></div><b class="mono small" style="color:${scoreCol(s)};width:42px;text-align:right">${s == null ? '—' : Math.round(s) + '%'}</b></div></td></tr>`; }).join('')}</tbody></table>`;
 }
@@ -3325,14 +3396,18 @@ function viewIntegration() {
     <div class="note info small mt16">${ic('alert', 'sm')} This demo uses a simulated feed that refreshes every sync. To connect your real system, point the endpoint at its API, or import a JSON export in the format below.</div></div>
   <div class="card mb16"><div class="hd"><h3>Modules</h3><span class="small muted">Click to enable or disable a module</span></div><div class="bd"><div class="modgrid">${MODS.map(mo => { const off = I.disabled.includes(mo.id), rules = CRULES.filter(r => r.mod === mo.id), n = all.filter(r => r.mod === mo.id).length;
     return `<div class="modt ${off ? 'off' : ''}" onclick="A.ccToggle('${mo.id}')">${modTile(mo)}<div class="grow" style="min-width:0"><div class="mn">${mo.name}</div><div class="xs muted">${rules.length} control point${rules.length > 1 ? 's' : ''} · ${n} records</div></div><span class="tgl ${off ? '' : 'on'}"><i></i></span></div>`; }).join('')}</div></div></div>
-  <div class="card mb16"><div class="hd"><h3>Mapping to the standard</h3></div><div class="bd" style="padding:0;overflow-x:auto"><table class="tbl"><thead><tr><th>Module</th><th>Control point</th><th>Standard requirement</th><th>Check</th></tr></thead><tbody>${CRULES.map(r => { const l = limitFor(r, ''), mo = mod(r.mod); return `<tr><td><div class="row">${modTile(mo)}<span class="small">${mo.name}</span></div></td><td class="small"><b>${esc(r.name)}</b></td><td class="small">${l ? `<a href="${L(l.m, l.c)}">${esc(l.m.code)} §${nums(l.m)[l.c.id]}</a> ${esc(l.q.label)} — ${limTxt(l)}` : `<span class="badge b-red">Gap — no limit in the standard</span>`}</td><td class="xs muted">${{ deadline:'Time from event to completion', interval:'Time since last done', measure:'Recorded value vs limit', freq:'Count per week', binary:'Present / missing' }[r.kind]}</td></tr>`; }).join('')}</tbody></table></div></div>
+  <div class="card mb16"><div class="hd"><h3>Mapping to the standard</h3></div><div class="bd" style="padding:0;overflow-x:auto"><table class="tbl"><thead><tr><th>Module</th><th>Control point</th><th>Standard requirement</th><th>Check</th><th>Can lead to</th></tr></thead><tbody>${CRULES.map(r => { const l = limitFor(r, ''), mo = mod(r.mod); return `<tr><td><div class="row">${modTile(mo)}<span class="small">${mo.name}</span></div></td><td class="small"><b>${esc(r.name)}</b></td><td class="small">${l ? `<a href="${L(l.m, l.c)}">${esc(l.m.code)} §${nums(l.m)[l.c.id]}</a> ${esc(l.q.label)} — ${limTxt(l)}` : `<span class="badge b-red">Gap — no limit in the standard</span>`}</td><td class="xs muted">${{ deadline:'Time from event to completion', interval:'Time since last done', measure:'Recorded value vs limit', freq:'Count per week', binary:'Present / missing' }[r.kind]}</td><td>${levelTag(potOf(r))}</td></tr>`; }).join('')}</tbody></table></div></div>
+  <div class="card mb16"><div class="hd"><h3>${ic('pyramid')} Mapping to the risk pyramid</h3><span class="small muted">Each ${esc(I.system)} class goes to one tier</span></div><div class="bd" style="padding:0;overflow-x:auto"><table class="tbl"><thead><tr><th>Level</th><th>Tier</th><th>Class codes</th><th>Records</th></tr></thead><tbody>${[...TIERS].reverse().map(t => `<tr><td>${levelTag(t.id)}</td><td class="small"><b>${esc(t.name)}</b></td><td class="small">${Object.entries(t.classes).map(([k, v]) => `<span class="mono">${k}</span> ${esc(v)}`).join(' · ')}</td><td class="mono small">${num(riskEvents().filter(e => e.tier === t.id).length)}</td></tr>`).join('')}</tbody></table></div></div>
   <div class="card"><div class="hd"><h3>Import real data (JSON)</h3><label class="btn sm right">${ic('upload', 'sm')} Import file<input type="file" accept=".json" class="hide" onchange="A.ccImport(this)"></label>${I.imported ? `<button class="btn sm" onclick="A.ccClearImport()">Use live sync</button>` : ''}</div><div class="bd"><pre class="code">{ "records": [
   { "id": "INV-2417", "rule": "inv-start", "dept": "MNT", "title": "Hand caught in conveyor",
     "start": "2026-10-13T08:30:00Z", "end": null },          // deadline: event → completion
   { "id": "FE-0921", "rule": "fe-insp", "dept": "PRJ", "start": "2026-09-03" },   // interval: last done
   { "id": "SHF-31", "rule": "fa", "dept": "OPS", "start": "2026-10-14", "value": 1 }  // measure / freq / binary
+], "events": [
+  { "id": "EV-88", "class": "NM", "dept": "OPS", "mod": "increp", "title": "Forklift near miss", "date": "2026-10-14" }  // risk pyramid
 ] }
 rules: ${CRULES.map(r => r.id).join(', ')}
+classes: ${Object.keys(CLASS_TIER).join(', ')}
 depts: ${S.departments.map(d => d.id).join(', ')}</pre></div></div>`;
 }
 
@@ -3340,7 +3415,7 @@ function ccStrip() {
   try {
     const c = cube(), s = score(c.period), o = c.period.filter(x => x.state === 'overdue');
     const worst = S.departments.map(d => ({ d, s:score(c.period.filter(x => x.dept === d.id)) })).filter(x => x.s != null).sort((a, b) => a.s - b.s)[0];
-    return `<a class="ccstrip" href="#/compliance"><span class="mico" style="background:${scoreCol(s)}">${ic('shieldck')}</span><div class="grow"><div class="eyebrow">Live compliance · ${esc(integ().system)}</div><div class="row wrap" style="margin-top:4px"><b class="h2" style="color:${scoreCol(s)}">${s}%</b><span class="small muted">${c.period.length} records checked against the standard</span></div></div>${o.length ? `<span class="badge b-red">${o.length} live breaches</span>` : ''}${worst ? `<span class="small muted">Lowest: <b>${esc(worst.d.name)}</b> ${Math.round(worst.s)}%</span>` : ''}<span class="btn sm">Open command center ${ic('chev', 'sm')}</span></a>`;
+    return `<a class="ccstrip" href="#/compliance"><span class="mico" style="background:${scoreCol(s)}">${ic('shieldck')}</span><div class="grow"><div class="eyebrow">Live compliance · ${esc(integ().system)}</div><div class="row wrap" style="margin-top:4px"><b class="h2" style="color:${scoreCol(s)}">${s}%</b><span class="small muted">${c.period.length} records checked against the standard</span></div></div>${(() => { const l = riskOf(null).level; return `<span class="row small">${levelTag(l)}<b>${esc(tierOf(l).level)}</b></span>`; })()}${o.length ? `<span class="badge b-red">${o.length} live breaches</span>` : ''}${worst ? `<span class="small muted">Lowest: <b>${esc(worst.d.name)}</b> ${Math.round(worst.s)}%</span>` : ''}<span class="btn sm">Open command center ${ic('chev', 'sm')}</span></a>`;
   } catch (e) { return ''; }
 }
 
@@ -3366,7 +3441,8 @@ Object.assign(A, {
     const top = over.sort((a, b) => b.frac - a.frac)[0];
     const tight = S.departments.filter(d => stdManual() && Object.keys(effective(stdManual(), d.id).tight).length);
     modal({ title:'Executive brief', icon:`<span class="mico" style="background:var(--accent)">${ic('sparkles')}</span>`, wide:true, body:`<div class="brief">
-      <p class="lead2">Overall compliance with <b>${esc(stdManual().code)}</b> is <b style="color:${scoreCol(sc)}">${sc}%</b> over the last ${UI.cf.days} days, with <b>${over.length}</b> live breaches open right now.</p>
+      <p class="lead2">Overall compliance with <b>${esc(stdManual().code)}</b> is <b style="color:${scoreCol(sc)}">${sc}%</b> over the last ${UI.cf.days} days, with <b>${over.length}</b> live breaches open right now. The company is at <b>risk level ${riskOf(null).level} of 5 (${esc(tierOf(riskOf(null).level).level)})</b>.</p>
+      <h4>Risk position</h4><ul>${riskOf(null).active.map(x => `<li>${x.why}. ${x.fix}.</li>`).join('')}<li>${reportingNote(riskOf(null))}</li></ul>
       <h4>Where to act</h4><ul>
         ${ds[0] ? `<li><b>${esc(ds[0].d.name)}</b> is the lowest-scoring department at <b>${ds[0].s}%</b>${ds[0].o ? ` with ${ds[0].o} live breach${ds[0].o > 1 ? 'es' : ''}` : ''}.</li>` : ''}
         ${ms[0] ? `<li>Weakest system module: <b>${ms[0].mo.name}</b> (${ms[0].s}%).</li>` : ''}
@@ -3376,12 +3452,234 @@ Object.assign(A, {
       <h4>Recommended actions</h4><ol><li>Close the ${over.length} live breaches this week — notify department heads from the breach list.</li>${ms[0] ? `<li>Run a focused review of ${ms[0].mo.name} processes with ${esc(ds[0]?.d.name || 'the lowest department')}.</li>` : ''}<li>Review the standard's limits at the next management review using this trend.</li></ol></div>` });
   },
   ccImport(inp) { const f = inp.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { try { const j = JSON.parse(r.result.replace(/\/\/.*$/gm, '')); const recs = (j.records || j).map(x => ({ ...x, start:new Date(x.start).getTime(), end:x.end ? new Date(x.end).getTime() : x.end ?? undefined, mod:x.mod || CRULES.find(c => c.id === x.rule)?.mod })).filter(x => x.mod && x.dept);
-    integ().imported = recs; integ().importedAt = now(); FEED = null; commit(`Imported ${recs.length} records`); } catch (e) { toast('Import failed: ' + e.message, 'bad'); } }; r.readAsText(f); },
-  ccClearImport() { delete integ().imported; FEED = null; commit('Back to live sync'); },
+    const evs = (j.events || []).map(x => ({ ...x, date:new Date(x.date).getTime(), tier:CLASS_TIER[x.class] })).filter(x => x.tier && x.dept); integ().imported = recs; integ().importedEvents = evs; integ().importedAt = now(); FEED = null; commit(`Imported ${recs.length} records and ${evs.length} events`); } catch (e) { toast('Import failed: ' + e.message, 'bad'); } }; r.readAsText(f); },
+  ccClearImport() { delete integ().imported; delete integ().importedEvents; FEED = null; commit('Back to live sync'); },
 });
 
 const _render0 = render;
 render = function () { LIMC = {}; CUBE = null; _render0(); };
+
+/* ============ Risk pyramid — the company's level, worked out from Safety+ events and open control failures ============ */
+Object.assign(ICONS, {
+  pyramid:'<path d="M12 3 2.5 20h19L12 3z"/><path d="M7.5 12h9M5 16h14"/>',
+  flag:'<path d="M4 22V4c4-2 6 2 10 0s4-1 6 0v10c-2-1-3-1-6 0s-6-2-10 0"/>',
+  sliders:'<path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/>',
+  info:'<circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/>',
+  down:'<path d="M12 3v12M7 11l5 5 5-5M4 21h16"/>',
+});
+const TIERS = [ // level 1 is the base of the pyramid, level 5 the top
+  { id:1, name:'Unsafe Conditions and Unsafe Acts', short:'Hazards', level:'Controlled', ref:300000, col:'#F4E409', ink:'#3B3500', classes:{ UC:'Unsafe condition', UA:'Unsafe act' }, says:'Hazards are being found and no control is failing.' },
+  { id:2, name:'Near Misses, First Aids, Minor Incidents', short:'Near misses & minor', level:'Guarded', ref:30000, col:'#FACC15', ink:'#3B2F00', classes:{ NM:'Near miss', FAC:'First aid case', MTC:'Medical aid case', RWC:'Modified work case' }, says:'Controls are slipping, but no one has been hurt because of it.' },
+  { id:3, name:'Lost Time Accidents', short:'Lost time', level:'Elevated', ref:300, col:'#F59E0B', ink:'#3A2400', classes:{ LTI:'Lost time injury' }, says:'People are being hurt, or a life-critical control has failed.' },
+  { id:4, name:'Serious Disabling Injury', short:'Serious injury', level:'Severe', ref:30, col:'#EA580C', ink:'#FFFFFF', classes:{ PDI:'Permanent disability' }, says:'A serious injury is recent, or life-critical controls are failing repeatedly.' },
+  { id:5, name:'Fatality', short:'Fatality', level:'Critical', ref:1, col:'#C8102E', ink:'#FFFFFF', classes:{ FAT:'Fatality' }, says:'A fatality has occurred in the last 12 months.' },
+];
+const tierOf = id => TIERS[id - 1];
+const CLASS_TIER = Object.fromEntries(TIERS.flatMap(t => Object.keys(t.classes).map(c => [c, t.id])));
+// What a failed control could lead to if it is left open
+const POT = { 'ptw-gas':5, 'ptw-fw':5, 'loto-insp':5, jsa:5, moc:5, 'risk-chg':5, capa:5, 'chem-sds':4, 'chem-fit':4, 'fe-insp':4, 'fe-maint':4, 'inv-final':4, ind:4, 'inc-notify':3, 'inc-log':3, 'inv-start':3, 'inv-prel':3, ref:3, fa:3, 'risk-rev':3, turn:3, insp:2, ihw:2, mgw:2, aud:2, tbx:2, sugg:1 };
+const potOf = rule => POT[rule.id] ?? 2;
+const LIFE = 5, FAILED_DAYS = 30, LTA_DAYS = 90, SERIOUS_DAYS = 182, YEAR_DAYS = 365;
+const HEADS = { OPS:240, MNT:120, PRJ:180, ENG:60, HSE:20, HR:30, EXE:12 }, HOURS_PER_HEAD = 2400;
+const headsOf = ids => (ids || S.departments.map(d => d.id)).reduce((s, id) => s + (HEADS[id] ?? 40), 0);
+const HAZARDS = ['Blocked fire exit','Missing machine guard','Oil spill on walkway','Unsecured gas cylinder','Worker without eye protection','Damaged extension cable','Ladder used on uneven ground','Open floor grating','Poor stacking in racks','Harness not clipped on'];
+const MINORS = ['Forklift near miss','Dropped tool from platform','Minor cut to finger','Slip on wet floor','Vehicle reversing near miss','Foreign body in eye','Minor burn from hot surface','Bruised hand during lifting'];
+UI.sim = UI.sim || { life:false, depts:[] };
+const num = n => Number(n).toLocaleString('en-US');
+
+/* ---------- Events: every classified record from Safety+, or imported ---------- */
+function riskEvents() {
+  const I = integ(); if (I.importedEvents?.length) return I.importedEvents;
+  const F = feed(); if (F.events) return F.events;
+  const R = rng('pyramid' + new Date().toDateString()), T = now(), pick = a => a[Math.floor(R() * a.length)];
+  const out = []; let seq = 5000;
+  const add = (cls, deptId, age, title, mo, id) => out.push({ id:id || `EV-${seq++}`, class:cls, tier:CLASS_TIER[cls], dept:deptId, mod:mo, title, date:T - age * DAY, area:pick(AREAS) });
+  for (const d of S.departments) {
+    const heads = HEADS[d.id] ?? 40, culture = Math.pow(DQ[d.id] ?? .85, 5);
+    for (let k = 0, n = Math.round(heads * 5.4 * culture); k < n; k++) add(R() < .55 ? 'UC' : 'UA', d.id, R() * YEAR_DAYS, pick(HAZARDS), pick(['insp','ihw','mgw','sugg']));
+    for (let k = 0, n = Math.round(heads * .7 * culture); k < n; k++) add(pick(['NM','NM','NM','FAC','FAC','MTC','RWC']), d.id, R() * YEAR_DAYS, pick(MINORS), 'increp');
+  }
+  [['MNT',130,'Crushed finger at press'],['PRJ',38,'Fall from scaffold step'],['PRJ',175,'Struck by swinging load'],['PRJ',290,'Back injury during manual lifting'],['OPS',210,'Forklift collision with pedestrian']].forEach(([d, a, t]) => add('LTI', d, a, t, 'increp'));
+  add('PDI', 'PRJ', 235, 'Partial hand amputation at rebar cutter', 'increp');
+  add('LTI', 'MNT', 51 / 24, 'Hand caught in conveyor nip point', 'increp', 'INV-2417');
+  add('MTC', 'MNT', 31 / 24, 'Hydraulic hose burst', 'increp', 'INV-2409');
+  add('NM', 'OPS', .03, 'Forklift near miss', 'increp', 'INC-2422');
+  return F.events = out.filter(e => !I.disabled.includes(e.mod));
+}
+
+/* ---------- Level: the highest rule that is true. Reporting a hazard or near miss never raises it ---------- */
+function riskOf(deptIds, closed) {
+  const T = now(), inScope = x => !deptIds || deptIds.includes(x.dept), ageDays = t => (T - t) / DAY;
+  const ev = riskEvents().filter(e => inScope(e) && ageDays(e.date) <= YEAR_DAYS);
+  const tiers = TIERS.map(t => { const events = ev.filter(e => e.tier === t.id).sort((a, b) => b.date - a.date); return { ...t, events, n:events.length }; });
+  const live = cube().all.filter(inScope);
+  const pre = live.filter(x => (x.state === 'overdue' && !closed?.(x)) || (x.state === 'breach' && ageDays(x.start) <= FAILED_DAYS));
+  const life = pre.filter(x => potOf(x.rule) === LIFE), lifeOpen = life.filter(x => x.state === 'overdue').length, open = pre.filter(x => x.state === 'overdue').length;
+  const lifeBase = live.filter(x => potOf(x.rule) === LIFE && (x.rule.kind === 'interval' || ageDays(x.start) <= FAILED_DAYS) && x.state !== 'na').length;
+  const lifeRate = lifeBase ? life.length / lifeBase : 0;
+  const clears = (e, days) => fmtD(e.date + days * DAY), [fat, ser, lta] = [5, 4, 3].map(id => tiers[id - 1].events[0]);
+  const rules = [
+    { level:5, on:!!fat, why:fat && `Fatality recorded on ${fmtD(fat.date)}`, fix:fat && `Stays until ${clears(fat, YEAR_DAYS)} with no further fatality` },
+    { level:4, on:!!ser && ageDays(ser.date) <= SERIOUS_DAYS, why:ser && `Serious injury on ${fmtD(ser.date)}`, fix:ser && `Clears ${clears(ser, SERIOUS_DAYS)} if there is no new serious injury` },
+    { level:4, on:life.length >= 3 && lifeRate >= .15, why:`${life.length} life-critical control failures (${Math.round(lifeRate * 100)}% of checks)`, fix:'Bring life-critical failures below 3, or below 15% of checks' },
+    { level:3, on:!!lta && ageDays(lta.date) <= LTA_DAYS, why:lta && `Lost time accident on ${fmtD(lta.date)}`, fix:lta && `Clears ${clears(lta, LTA_DAYS)} if there is no new lost time accident` },
+    { level:3, on:life.length > 0, why:`${life.length} life-critical control${life.length > 1 ? 's' : ''} failed or overdue`, fix:`Close ${lifeOpen} overdue life-critical control${lifeOpen === 1 ? '' : 's'}; failed checks age out after ${FAILED_DAYS} days` },
+    { level:2, on:pre.length > 0, why:`${pre.length} control${pre.length > 1 ? 's' : ''} failed or overdue`, fix:`Close ${open} overdue control${open === 1 ? '' : 's'}; failed checks age out after ${FAILED_DAYS} days` },
+  ];
+  // A group is never safer than its worst department
+  if (!deptIds || deptIds.length > 1) (deptIds || S.departments.map(d => d.id)).filter(dept).forEach(id => { const l = riskOf([id], closed).level; rules.push({ level:l, on:l > 1, why:`${dept(id).name} is at Level ${l}`, fix:`Bring ${dept(id).name} below Level ${l}` }); });
+  const level = Math.max(1, ...rules.filter(x => x.on).map(x => x.level));
+  const hurt = tiers[2].n + tiers[3].n + tiers[4].n, recordable = hurt + tiers[1].events.filter(e => e.class === 'MTC' || e.class === 'RWC').length, heads = headsOf(deptIds), hours = heads * HOURS_PER_HEAD;
+  return { level, tiers, active:rules.filter(x => x.on && x.level === level), pre, life, hurt, heads, ltifr:hurt * 1e6 / hours, trir:recordable * 2e5 / hours, perLta:hurt ? tiers[1].n / hurt : null, hazPer100:tiers[0].n / heads * 100 };
+}
+function scopeDepts() { const f = UI.cf.dept; return f ? (f.startsWith('div:') ? DIVS.find(d => d.id === f.slice(4))?.depts || [] : [f]) : null; }
+function levelHistory(deptIds) {
+  const T = now(), ev = riskEvents().filter(e => !deptIds || deptIds.includes(e.dept));
+  return Array.from({ length:12 }, (_, i) => {
+    const end = new Date(T); end.setDate(1); end.setHours(0, 0, 0, 0); end.setMonth(end.getMonth() - (10 - i)); const t = i === 11 ? T : end.getTime() - 1;
+    const within = (tier, days) => ev.some(e => e.tier === tier && e.date <= t && t - e.date <= days * DAY);
+    const level = within(5, YEAR_DAYS) ? 5 : within(4, SERIOUS_DAYS) ? 4 : within(3, LTA_DAYS) ? 3 : within(2, FAILED_DAYS) ? 2 : 1;
+    return { level, label:new Date(t).toLocaleDateString('en-GB', { month:'short' }) };
+  });
+}
+const levelTag = l => `<span class="rk-tag" style="background:${tierOf(l).col};color:${tierOf(l).ink}">L${l}</span>`;
+const potTag = rule => { const t = tierOf(potOf(rule)); return `<span class="pot" title="Worst outcome if this control fails"><i style="background:${t.col}"></i>Can lead to: ${esc(t.short)}</span>`; };
+
+/* ---------- Pyramid ---------- */
+function pyramidSvg(r) {
+  const H = 410, gap = 6, bh = (H - gap * 4) / 5, cx = 236, half = y => 226 * y / H, lx = 490;
+  const bands = [...r.tiers].reverse().map((t, i) => {
+    const y0 = i * (bh + gap), y1 = y0 + bh, yc = (y0 + y1) / 2, here = t.id === r.level;
+    const pts = `${cx - half(y0)},${y0} ${cx + half(y0)},${y0} ${cx + half(y1)},${y1} ${cx - half(y1)},${y1}`;
+    const ratio = t.id === 5 ? '' : ` · reference 1 : ${num(t.ref)}`;
+    return `<g class="rk-band" role="button" tabindex="0" aria-label="${esc(t.name)}: ${t.n} in 12 months" onclick="A.ccTier(${t.id})" onkeydown="if(event.key==='Enter')A.ccTier(${t.id})">
+      <title>${esc(t.name)}: ${num(t.n)} in the last 12 months. Click to see the records.</title>
+      <polygon points="${pts}" fill="${t.col}"/>${here ? `<polygon class="rk-ring" points="${pts}"/>` : ''}
+      <text x="${cx}" y="${yc + (t.id === 5 ? 18 : 9)}" text-anchor="middle" style="font:700 ${t.id === 5 ? 22 : 26}px var(--sans);fill:${t.ink}">${num(t.n)}</text>
+      <line class="rk-lead" x1="${cx + half(yc) + 8}" x2="${lx - 10}" y1="${yc}" y2="${yc}"/>
+      <text class="rk-t1" x="${lx}" y="${yc - 5}">${esc(t.name)}</text>
+      <text class="rk-t2" x="${lx}" y="${yc + 12}">Level ${t.id} · ${esc(t.level)}${ratio}</text>
+      ${here ? `<g transform="translate(${lx},${yc + 19})"><rect width="102" height="19" rx="5" fill="var(--navy,#1C2B4A)"/><text class="rk-here" x="51" y="13.5" text-anchor="middle">YOU ARE HERE</text></g>` : ''}
+    </g>`; }).join('');
+  return `<svg viewBox="0 0 860 ${H + 8}" role="img" aria-label="Risk pyramid. Current level ${r.level} of 5, ${esc(tierOf(r.level).level)}.">${bands}</svg>`;
+}
+function reportingNote(r) {
+  if (r.perLta == null) return `<b>No lost time in 12 months.</b> ${num(r.tiers[1].n)} near misses and minor cases were captured. Keep reporting.`;
+  return r.perLta >= 100 ? `<b>Healthy reporting.</b> ${Math.round(r.perLta)} near misses and minor cases per lost time accident, above the reference of 100.`
+    : `<b>The base of the pyramid is thin.</b> ${Math.round(r.perLta)} near misses and minor cases per lost time accident against a reference of 100, so small events are probably going unreported.`;
+}
+function riskCards() {
+  const ids = scopeDepts(), r = riskOf(ids), t = tierOf(r.level), f = UI.cf, hist = levelHistory(ids);
+  hist[11].level = r.level;
+  const scopeName = f.dept ? (f.dept.startsWith('div:') ? DIVS.find(d => d.id === f.dept.slice(4))?.name : dept(f.dept)?.name) : S.settings.company;
+  const deptChips = S.departments.map(d => ({ d, l:riskOf([d.id]).level })).sort((a, b) => b.l - a.l).map(({ d, l }) => `<a class="rk-chip ${f.dept === d.id ? 'on' : ''}" onclick="UI.cf.dept=UI.cf.dept==='${d.id}'?'':'${d.id}';rerender()" title="${esc(d.name)}: Level ${l} ${tierOf(l).level}">${levelTag(l)}${esc(d.name)}</a>`).join('');
+  const kpi = (l, v, n) => `<div class="rk-kpi"><span>${l}</span><b>${v}</b><em>${n}</em></div>`;
+  return `<div class="card span12"><div class="hd"><h3>${ic('pyramid')} Risk pyramid · ${esc(scopeName)}</h3><span class="small muted">Last 12 months from ${esc(integ().system)} · click a tier to see the records</span><button class="btn sm right" onclick="A.ccMethod()">${ic('info', 'sm')} How the level is worked out</button></div>
+    <div class="rk-top"><div class="rk-pyr">${pyramidSvg(r)}</div>
+      <div class="rk-side">
+        <div class="rk-level"><span class="rk-badge" style="background:${t.col};color:${t.ink}">L${r.level}</span><div><h4>Level ${r.level} of 5 · ${esc(t.level)}</h4><p>${esc(t.says)}</p></div></div>
+        <div><div class="rk-sec">Why you are here</div>${r.active.length ? r.active.map(x => `<div class="rk-li">${ic('alert')}<span>${x.why}</span></div>`).join('') : `<div class="rk-li">${ic('shieldck')}<span>No control is failing or overdue.</span></div>`}</div>
+        ${r.level > 1 ? `<div><div class="rk-sec">To reach Level ${r.level - 1}</div>${r.active.map(x => `<div class="rk-li">${ic('flag')}<span>${x.fix}</span></div>`).join('')}</div>` : ''}
+        <div class="note ${r.perLta != null && r.perLta < 100 ? 'warn' : 'info'} small">${reportingNote(r)}</div>
+      </div></div>
+    <div class="rk-foot"><div><div class="rk-sec">Level by department</div><div class="rk-chips">${deptChips}</div></div>
+      <div><div class="rk-sec">Level over 12 months</div><div class="rk-hist">${hist.map(h => `<span style="background:${tierOf(h.level).col};color:${tierOf(h.level).ink}" title="${h.label}: Level ${h.level} ${tierOf(h.level).level}">${h.level}</span>`).join('')}</div><div class="rk-histx">${hist.map(h => `<span>${h.label}</span>`).join('')}</div></div></div></div>
+  <div class="span12 rk-kpis">
+    ${kpi('LTIFR', r.ltifr.toFixed(2), 'Lost time injuries per million hours')}
+    ${kpi('TRIR', r.trir.toFixed(2), 'Recordable cases per 200,000 hours')}
+    ${kpi('Near misses per lost time', r.perLta == null ? '—' : Math.round(r.perLta), 'Reference 100 or more')}
+    ${kpi('Hazards per 100 workers', Math.round(r.hazPer100), `${num(r.heads)} workers in scope`)}
+    ${kpi('Life-critical failures', r.life.length, `Open, or failed in the last ${FAILED_DAYS} days`)}
+  </div>`;
+}
+
+/* ---------- Decision tools ---------- */
+function forecast(scoped) {
+  const T = now(), good = scoped.filter(x => GOOD.has(x.state)).length, bad = scoped.filter(x => BAD.has(x.state)).length;
+  const coming = scoped.filter(x => x.due > T && x.due <= T + 30 * DAY && x.end == null && x.state !== 'na');
+  const days = Array.from({ length:30 }, (_, i) => coming.filter(x => x.due > T + i * DAY && x.due <= T + (i + 1) * DAY).length), mx = Math.max(1, ...days);
+  const within = n => coming.filter(x => x.due <= T + n * DAY).length, slipped = coming.filter(x => GOOD.has(x.state)).length;
+  const after = good + bad ? Math.round((good - slipped) / (good + bad) * 1000) / 10 : null;
+  return `<div class="card span6"><div class="hd"><h3>${ic('clock')} Next 30 days</h3><span class="small muted">Controls falling due</span></div><div class="bd">
+    <div class="fc-stats"><div><span>Next 7 days</span><b>${within(7)}</b></div><div><span>Next 30 days</span><b>${within(30)}</b></div><div><span>Score if none are done</span><b>${after == null ? '—' : after + '%'}</b></div></div>
+    <div class="fc-bars">${days.map((n, i) => `<i style="height:${n / mx * 100}%" title="${fmtD(T + (i + 1) * DAY)}: ${n} due"></i>`).join('')}</div>
+    <div class="fc-x"><span>Today</span><span>+15 days</span><span>+30 days</span></div></div></div>`;
+}
+function pareto(scoped) {
+  const rows = CRULES.map(rule => ({ rule, n:scoped.filter(x => x.rule.id === rule.id && BAD.has(x.state)).length })).filter(x => x.n).sort((a, b) => b.n - a.n);
+  const total = rows.reduce((s, x) => s + x.n, 0); let run = 0, cut = 0;
+  rows.forEach((x, i) => { run += x.n; x.cum = run / total * 100; if (!cut && x.cum >= 80) cut = i + 1; });
+  const mx = rows[0]?.n || 1;
+  return `<div class="card span6"><div class="hd"><h3>${ic('target')} Where non-compliance comes from</h3></div><div class="bd">
+    ${total ? `<p class="small muted" style="margin:0 0 10px"><b style="color:var(--ink)">${cut} of ${CRULES.length} control points</b> cause 80% of the ${total} non-compliant records.</p>` : '<div class="empty small">No non-compliant records in this scope.</div>'}
+    ${rows.slice(0, 7).map(x => `<div class="pa-row" onclick="A.ccDrill('','${x.rule.mod}','${x.rule.id}')" title="${esc(x.rule.name)}: ${x.n} records, ${Math.round(x.cum)}% cumulative"><span class="nm">${esc(x.rule.name)}</span><div class="bar" style="height:8px"><i style="width:${x.n / mx * 100}%;background:var(--blue)"></i></div><b class="mono small" style="text-align:right">${x.n}</b><span class="xs muted" style="text-align:right">${Math.round(x.cum)}%</span></div>`).join('')}</div></div>`;
+}
+function ageing(over) {
+  const T = now(), buckets = [['Under 24 hours', 0, 1], ['1 to 3 days', 1, 3], ['3 to 7 days', 3, 7], ['7 to 30 days', 7, 30], ['Over 30 days', 30, 1e9]].map(([l, a, b]) => ({ l, n:over.filter(x => { const d = (T - x.due) / DAY; return d >= a && d < b; }).length }));
+  const mx = Math.max(1, ...buckets.map(b => b.n));
+  return `<div class="card span5"><div class="hd"><h3>${ic('alert')} Age of live breaches</h3><button class="btn sm right" onclick="A.ccNotifyAll()" ${over.length ? '' : 'disabled'}>${ic('bell', 'sm')} Notify all heads</button></div><div class="bd">${buckets.map(b => `<div class="age-row"><span class="muted">${b.l}</span><div class="bar" style="height:10px"><i style="width:${b.n / mx * 100}%;background:var(--red)"></i></div><b class="mono small" style="text-align:right">${b.n}</b></div>`).join('')}</div></div>`;
+}
+function simulator(scoped) {
+  const ids = scopeDepts(), sim = UI.sim, before = riskOf(ids), sel = x => x.state === 'overdue' && ((sim.life && potOf(x.rule) === LIFE) || sim.depts.includes(x.dept));
+  const after = riskOf(ids, sel), s0 = score(scoped), s1 = score(scoped.map(x => sel(x) ? { ...x, state:'ok' } : x));
+  const closing = scoped.filter(sel).length, lifeOpen = scoped.filter(x => x.state === 'overdue' && potOf(x.rule) === LIFE).length;
+  const opts = S.departments.map(d => ({ d, n:scoped.filter(x => x.state === 'overdue' && x.dept === d.id).length })).filter(x => x.n);
+  return `<div class="card span7"><div class="hd"><h3>${ic('sliders')} What if we close…</h3><span class="small muted">Choose live breaches to close and see the result</span></div><div class="bd">
+    <div class="sim-opts"><a class="sim-o ${sim.life ? 'on' : ''}" onclick="UI.sim.life=!UI.sim.life;rerender()">All life-critical (${lifeOpen})</a>${opts.map(({ d, n }) => `<a class="sim-o ${sim.depts.includes(d.id) ? 'on' : ''}" onclick="A.ccSim('${d.id}')">${esc(d.name)} (${n})</a>`).join('')}</div>
+    <div class="sim-out"><div><span>Compliance score</span><b>${s0 ?? '—'}%<i class="arrow">→</i>${s1 ?? '—'}%</b></div><div><span>Risk level</span><b>L${before.level}<i class="arrow">→</i>L${after.level}</b></div></div>
+    <p class="xs muted" style="margin:10px 0 0">${closing ? `Closes ${closing} live breach${closing > 1 ? 'es' : ''}. ` : ''}Recent injuries and failed checks stay on record, so they hold the level until they age out.</p></div></div>`;
+}
+function insightCards(scoped, over) { return forecast(scoped) + pareto(scoped) + ageing(over) + simulator(scoped); }
+
+/* ---------- National reporting ---------- */
+const NAT = {"eastern":["Al Ahsa","Qatif","Dammam","Hafr Al Batin","Jubail","Al Khobar","Al Khafji","Abqaiq","Qaryah Al Ulya","Dhahran","Sharurah","Ras Tanura","Al Nuayriyah","Al Udayd"],"riyadh":["Riyadh","Al Majmaah","Dawadmi","Az Zulfi","Al Kharj","Al Quwayiyah","Ar Rayn","Wadi Ad Dawasir","Ad Diriyah","Duruma","Shaqra","Afif","Hawtat Bani Tamim","Al Ghat","Rumah","Ad Dilam","Al Muzahimiyah","Al Aflaj","Huraymila","As Sulayyil","Al Hariq","Thadiq","Marat"],"makkah":["Jeddah","Taif","Makkah","Rabigh","Al Jumum","Ranyah","Khulays","Al Khurmah","Al Lith","Bahrah","Al Ardiyat","Al Qunfudhah","Turubah","Al Kamil","Maysan","Adam","Farat Ghamid Az Zinad","Al Birk"],"jazan":["Sabya","Abu Arish","Ahad Al Masarihah","Jazan","Samtah","Al Aridah","Al Harth","Damad","Fayfa","Farasan","Ad Darb","Al Aydabi","Ar Rayth","At Tuwal","Harub","Ad Dair","Baish"],"madinah":["Madinah","Yanbu","Al Mahd","Al Ula","Badr","Khaybar","Al Hinakiyah","Al Is","Wadi Al Fara"],"qassim":["Buraydah","Unaizah","Ar Rass","Uqlat As Suqur","Al Bukayriyah","Al Badai","Dariyah","Ash Shimasiyah","Al Mithnab","Al Asyah","Riyadh Al Khabra","An Nabhaniyah","Uyun Al Jiwa"],"jouf":["Sakaka","Al Qurayyat","Dumat Al Jandal","Tabarjal"],"asir":["Khamis Mushait","Abha","Bisha","Muhayil","Balqarn","An Namas","Tathlith","Tarib","Ahad Rufaydah","Tanumah","Al Majardah","Sarat Abidah","Bariq","Zahran Al Janub","Al Harjah","Rijal Al Ma"],"najran":["Najran","Yadamah","Khubash","Habuna","Thar","Badr Al Janub"],"northern":["Arar","Rafha","Turaif","Al Uwayqilah"],"tabuk":["Tabuk","Tayma","Haqil","Umluj","Al Wajh","Duba","Al Bad"],"hail":["Hail","Ash Shamli","Baqaa","Ash Shinan","Mawqaq","As Sulaymi","Al Hait","Simira","Al Ghazalah"],"baha":["Al Baha","Al Aqiq","Bani Hasan","Baljurashi","Al Hajrah","Al Mikhwah","Qilwah","Al Qara","Al Mandaq"]};
+const NAT_SECTORS = { construction:'Construction', oilgas:'Oil & gas', manufacturing:'Manufacturing', logistics:'Transport & logistics', utilities:'Energy & utilities', mining:'Mining', retail:'Retail & services', health:'Healthcare' };
+function natReg() { const I = integ(); return I.reg || (I.reg = { id:'EST-70412', region:'eastern', city:'Jubail', sector:'manufacturing' }); }
+function nationalReturn() {
+  const c = cube(), r = riskOf(null), g = natReg(), T = now(), [hazard, minor, lta, serious, fatal] = r.tiers.map(t => t.n);
+  const modScores = list => Object.fromEntries(MODS.map(mo => [mo.id, score(list.filter(x => x.mod === mo.id))]));
+  const over = c.period.filter(x => x.state === 'overdue').sort((a, b) => potOf(b.rule) - potOf(a.rule) || b.frac - a.frac);
+  return { schema:'canon.national-return.v2', generatedAt:new Date().toISOString(), establishment:{ ...g, name:S.settings.company, workforce:r.heads },
+    compliance:{ score:score(c.period), records:c.period.length, nonCompliant:c.period.filter(x => BAD.has(x.state)).length, liveBreaches:over.length, lifeCriticalOpen:r.life.length, standard:stdManual()?.code },
+    risk:{ level:r.level, ltifr:+r.ltifr.toFixed(2), trir:+r.trir.toFixed(2), tiers:{ hazard, minor, lta, serious, fatal }, reasons:r.active.map(x => ({ why:x.why, fix:x.fix })) },
+    modules:modScores(c.period),
+    departments:S.departments.map(d => { const xs = c.period.filter(x => x.dept === d.id); return { name:d.name, score:score(xs), records:xs.length, modules:modScores(xs) }; }),
+    issues:over.map(x => ({ ref:x.id, control:x.rule.name, module:x.mod, department:dept(x.dept).name, area:x.area || '', overdueDays:Math.max(0, Math.round((T - x.due) / DAY * 10) / 10), limit:limTxt(x.lim), standard:`${x.lim.m.code} §${nums(x.lim.m)[x.lim.c.id]}`, potential:potOf(x.rule) })) };
+}
+
+/* ---------- Actions ---------- */
+Object.assign(A, {
+  ccTier(id) {
+    const r = riskOf(scopeDepts()), t = r.tiers[id - 1];
+    modal({ wide:true, title:`${esc(t.name)} · ${num(t.n)} in 12 months`, icon:`<span class="mico" style="background:${t.col};color:${t.ink};font:700 13px var(--sans)">L${id}</span>`,
+      body:`<p class="small muted" style="margin-top:0">Safety+ classes counted here: ${Object.values(t.classes).map(esc).join(', ')}.</p><div class="col gap8">${t.events.slice(0, 60).map(e => `<div class="drow"><span class="badge b-gray" style="min-width:128px;justify-content:center">${esc(t.classes[e.class] || e.class)}</span><div class="grow" style="min-width:0"><div class="small"><b class="mono">${esc(e.id)}</b> ${esc(e.title)}</div><div class="xs muted">${fmtD(e.date)} · ${esc(dept(e.dept)?.name || e.dept)}${e.area ? ' · ' + esc(e.area) : ''} · ${esc(mod(e.mod)?.name || '')}</div></div></div>`).join('') || '<div class="empty">No records at this level in the last 12 months.</div>'}${t.n > 60 ? `<div class="xs muted">Showing the latest 60 of ${num(t.n)}.</div>` : ''}</div>` });
+  },
+  ccMethod() {
+    const row = (l, rule) => `<tr><td>${levelTag(l)}</td><td><b>${esc(tierOf(l).level)}</b></td><td>${rule}</td></tr>`;
+    modal({ wide:true, title:'How the level is worked out', icon:`<span class="mico" style="background:var(--navy,#1C2B4A)">${ic('pyramid')}</span>`, body:`<p class="small" style="margin-top:0">Every record from ${esc(integ().system)} is placed on the pyramid by its class. The level is the <b>highest rule below that is true</b>, for the company and for each department. Hazards and near misses never raise the level, so reporting is always safe.</p>
+      <table class="mth"><thead><tr><th>Level</th><th>Name</th><th>True when</th></tr></thead><tbody>
+      ${row(5, 'A fatality in the last 12 months')}${row(4, 'A serious injury in the last 6 months, or 3 or more life-critical controls failed or overdue and at least 15% of those checks')}${row(3, `A lost time accident in the last ${LTA_DAYS} days, or any life-critical control failed or overdue`)}${row(2, `Any control overdue, or failed in the last ${FAILED_DAYS} days`)}${row(1, 'None of the above')}</tbody></table>
+      <p class="small mt12"><b>Life-critical controls</b> are those that can lead to a fatality: ${CRULES.filter(x => potOf(x) === LIFE).map(x => esc(x.name)).join(', ')}.</p>
+      <p class="small"><b>Reference ratios</b> (1 : 30 : 300 : 30,000 : 300,000) are a guide to the shape of the pyramid, not a prediction. They are used only for the reporting check, never for the level.</p>
+      <p class="small"><b>The 12-month strip</b> uses recorded events only, because past control states are not kept. The latest month is the live level.</p>` });
+  },
+  ccSim(id) { const s = UI.sim; s.depts = s.depts.includes(id) ? s.depts.filter(x => x !== id) : [...s.depts, id]; rerender(); },
+  ccNotifyAll() {
+    const over = cube().period.filter(x => x.state === 'overdue'), I = integ(), by = {}; over.forEach(x => (by[x.dept] = by[x.dept] || []).push(x));
+    Object.entries(by).forEach(([d, xs]) => { notify(deptHead(d), `${xs.length} live compliance breach${xs.length > 1 ? 'es' : ''} in ${dept(d).name} need closing.`, '#/compliance', 'escalation'); xs.forEach(x => I.notified[x.id] = now()); });
+    log(null, `notified ${Object.keys(by).length} department heads about ${over.length} live breaches`, 'escalation'); commit(`${Object.keys(by).length} department heads notified`);
+  },
+  ccReturn() {
+    const g = natReg(), opt = (o, v) => Object.entries(o).map(([k, l]) => `<option value="${k}" ${k === v ? 'selected' : ''}>${esc(l)}</option>`).join('');
+    const regions = Object.fromEntries(Object.keys(NAT).map(k => [k, k === 'northern' ? 'Northern Borders' : k[0].toUpperCase() + k.slice(1)]));
+    modal({ title:'National return', wide:true, icon:`<span class="mico" style="background:var(--navy,#1C2B4A)">${ic('flag')}</span>`, foot:`<button class="btn acc" onclick="A.ccReturnSave()">${ic('down')} Download return (JSON)</button>`,
+      body:`<p class="small muted" style="margin-top:0">The summary this company sends to the national dashboard. It holds totals and open control breaches, with no personal names.</p>
+      <div class="grid3 mb16"><div><label class="lbl">Region</label><select class="select" onchange="natReg().region=this.value;natReg().city=NAT[this.value][0];save();A.ccReturn()">${opt(regions, g.region)}</select></div><div><label class="lbl">City</label><select class="select" onchange="natReg().city=this.value;save()">${NAT[g.region].map(c => `<option ${c === g.city ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select></div><div><label class="lbl">Sector</label><select class="select" onchange="natReg().sector=this.value;save()">${opt(NAT_SECTORS, g.sector)}</select></div></div>
+      <pre class="code" style="max-height:300px">${esc(JSON.stringify(nationalReturn(), null, 2))}</pre>` });
+  },
+  ccReturnSave() { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(nationalReturn(), null, 2)], { type:'application/json' })); a.download = `national-return-${natReg().id}.json`; a.click(); URL.revokeObjectURL(a.href); toast('Return downloaded', 'good'); },
+});
+function riskPill() { try { const r = riskOf(null); return `<a class="rk-pill" href="#/compliance" title="Company risk level">${levelTag(r.level)}${esc(tierOf(r.level).level)}</a>`; } catch (e) { return ''; } }
 
 /* ============ Department change requests from the book: suggest → diff review → approve / return ============ */
 VK.edit = { l:'Department variation', b:'b-blue', i:'edit' };
